@@ -23,6 +23,11 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
     name = "Contact"
     url = "/#contact"
     weight = 3
+    
+[[menu.main]]
+    name = "About"
+    url = "/cv.pdf"
+    weight = 4
 
 [params]
     author = "David Granjon"
