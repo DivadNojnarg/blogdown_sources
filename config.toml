@@ -23,6 +23,18 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
 
 [params]
     description = "A website built through Hugo and blogdown."
+    logoBig = "/images/osprey-logo.png"
+    logoSmall = "/images/osprey-logo.png"
+    
+    linkedin = "Blabla"
+    github = "Blabla"
+    
+    email = ""
+    
+    googleTagManger = ""
+    highlightJS = true
+    copyright = true
+    credits = true
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
