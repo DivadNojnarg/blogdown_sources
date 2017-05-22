@@ -25,9 +25,10 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
     weight = 3
 
 [params]
+    author = "David"
     description = "A website built through Hugo and blogdown."
-    logoBig = "/images/osprey-logo.png"
-    logoSmall = "/images/osprey-logo.png"
+    logoBig = "/images/fractal-logo.png"
+    logoSmall = "/images/fractal-logo.png"
     
     linkedin = "Blabla"
     github = "Blabla"
