@@ -1,7 +1,7 @@
 baseurl = "https://divadnojnarg.github.io"
 relativeurls = true
 languageCode = "en-us"
-title = "A Hugo website"
+title = "Hi, I am David"
 theme = "osprey"
 googleAnalytics = ""
 disqusShortname = ""
@@ -25,8 +25,8 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
     weight = 3
 
 [params]
-    author = "David"
-    description = "A website built through Hugo and blogdown."
+    author = "David Granjon"
+    description = "PhD in Mathematical Physiology, Renal Physiology, Zurich."
     logoBig = "/images/fractal-logo.png"
     logoSmall = "/images/fractal-logo.png"
     
