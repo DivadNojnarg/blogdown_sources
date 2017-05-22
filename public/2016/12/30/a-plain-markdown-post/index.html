@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+
+        <title>
+            
+            
+                A Plain Markdown Post | A Hugo website
+            
+        </title>
+
+        <meta name="title" content="A Plain Markdown Post | A Hugo website">
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        <meta name="generator" content="">
+        <base href="../../../../">
+        <meta name="description" content="A website built through Hugo and blogdown.">
+        
+        
+        
+        <meta property="og:title" content="A Plain Markdown Post | A Hugo website">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/">
+        
+        <meta property="og:description" content="A website built through Hugo and blogdown.">
+        
+
+        
+
+        <link rel="canonical" href="../../../../2016/12/30/a-plain-markdown-post/">
+        
+        <link rel="stylesheet" href="styles/main.css" type="text/css">
+        
+        
+    </head>
+
+    <body>
+        
+
+        
+
+        <nav class="row middle-xs center-xs">
+            <div class="col-xs-6 col-sm-1 logo">
+                <a href="../../../../"><img src="" alt="A Hugo website"></a>
+            </div>
+            
+            <div class="col-xs-3 col-md-2"><h3><a href="../../../../about/">About</a></h3></div>
+            
+            <div class="col-xs-3 col-md-2"><h3><a href="https://github.com/rstudio/blogdown">GitHub</a></h3></div>
+            
+            <div class="col-xs-3 col-md-2"><h3><a href="https://twitter.com/rstudio">Twitter</a></h3></div>
+            
+            <div class="col-xs-6 col-sm-1 nav-toggle">
+                <a href="" class="nav-icon" onclick="return false"><img src="../../../../images/icon-menu.png" alt="Open Menu"><img src="../../../../images/icon-x.png" alt="Close Menu" style="display: none;"></a>
+            </div>
+        </nav>
+        <section class="nav-full row middle-xs center-xs">
+            <div class="col-xs-12">
+                <div class="row middle-xs center-xs">
+                    
+                    <div class="col-xs-12"><h1><a href="../../../../about/">About</a></h1></div>
+                    
+                    <div class="col-xs-12"><h1><a href="https://github.com/rstudio/blogdown">GitHub</a></h1></div>
+                    
+                    <div class="col-xs-12"><h1><a href="https://twitter.com/rstudio">Twitter</a></h1></div>
+                    
+                </div>
+            </div>
+        </section>
+        <main>
+
+
+<section class="container">
+    <section class="content">
+      <h1> A Plain Markdown Post </h1>
+
+      <div class="sub-header">
+        December 2016 · 2 minute read
+      </div>
+
+      <div class="entry-content">
+        <p>This is a post written in plain Markdown (<code>*.md</code>) instead of R Markdown (<code>*.Rmd</code>). The major differences are:</p>
+
+<ol>
+<li>You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (<code>```{r}</code>);</li>
+<li>A plain Markdown post is rendered through <a href="https://gohugo.io/overview/configuration/">Blackfriday</a>, and an R Markdown document is compiled by <a href="http://rmarkdown.rstudio.com"><strong>rmarkdown</strong></a> and <a href="http://pandoc.org">Pandoc</a>.</li>
+</ol>
+
+<p>There are many differences in syntax between Blackfriday&rsquo;s Markdown and Pandoc&rsquo;s Markdown. For example, you can write a task list with Blackfriday but not with Pandoc:</p>
+
+<ul class="task-list">
+<li><input type="checkbox" checked disabled class="task-list-item"> Write an R package.</li>
+<li><input type="checkbox" disabled class="task-list-item"> Write a book.</li>
+<li><input type="checkbox" disabled class="task-list-item"> &hellip;</li>
+<li><input type="checkbox" disabled class="task-list-item"> Profit!</li>
+</ul>
+
+<p>Similarly, Blackfriday does not support LaTeX math and Pandoc does. I have added the MathJax support to this theme (<a href="https://github.com/yihui/hugo-lithium-theme">hugo-lithium-theme</a>) but there is a caveat for plain Markdown posts: you have to include math expressions in a pair of backticks (inline: <code>`$ $`</code>; display style: <code>`$$ $$`</code>), e.g., <code>$S_n = \sum_{i=1}^n X_i$</code>.<sup class="footnote-ref" id="fnref:This-is-because"><a rel="footnote" href="#fn:This-is-because">1</a></sup> For R Markdown posts, you do not need the backticks, because Pandoc can identify and process math expressions.</p>
+
+<p>When creating a new post, you have to decide whether the post format is Markdown or R Markdown, and this can be done via the <code>rmd</code> argument of the function <code>blogdown::new_post()</code>, e.g.</p>
+
+<pre><code class="language-r">blogdown::new_post(&quot;Post Title&quot;, rmd = FALSE)
+</code></pre>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:This-is-because">This is because we have to protect the math expressions from being interpreted as Markdown. You may not need the backticks if your math expression does not contain any special Markdown syntax such as underscores or asterisks, but it is always a safer choice to use backticks. When you happen to have a pair of literal dollar signs inside the same element, you can escape one dollar sign, e.g., <code>\$50 and $100</code> renders &ldquo;\$50 and $100&rdquo;. <a class="footnote-return" href="#fnref:This-is-because"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+      </div>
+
+      <div class="links">
+        
+          &laquo; <a class="basic-alignment left" href="../../../../2015/07/23/hello-r-markdown/">Hello R Markdown</a>
+        
+        
+      </div>
+    </section>
+</section>
+
+        </main>
+        <footer class="row middle-xs center-xs">
+            
+            
+            
+            
+            
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+            
+            <script src="../../../../scripts/main.js" type="text/javascript"></script>
+            
+            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+        </footer>
+    </body>
+</html>
+
