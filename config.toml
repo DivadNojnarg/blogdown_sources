@@ -1,10 +1,12 @@
 baseurl = "https://divadnojnarg.github.io"
 relativeurls = true
 languageCode = "en-us"
+tags = ["Zurich", "renal physiology", "mathematical physiology", "calcium", "phosphate", "ShinyApps", "R"]
+
 title = "Hi, I am David"
 theme = "osprey"
 googleAnalytics = ""
-disqusShortname = ""
+disqusShortname = "divadnojnarg"
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
 
