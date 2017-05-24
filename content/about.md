@@ -3,7 +3,7 @@ title: "About"
 date: "2016-05-05T21:48:51-07:00"
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium-theme).
+### This is a test for Latex display by MathJax.
 
 $$
 \left( \sum_{k=1}^n a_k b_k \right)^{2} \leq
@@ -59,3 +59,11 @@ ability to mix math and text in a paragraph is also important.  This
 expression $\sqrt{3x-1}+(1+x)^2$ is an example of an inline equation.  As
 you see, MathJax equations can be used this way as well, without unduly
 disturbing the spacing between lines.
+
+### How to include a video 
+
+{{< youtube w7Ft2ymGmfc >}}
+
+### Include an image
+
+{{< figure src="/media/lorenz_plot.png" title="Some Trajectories" >}}
