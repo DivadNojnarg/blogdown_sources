@@ -46,6 +46,8 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
     highlightJS = true
     copyright = true
     credits = true
+    
+    math = true
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"

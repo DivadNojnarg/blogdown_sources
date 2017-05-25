@@ -10,7 +10,7 @@
         })(window,document,'script','dataLayer','{{ .Site.Params.googleTagManager }}');</script>
         <!-- End Google Tag Manager -->
         {{ end }}
-
+        
         <title>
             {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
             {{ if .IsHome }}
