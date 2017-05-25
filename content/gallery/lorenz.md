@@ -5,6 +5,6 @@
   alt = "A simple app to simulate the Lorenz-model"
   color = ""
   link1 = "/about_Lorenz/about_Lorenz"
-  link2 = "/about"
+  link2 = ""
 +++
     
