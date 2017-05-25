@@ -6,8 +6,8 @@ date: "2016-05-05T21:48:51-07:00"
 ### This is a test for Latex display by MathJax.
 
 $$
-\left( \sum_{k=1}^n a_k b_k \right)^{2} \leq
- \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+\left( \sum\_{k=1}^n a_k b_k \right)^{2} \leq
+ \left( \sum\_{k=1}^n a_k^2 \right) \left( \sum\_{k=1}^n b_k^2 \right)
 $$
 
 $$
@@ -50,7 +50,7 @@ $$
 
 $$
 \begin{equation} 
-x(t) = e^{\int_{t_0}^tp(s)ds}\Bigg(\int_{t_0}^t\Big(q(s)e^{-\int_{t_0}^sp(\tau)d\tau}\Big)ds + x_0\Bigg).
+x(t) = e^{\int\_{t_0}^tp(s)ds}\Bigg(\int\_{t_0}^t\Big(q(s)e^{-\int\_{t_0}^sp(\tau)d\tau}\Big)ds + x_0\Bigg).
 \end{equation}
 $$
 
