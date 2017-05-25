@@ -88,7 +88,7 @@ I found a [solution](https://discuss.gohugo.io/t/solved-mathjax-stopped-working/
 
 Now, your **mathjax_support.html** should look like the above code and you should be able to play with latex!
 
-<span style="color:red">**According to MathJax, their CDN is being [discontinued](https://www.mathjax.org/cdn-shutting-down/), but using you are not concerned if you use the previous code.**</span>
+<span style="color:red">**According to MathJax, their CDN is being [discontinued](https://www.mathjax.org/cdn-shutting-down/), you are not concerned if you use the previous code.**</span>
 
 ## Latex rendering errors
 
