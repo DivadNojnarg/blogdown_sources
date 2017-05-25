@@ -4,7 +4,7 @@
   image = "lorenz_attractor.png"
   alt = "A simple app to simulate the Lorenz-model"
   color = ""
-  link1 = "/Lorenz/about_Lorenz"
+  link1 = "/about"
   link2 = ""
 +++
     

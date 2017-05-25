@@ -88,6 +88,8 @@ I found a [solution](https://discuss.gohugo.io/t/solved-mathjax-stopped-working/
 
 Now, your **mathjax_support.html** should look like the above code and you should be able to play with latex!
 
+<span style="color:red">**According to MathJax, their CDN is being [discontinued](https://www.mathjax.org/cdn-shutting-down/), but using you are not concerned if you use the previous code.**</span>
+
 ## Latex rendering errors
 
 There are some differences with classical Latex expressions and the syntax to use in a markdown document. For example, `\sum_` does not render with Hugo and you should use `\sum\_` instead (notice the second backslash before the underscore). I noticed that it is the same thing for `\int_` (so `\int\_`). Of course, this will tighly depend on the configuration you chose for MathJax. Moreover, the following system of equations does not render properly:
