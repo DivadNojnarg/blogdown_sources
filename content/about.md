@@ -11,19 +11,21 @@ $$
 $$
 
 $$
+\left\\{
 \begin{align}
-\dot{x} & = \sigma(y-x) \\
-\dot{y} & = \rho x - y - xz \\
+\dot{x} & = \sigma(y-x) \newline
+\dot{y} & = \rho x - y - xz \newline
 \dot{z} & = -\beta z + xy
 \end{align}
+\right.
 $$
 
 $$
 \mathbf{V}_1 \times \mathbf{V}_2 =
    \begin{vmatrix}
-    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
-    \frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\
-    \frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \\
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \newline
+    \frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \newline
+    \frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \newline
    \end{vmatrix}
 $$
 
@@ -41,9 +43,9 @@ $$
 
 $$
 \begin{align}
-  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
-  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
+  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \newline
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \newline
   \nabla \cdot \vec{\mathbf{B}} & = 0
 \end{align}
 $$
