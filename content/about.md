@@ -18,7 +18,7 @@ The purpose of this page is to show some Shiny Apps of the Lorenz model develope
 ### Solve the Lorenz model for random initial conditions
 
 This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters. In all my apps, it is possible to save, load, reset and close the application via a button bar.
-Finally, as explained in the app text, the maximum number of initial conditions was set to **100**, since above this value, plotly can be unstable on several computers. **A lot of novel features are comming soon**.
+Finally, as explained in the app text, the maximum number of initial conditions was set to **100**, since above this value, plotly can be unstable on several computers. **A lot of novel features are comming soon**. Send me a mail if you find any bug!
 
-<iframe src="https://dgranjon.shinyapps.io/lorenz_1_initialcond/" style="width: 800px; height: 700px; border: none; overflow: hidden;"></iframe>
+<!--<iframe src="https://dgranjon.shinyapps.io/lorenz_1_initialcond/" style="width: 700px; height: 500px; border: none; overflow: hidden;"></iframe> -->
 
