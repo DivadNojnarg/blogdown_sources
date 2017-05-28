@@ -8,4 +8,3 @@
   link2 = "https://dgranjon.shinyapps.io/lorenz_1_initialcond/"
   link3 = ""
 +++
-    
