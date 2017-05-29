@@ -22,6 +22,16 @@ This app was tested on Windows 10 (Edge: ok, Mozilla firefox: ok, chrome: ok), m
 
 For the moment, my apps are hosted on my shinyapps.io account. However, when my shiny server is ready, I will move everything because I am not very satisfied by the shinyapps.io server performances.
 
+## 2. Solve the Lorenz model when parameters change
+
+The second app provides a simple interface where a control panel allows the user to change parameters, initial conditions together with solver options. Equations are integrated and results are available in a table. Additionally, 3D space graph as well as phase plane projections are displayed on demand. 
+
+<iframe src="https://dgranjon.shinyapps.io/lorenz_2_parameters/" style="width: 700px; height: 700px; border: none; overflow: hidden;"></iframe>
+
+ * Remarks
+ 
+ I will update this app, as soon as possible. 
+
 <!--### How to include a video
 
 {{< youtube w7Ft2ymGmfc >}}
