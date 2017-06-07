@@ -30,7 +30,7 @@ The second app provides a simple interface where a control panel allows the user
 
  * Remarks
  
- I will update this app, as soon as possible. 
+ Last Update: 07/06/17 (fix a problem regarding save and load buttons, where apps were crashing). 
 
 <!--### How to include a video
 
