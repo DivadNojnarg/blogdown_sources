@@ -4,7 +4,7 @@
   image = "shiny.png"
   alt = "Showcase of my Shiny Apps, sandbox "
   color = ""
-  link1 = ""
+  link1 = "/about-shiny"
   link2 = "https://dgranjon.shinyapps.io/model_generator_v1/"
 +++
     
