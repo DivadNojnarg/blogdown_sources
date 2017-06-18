@@ -9,4 +9,4 @@ All my previous shiny apps are dedicated to special models and features tighly d
   
 <iframe src="https://dgranjon.shinyapps.io/model_generator_v1/" style="width: 700px; height: 700px; border: none; overflow: hidden;"></iframe>
   
-  Last update: 08/06/17
+  Last update: 18/06/17 -> Version 0.2 available: the user can add trajectories on the phase plane by a simple click
