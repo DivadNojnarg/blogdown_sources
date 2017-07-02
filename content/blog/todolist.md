@@ -14,11 +14,8 @@ Future updates:
 - [ ] add a description part to the Calcium Homeostasis gallery
 - [ ] add tutorials/articles in the teaching section 
 
-<div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-    40%
-  </div>
-</div>
+Overall progress:
+
+=====40%|success=====
 
 Last update: 18-06-17
