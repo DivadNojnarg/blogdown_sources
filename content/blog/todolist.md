@@ -14,8 +14,4 @@ Future updates:
 - [ ] add a description part to the Calcium Homeostasis gallery
 - [ ] add tutorials/articles in the teaching section 
 
-Overall progress:
-
-=====40%|success=====
-
-Last update: 02-07-17
+Last update: 07-07-17
