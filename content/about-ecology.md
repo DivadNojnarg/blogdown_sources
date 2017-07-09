@@ -9,4 +9,4 @@ The study of prey-predators interactions is a very exciting field, where a wide 
 
 <iframe src="https://dgranjon.shinyapps.io/lotka_volterra_bdd/" style="width: 700px; height: 700px; border: none; overflow: hidden;"></iframe>
 
-Last update: 07/06/17
+Last update: 07/07/17 -> tabBox and box are now sortable in the entire UI.
