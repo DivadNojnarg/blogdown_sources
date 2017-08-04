@@ -5,6 +5,7 @@
 
 Future updates:
 
+- [x] add a link to the second scientific article published
 - [x] upload the first shiny app in the Lorenz model section
 - [x] add all other shiny apps related to the Lorenz model
 - [x] open the shiny showcase section
@@ -14,4 +15,4 @@ Future updates:
 - [ ] add a description part to the Calcium Homeostasis gallery
 - [ ] add tutorials/articles in the teaching section 
 
-Last update: 07-07-17
+Last update: 04-08-17
