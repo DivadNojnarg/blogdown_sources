@@ -15,4 +15,4 @@ Future updates:
 - [ ] add a description part to the Calcium Homeostasis gallery
 - [ ] add tutorials/articles in the teaching section 
 
-Last update: 04-08-17
+Last update: 22-10-17
