@@ -4,11 +4,11 @@
 +++
 
 After several months of silence (I am very busy :)), I would like to share with 
-you a "**best of**" of all Shiny packages you need to build beautiful and powerful
+you a "**best of**" of all Shiny packages you might need to build beautiful and powerful
 applications.
 
 ## Enhance your apps with Javascript (still updated)
-The **shinyjs** package was written by Dean Attali, [https://deanattali.com/shinyjs/](https://deanattali.com/shinyjs/), 
+The **shinyjs** package was designed by Dean Attali, [https://deanattali.com/shinyjs/](https://deanattali.com/shinyjs/), 
 a very famous shiny user.
 In summary, it allows you to add interactivity inside your app for example:
 
@@ -51,8 +51,7 @@ Be careful: this package is not updated (but still very good!).
 
 ## Extend shinyBS: **bsplus** (not updated anymore?)
 In addition to providing extra bootstrap components, such as accordions and carousel,
-a very interesting function allows the user to include help text/popover inside
-shiny inputs, as follows:
+a function allows the user to include help text/popover inside shiny inputs, as follows:
 
 ```R
 numericInput(inputId = "foo", label = "Enter a number", value = 0) %>%
@@ -62,13 +61,13 @@ numericInput(inputId = "foo", label = "Enter a number", value = 0) %>%
   )
 ```
 
-This could be very useful if you want to include a reset button just next to a slider input!
+This could be useful if you want to include a reset button just next to a slider input!
 
 ## Make your interface customizable by the user: shinyjqui
 **shinyjqui**, developped by Yang Tang [https://cran.r-project.org/web/packages/shinyjqui/vignettes/introduction.html](https://cran.r-project.org/web/packages/shinyjqui/vignettes/introduction.html) ([github](https://github.com/Yang-Tang/shinyjqui)), 
 is an amazing package to allow mouse interactions such as 
 dragging/resizing/sorting elements inside your UI. There are also up to 15 animations
-effects that can be applied to UI elements (slide, bounce, ...). For instance,
+effects that can be applied to each UI elements (slide, bounce, ...). For instance,
 this might be useful to combine help text with these animations. Since I am using custom
 dashboard templates, I prefer:
 
@@ -77,7 +76,7 @@ jqui_sortable(selector, switch = TRUE, options = NULL)
 
 ```
 which allows the user to display each panel as desired, giving a more flexible design.
-However, be careful when adding these functions: your design has to remain functional!
+However your design has to remain functional!
 
 ## Extend shiny input elements: **shinyWidgets**
 It is definitely one of my favorite shiny package, developed by the [dreamR](https://www.dreamrs.fr) 
@@ -104,7 +103,7 @@ shiny apps with a lot of options, menus. It will save a lot of space in addition
 pretty nice. More informations [here](https://github.com/ebailey78/shinyMenus).
 Notice that adding a sliderInput in the menubar (``` smNavBar(...)```) does not work perfectly and will
 add an ugly extra vertical space. Using the ``` sliderTextInput() ``` of **shinyWidget**
-renders slightly better. To summarise, there is no garanty that each widget can be fully
+renders slightly better. To summarise, there is no warranty that each widget will be fully
 integrated without display issues. However, it is likely that you can fix these problems
 by adding some custom CSS or playing with options.
 
@@ -112,8 +111,7 @@ by adding some custom CSS or playing with options.
 
 ### Use material template
 **shinymaterial** is a package provided by Eric Anderson ([Github](https://github.com/ericrayanderson/shinymaterial)).
-I personally enjoy this custom template taken from the [**material**](https://material.io/guidelines/) design. However,
-it has not been updated since several months. Consequently, some features are still missing. 
+I personally enjoy this custom template taken from the [**material**](https://material.io/guidelines/) design. 
 By the way, a showcase is available [here](https://ericrayanderson.github.io/shinymaterial/). 
 A major drawback is that the navbarmenu cannot be customized very easily, unless after some manipulations.
 
@@ -122,16 +120,16 @@ A major drawback is that the navbarmenu cannot be customized very easily, unless
 **shiny.semantic** developped by [Appsilon](https://github.com/Appsilon/shiny.semantic) is mainly
 dedicated to build dashboards, using the semantic [design](https://semantic-ui.com).
 The showcase is accessible [here](http://demo.appsilondatascience.com/shiny.semantic/components/). 
-It is important to notice that this template is not compatible with bootstrap3 and thus requires to desactivate it:
+Notice that this template is not compatible with bootstrap3 and thus requires to desactivate it before:
 
 ```R
 suppressDependencies("bootstrap")
 ```
 
 I tried once to mix bootstrap and semantic UI, resulting in a lot of issues. A feature I really appreciate is the
-card widget as well as rating but I will have to report that input such as sliders are not part of
+card widget as well as rating but I will have to report that inputs such as sliders are not part of
 this package, which implies to use input widgets from the shiny base package. I did not spend
-so much time working with this UI but I think it could be really promising as well as a serious 
+so much time working with this UI but I think it could be really promising and serious 
 alternative to bootstrap!
 
 ## Make your app more professional
@@ -140,7 +138,7 @@ alternative to bootstrap!
 It is convenient for the user to be notified when a shiny is processing data, especially
 when a task lasts more than 2 seconds. In this case, displaying a css-loader will indicate
 your users that your app is still working and did not crash. **shinycssloader** includes 
-8 different spinners, whom size can be customized. Thus package is available
+8 different spinners, whom size can be customized. This package is available
 [here](https://github.com/andrewsali/shinycssloaders)
 
 ### Improve alert messages: **sweetalertR**
@@ -161,6 +159,9 @@ before going too far. Indeed, it is better to make some tests before to avoid na
 
 
 I will update this article as soon as I have more free time.
+
+Update: 28/10/17
+**shinymaterial** has been updated yesterday (V0.4.0 on CRAN).
 
 
 
