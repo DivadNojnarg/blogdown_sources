@@ -46,7 +46,7 @@ dep <- list(
 You will have to change this part `css/ion.rangeSlider.skinShiny.css`.
 
 * To choose a Ion.Rangeslider theme, you may download the full js library from the
-official [website](http://ionden.com/a/plugins/ion.rangeSlider/en.html. 
+official [website](http://ionden.com/a/plugins/ion.rangeSlider/en.html). 
 Extract the corresponding archive and open it. In the *css* folder, you should see 5 different css
 skins.
 
