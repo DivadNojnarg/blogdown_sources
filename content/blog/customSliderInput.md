@@ -18,7 +18,7 @@ install.packages("shiny", type = "source")
 ```
 
 * A link to the downloaded folder will be given. Then open a **terminal** and go to:
-```
+```sh
 $ cd/folder_where_sources_are_downloaded
 ```
 The corresponding folder contains a **tar.gz** file that you will have to extract.
@@ -55,20 +55,20 @@ by `ion.rangeSlider.skinFlat.css` (You are free to select another one)
 
 * You need now to make an archive of the modified shiny folder (containing the custom
 slider skin). Open a **terminal** and go to the directory of your new shiny folder:
-```
+```sh
 $ tar -zcvf shiny_1.0.5.tar.gz shiny_custom
 ```
 
 * Delete the official shiny package folder (it is stored in the library folder of R). 
 On Mac, it is in:
 
-```
+```sh
 $ cd /Library/Frameworks/R.framework/Versions/3.3/Resources/library/
 ```
 
 * Open a terminal and go back in the directory containing your own modified shiny package. Then run:
 
-```
+```sh
 $ R CMD INSTALL shiny_1.0.5.tar.gz
 ```
 
