@@ -19,7 +19,7 @@ In summary, it allows you to add interactivity inside your app for example:
 These are the most outstanding properties of this package and require just a few
 lines of code to work.
 
-```R
+```
 
 hide(id, anim, animType, time, selector)
 show(id, anim, animType, time, selector)
@@ -53,7 +53,7 @@ Be careful: this package is not updated (but still very good!).
 In addition to providing extra bootstrap components, such as accordions and carousel,
 a function allows the user to include help text/popover inside shiny inputs, as follows:
 
-```R
+```
 numericInput(inputId = "foo", label = "Enter a number", value = 0) %>%
   shinyInput_label_embed(
     shiny_iconlink() %>%
@@ -71,7 +71,7 @@ effects that can be applied to each UI elements (slide, bounce, ...). For instan
 this might be useful to combine help text with these animations. Since I am using custom
 dashboard templates, I prefer:
 
-```R
+```
 jqui_sortable(selector, switch = TRUE, options = NULL)
 
 ```
@@ -90,7 +90,7 @@ team based in Paris. Besides, it is still under active development ([Github](htt
 
 After installing this package you can preview a showcase as follows:
 
-```R
+```
 library(shinyWidgets)
 shinyWidgetsGallery()
 ```
@@ -122,7 +122,7 @@ dedicated to build dashboards, using the semantic [design](https://semantic-ui.c
 The showcase is accessible [here](http://demo.appsilondatascience.com/shiny.semantic/components/). 
 Notice that this template is not compatible with bootstrap3 and thus requires to desactivate it before:
 
-```R
+```
 suppressDependencies("bootstrap")
 ```
 
