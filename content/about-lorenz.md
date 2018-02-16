@@ -9,10 +9,10 @@ The purpose of this page is to show some Shiny Apps of the Lorenz model develope
 
 ## 1. Solve the Lorenz model for random initial conditions
 
-This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters. In all my apps, it is possible to save, load, reset and close the application via a button bar.
-Finally, as explained in the app text, the maximum number of initial conditions was set to **100**, since above this value, plotly can be unstable on several computers. If you notice that the time to integrate the system is too long, you can reduce the maximum time of integration (or the integration step). **Send me a mail if you find any bug!**
+This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters.
+As explained in the app text, the maximum number of initial conditions was set to **100**, since above this value, plotly can be unstable on several computers (my server is 8 cores and 32gb RAM). If you notice that the time to integrate the system is too long, you can reduce the maximum time of integration (or the integration step). **Send me a mail if you find any bug!**
 
-<iframe src="https://dgranjon.shinyapps.io/lorenz_1_initialcond/" style="width: 700px; height: 700px; border: none; overflow: hidden;"></iframe>
+<iframe src="http://130.60.24.205/Lorenz_init/" style="width: 700px; height: 700px; border: none; overflow: hidden;"></iframe>
 
   * Supported Hardware
 
@@ -20,7 +20,7 @@ This app was tested on Windows 10 (Edge: ok, Mozilla firefox: ok, chrome: ok), m
 
   * Additional remarks
 
-For the moment, my apps are hosted on my shinyapps.io account. However, when my shiny server is ready, I will move everything because I am not very satisfied by the shinyapps.io server performances.
+I started to move all my apps on my private shinyserver. For the moment, only "Lorenz initial conditions"" is ready.
 
 ## 2. Solve the Lorenz model when parameters change
 
@@ -30,7 +30,10 @@ The second app provides a simple interface where a control panel allows the user
 
  * Remarks
  
- Last Update: 07/06/17 (fix a problem regarding save and load buttons, where apps were crashing). 
+ Last Update: 17/02/18 (update the Initial conditions app:
+ - definitely improve the design
+ - add new ode libraries (odeintr, RxODE)
+ - improve performances (parallel, ...)
 
 <!--### How to include a video
 
