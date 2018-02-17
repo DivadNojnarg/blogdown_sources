@@ -5,6 +5,6 @@
   alt = "Mathematical models in Ecology"
   color = ""
   link1 = "/about-ecology"
-  link2 = "https://dgranjon.shinyapps.io/lotka_volterra_bdd/"
+  link2 = "http://130.60.24.205/Lotka_bdd"
   link3 = ""
 +++
