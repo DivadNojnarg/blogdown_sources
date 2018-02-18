@@ -5,6 +5,6 @@
   alt = "Showcase of my Shiny Apps, sandbox "
   color = ""
   link1 = "/about-shiny"
-  link2 = "https://dgranjon.shinyapps.io/model_generator_v1/"
+  link2 = "http://130.60.24.205/Model_Reader/"
 +++
     

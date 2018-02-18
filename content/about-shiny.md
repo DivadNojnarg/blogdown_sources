@@ -5,8 +5,11 @@
   
   ## Introduction
   
-All my previous shiny apps are dedicated to special models and features tighly depend on model properties. Thus, came the idea of making a shiny app which will be able to read any 2D model, drawing the phase plane and making a stability analysis. The following app is a first step toward a much more sofisticated one.
+All my previous shiny apps are dedicated to special models and features tighly depend on model properties. Thus, came the idea of making a shiny app which will be able to read any 2D model, drawing the phase plane and making a stability analysis. The following app is a first step toward a much more sofisticated one, and is of course still in development. <br/>
   
-<iframe src="https://dgranjon.shinyapps.io/model_generator_v1/" style="width: 700px; height: 700px; border: none; overflow: hidden;"></iframe>
+Click [here](http://130.60.24.205/Model_Reader/) to acces my App.
+
+<a href="http://130.60.24.205/Lotka_bdd/"><img src="images/demo_model_reader_2.png" width="auto" height="auto" alt="blank"></a>
   
-  Last update: 18/06/17 -> Version 0.2 available: the user can add trajectories on the phase plane by a simple click.
+  
+Last update: 18/02/18 -> Major update of design and improvements (see App)
