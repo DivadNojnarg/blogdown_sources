@@ -59,7 +59,7 @@ saved state, without loosing all your work.
 
 Below are some preview pictures of the builder mode:
 
-<a href="images/shinyCV_preview_1.png><img src="images/shinyCV_preview_1.png" width="auto" height="auto" alt="blank"></a>
+<a href="images/shinyCV_preview_1.png"><img src="images/shinyCV_preview_1.png" width="auto" height="auto" alt="blank"></a>
 
 <a href="images/shinyCV_options.png"><img src="images/shinyCV_options.png" width="auto" height="auto" alt="blank"></a>
 
