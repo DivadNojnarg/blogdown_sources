@@ -8,7 +8,8 @@
 > Amazing HTML CVs based upon adminLTE2 template
 
 - https://adminlte.io/themes/AdminLTE ( main theme)
-- Will be release to CRAN as soon as possible
+- The repository is still private in Github! (Will be opened soon)
+- Will be released to CRAN as soon as possible
 
 ## Introduction
 
@@ -73,6 +74,6 @@ Below are some preview pictures of the builder mode:
 
 ## Upcoming features
 
-- The repository will be open to public very soon (once I am satisfied :)).
+- new timeline boxes
 - http://ionicabizau.github.io/github-calendar/example/ (integrate Github activity to the CV)
 
