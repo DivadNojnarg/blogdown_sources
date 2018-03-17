@@ -9,7 +9,7 @@ All my previous shiny apps are dedicated to special models and features tighly d
   
 Click [here](http://130.60.24.205/Model_Reader/) to acces my App.
 
-<a href="http://130.60.24.205/Lotka_bdd/"><img src="images/demo_model_reader_2.png" width="auto" height="auto" alt="blank"></a>
+<a href="http://130.60.24.205/Model_Reader/"><img src="images/demo_model_reader_2.png" width="auto" height="auto" alt="blank"></a>
   
   
 Last update: 18/02/18 -> Major update of design and improvements (see App)
