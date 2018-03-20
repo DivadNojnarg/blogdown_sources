@@ -35,9 +35,6 @@ Click [here](http://130.60.24.205/Lorenz_parameters/) to acces my App.
 
 This app was tested on Windows 10 (Edge: ok, Mozilla firefox: ok, chrome: ok), macOS Sierra laptop (safari: ok), 8" tablet (chrome and android 7.0), iphone 7 and 5" android smartphone. Besides, on mobile devices, it is not possible to move the 3D graph, due to a compatibility problem with webGL. This is related to the use of **Plotly** package, which seems to only work (totally) with computers.
 
-### Important
-
-I started to move all my apps on my private shinyserver. For the moment, only Lorenz apps are ready.
 
 ### Remarks
  

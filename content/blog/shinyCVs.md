@@ -80,7 +80,7 @@ Below is an example of the datas given by generate_datas_shinyCV():
 
 ```{r}
 # datas for the profile example
-  temp_profile <<- list(
+  temp_profile <- list(
     my_name = "Jean Bob",
     my_position = "Looking for a Job",
     my_age = 35,
@@ -95,11 +95,16 @@ Below is an example of the datas given by generate_datas_shinyCV():
     voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.",
-    my_image = NULL
+    my_image = list(
+      src = system.file("App/cv_viewer/www/man.png", package = "shinyCV"),
+      # very important to keep the adminLTE image border
+      class = "profile-user-img img-responsive img-circle",
+      alt = "User profile picture"
+    )
   )
 
   # datas for about example
-  temp_about <<- data.frame(
+  temp_about <- data.frame(
     my_phone = "+44 650 36 47",
     my_mail = "bobatgmail.com",
     my_location = "Los Angeles",
@@ -110,19 +115,19 @@ Below is an example of the datas given by generate_datas_shinyCV():
   )
 
   # datas for skills example
-  temp_skills <<- data.frame(
+  temp_skills <- data.frame(
     variable = c("R", "Javascript", "HTML"),
     value = c(80, 50, 60)
   )
 
   # datas for language example
-  temp_languages <<- data.frame(
+  temp_languages <- data.frame(
     variable = c("french", "english"),
     value = c(10, 90)
   )
 
   # datas for network example
-  temp_network <<- data.frame(
+  temp_network <- data.frame(
     title = c("Dr.", "Pr.", ""),
     sex = c("male", "female", "female"),
     name = c("Janine", "Huguette", "Jean Raymond"),
@@ -132,7 +137,7 @@ Below is an example of the datas given by generate_datas_shinyCV():
   )
 
   # datas for formation example
-  temp_formations <<- data.frame(
+  temp_formations <- data.frame(
     title = c("Bachelor Degree", "Master Degree", "PhD in Biostatistics"),
     topic = rep("database", 3),
     from = rep("1900-01-01", 3),
@@ -145,7 +150,7 @@ Below is an example of the datas given by generate_datas_shinyCV():
   )
 
   # datas for task example
-  temp_tasks <<- list(
+  temp_tasks <- list(
     # one task dataframe per project
     project1 = data.frame(
       name = c("task 1", "task 2"),
@@ -166,7 +171,7 @@ Below is an example of the datas given by generate_datas_shinyCV():
   )
 
   # datas for project example
-  temp_projects <<- data.frame(
+  temp_projects <- data.frame(
     title = c("My project 1", "My_project 2",
               "My project 3", "My project 4"),
     position = c("Big Boss", "Slave", "Big Boss", "Slave"),
@@ -175,8 +180,17 @@ Below is an example of the datas given by generate_datas_shinyCV():
     place = rep("Somewhere", 4)
   )
 
+  # datas for publications screenshots
+  demo_list <- list(
+    class = "img-responsive pad",
+    src = system.file("App/cv_viewer/www/text-lines.svg", package = "shinyCV"),
+    style = "height: 100px; display: block;
+    margin-left: auto; margin-right: auto;"
+  )
+  temp_publications_screenshots <- list(demo_list, demo_list, demo_list)
+
  # data for publication example
-  temp_publications <<- data.frame(
+  temp_publications <- data.frame(
     reference = rep("Your name et al., Journal Title, 2018", 3),
     abstract = rep("Lorem ipsum dolor sit amet, consectetur
                    adipiscing elit, sed do eiusmod tempor
@@ -192,7 +206,7 @@ Below is an example of the datas given by generate_datas_shinyCV():
 
 
   # datas for talk example
-  temp_talks <<- data.frame(
+  temp_talks <- data.frame(
     title = rep("My Talk", 5),
     from = rep("1900-01-01", 5),
     to = rep("1900-01-01", 5),
@@ -211,7 +225,7 @@ Below is an example of the datas given by generate_datas_shinyCV():
   )
 
   # datas for course example
-  temp_courses <<- data.frame(
+  temp_courses <- data.frame(
     title = rep("My course", 4),
     topic = rep("my topic", 4),
     nb_students = c(10, 100, 4, 250),
@@ -224,7 +238,7 @@ Below is an example of the datas given by generate_datas_shinyCV():
   )
 
   # datas for internship example
-  temp_internships <<- data.frame(
+  temp_internships <- data.frame(
     title = c("My Internship 1", "My Internship 2",
               "My Internship 3", "My Internship 4"),
     topic = rep("some topic", 4),
