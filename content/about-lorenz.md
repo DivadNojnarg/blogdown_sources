@@ -15,10 +15,10 @@ The purpose of this page is to show some Shiny Apps of the Lorenz model develope
 This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters.
 As explained in the app text, the maximum number of initial conditions was set to **100**, since above this value, plotly can be unstable on several computers (my server is 8 cores and 32gb RAM). If you notice that the time to integrate the system is too long, you can reduce the maximum time of integration (or the integration step). **Send me a mail if you find any bug!**<br/>
 
-Click [here](http://130.60.24.205/Lorenz_initcond/) to acces my App.
+Click [here](http://130.60.24.205/Lorenz_init/) to acces my App.
 
-<a href="http://130.60.24.205/Lorenz_initcond/"><img src="images/demo_lorenz_initcond.png" width="auto" height="auto" alt="blank"></a>
-<a href="http://130.60.24.205/Lorenz_initcond/"><img src="images/demo_lorenz_initcond_2.png" width="auto" height="auto" alt="blank"></a>
+<a href="http://130.60.24.205/Lorenz_init/"><img src="images/demo_lorenz_initcond.png" width="auto" height="auto" alt="blank"></a>
+<a href="http://130.60.24.205/Lorenz_init/"><img src="images/demo_lorenz_initcond_2.png" width="auto" height="auto" alt="blank"></a>
 
 ## 2. Solve the Lorenz model when parameters change
 
