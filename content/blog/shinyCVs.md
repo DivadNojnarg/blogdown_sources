@@ -8,8 +8,12 @@
 > Amazing HTML CVs based upon adminLTE2 template
 
 - https://adminlte.io/themes/AdminLTE ( main theme)
-- The repository is still private in Github! (Will be opened soon)
 - Will be released to CRAN as soon as possible
+
+```{r}
+library(devtools)
+install_github("DivadNojnarg/shinyCV")
+```
 
 ## Introduction: build your cv from the shiny interface
 
@@ -279,8 +283,8 @@ Below are some preview pictures of the builder mode:
 <a href="images/shinyCV_newdesign.png"><img src="images/shinyCV_newdesign.png" width="auto" height="auto" alt="blank"></a>
 
 ## Upcoming features
-
-- manually add pictures via feed_shinyCV()
+- manually reorder panels using shinyjqui
+- implement the right sidebar in R
 - new timeline boxes
 - http://ionicabizau.github.io/github-calendar/example/ (integrate Github activity to the CV)
 
