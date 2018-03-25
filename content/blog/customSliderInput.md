@@ -75,3 +75,5 @@ $ R CMD INSTALL shiny_1.0.5.tar.gz
 This will install your updates. If everything is fine, your sliders should
 be different from that used by default in shiny. Be careful that each future update of shiny
 will **erase** your modifications. Up to you to **save** this work.
+
+<a href="images/flat_sliders.png"><img src="images/flat_sliders.png" width="auto" height="auto" alt="blank"></a>
