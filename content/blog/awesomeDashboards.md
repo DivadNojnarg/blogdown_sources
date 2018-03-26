@@ -753,12 +753,18 @@ shinyApp(
 
 ```
 
+Congratulations!
+
+<a href="images/dashboard_socialbox.png"><img src="images/dashboard_socialbox.png" width="auto" height="auto" alt="blank"></a>
+
 From now, you should be able to integrate any boostrap 3 compatible objects in your
 shinydashboards. 
 
 A better example of what you could achieve is [here](https://dgranjon.shinyapps.io/myshinycv/)
 
 <a href="images/shinyCV_newdesign.png"><img src="images/shinyCV_newdesign.png" width="auto" height="auto" alt="blank"></a>
+
+Interestingly, you will also be able to build closable boxes (which is not part of shinydashboard, as far as I know ...)
 
 ## Some improved version of shinydashboard
 
@@ -768,7 +774,7 @@ A very interesting feature of adminLTE2 is the right sidebar, in which you can
 put custom widgets. Be careful, there seems to be a limit in the number of panels
 (up to 5).
 
-<a href="images/right_sidebar_example.png"><img src="images/right_sidebar_example.png" width="auto" height="auto" alt="blank"></a>
+<a href="images/right_sidebar_example.png"><img src="images/right_sidebar_example.png" width="100px" height="300px" alt="blank"></a>
 
 A package called [ygdashboard](https://github.com/gyang274/ygdashboard/tree/master/R) 
 integrates this option to shinydashboard. However, you cannot use shinydashboard and
