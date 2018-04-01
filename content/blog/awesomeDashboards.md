@@ -16,7 +16,7 @@ You probably know that when you write a R shiny code, such as **sliderInput**,
 shiny will generate the corresponding HTML code, to be integrate into an html page. 
 Let's have a look at what happens:
 
-```{r}
+```
 library(shiny)
 sliderInput("obs", "Number of observations:",
     min = 0, max = 1000, value = 500
@@ -34,7 +34,7 @@ If you enter the previous code in the R console, you will see:
 
 Basically, all what you write in R will be translated into HTML:
 
-```{r}
+```
 library(shiny)
 library(shinydashboard)
 shinyApp(
@@ -84,7 +84,7 @@ I find easier to create inputs (slider, checkboxes) writing them in R and copy t
 to get the corresponding HTML, and include this HTML snippet in your full template, than
 directly writing it in HTML, especially if you are not an HTML nerd. An example below:
 
-```{r}
+```
 library(shinyWidgets)
 prettyCheckboxGroup(
   inputId = "checkgroup2",
@@ -141,7 +141,7 @@ that you want to integrate in your shiny app?
 
 Let's start with this very preliminary shinydashboard template:
 
-```{r}
+```
 library(shiny)
 library(shinydashboard)
 shinyApp(
@@ -265,7 +265,7 @@ to the timeline object:
 ```
 
 To include raw HTML code in shiny, simple write:
-```{r}
+```
 HTML(
   paste0('
   Your HTML code here
@@ -274,7 +274,7 @@ HTML(
 ```
 Let's go back to our shinydashboard and include this HTML code in the body part:
 
-```{r}
+```
 library(shiny)
 library(shinydashboard)
 shinyApp(
@@ -461,7 +461,7 @@ no idea of the total number).
 
 The converted code will look like that:
 
-```{r}
+```
 # col
 tags$div(
   class = "col-md-4",
@@ -520,7 +520,7 @@ tags$div(
 
 Having a try with our own basic shinydashboard template:
 
-```{r}
+```
 library(shiny)
 library(shinydashboard)
 shinyApp(
@@ -594,7 +594,7 @@ Notice that the image is not display because I did not provide any source
 your own image that should by in the **/www** directory of your application. 
 Of course, it would be better if you wrap this custom R code in your own function like that:
 
-```{r}
+```
 my_tiny_socialbox <- function(username = "Paul", userposition = "looking for job",
                               sales = NULL, followers = NULL, products = NULL) {
                               
@@ -666,7 +666,7 @@ my_tiny_socialbox <- function(username = "Paul", userposition = "looking for job
 where you would have some fields such as username, userposition, sales, followers and products.
 Notice that I use the **withTags** function that enables me to remove `tags$`.
 
-```{r}
+```
 # create your custom box
 my_tiny_socialbox <- function(username = "Paul", userposition = "looking for job",
                               sales = NULL, followers = NULL, products = NULL) {
