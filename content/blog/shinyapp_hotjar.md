@@ -82,4 +82,21 @@ Finally, I give you an overview of what you could obtain with a shiny app. I not
  that I was not able to see any input object in the hotjar recorded movie. I have no idea of what is
  missing to make it perfect. Consequently, any feedback is welcome!
  
+ Here is the Hotjar feedback regarding this issue:
+ 
+ > Hi David,
+
+>Thanks for reaching out and I'm so sorry about this trouble!
+
+>I had a look at your heatmap and I believe the reason this may be happening is due to the fact that these elements are tied to canvas objects. Currently, Hotjar doesn't support interactions with SVG or Canvas objects, so they would appear in your heatmap and thus your knobInput examples return a void result.
+
+>That said, we already have this in our development pipeline. The more times an item is mentioned by our users the higher we prioritize it and the faster we will get it done - so this just got upvoted. 😃
+
+>I have taken a note to inform you as soon as this becomes available.
+
+>In the meantime, you can see what we're currently working on in our Product Roadmap.
+
+>Hope that cleared things up and please let me know if you need any extra help!
+ 
+ 
  <a href="images/heatmap_shinyapp.jpg"><img src="images/heatmap_shinyapp.jpg" width="auto" height="auto" alt="blank"></a>
