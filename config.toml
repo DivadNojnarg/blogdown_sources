@@ -28,14 +28,9 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
     weight = 3
     
 [[menu.main]]
-name = "Shiny.Server"
-url = "http://130.60.24.205"
-weight = 4
-
-[[menu.main]]
-name = "Apps.Physiol"
-url = "http://130.60.24.78"
-weight = 5
+    name = "Shiny.Server"
+    url = "http://130.60.24.205"
+    weight = 4
 
 [params]
     author = "David Granjon"
