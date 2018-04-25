@@ -30,6 +30,16 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
     name = "About"
     url = "/cv.pdf"
     weight = 4
+    
+[[menu.main]]
+name = "My Shiny Server"
+url = "http://130.60.24.205"
+weight = 5
+
+[[menu.main]]
+name = "Apps.Physiol"
+url = "http://130.60.24.78"
+weight = 6
 
 [params]
     author = "David Granjon"

@@ -116,7 +116,7 @@ By the way, a showcase is available [here](https://ericrayanderson.github.io/shi
 A major drawback is that the navbarmenu cannot be customized very easily, unless after some manipulations.
 
 
-## Using semantic design
+### Using semantic design
 **shiny.semantic** developped by [Appsilon](https://github.com/Appsilon/shiny.semantic) is mainly
 dedicated to build dashboards, using the semantic [design](https://semantic-ui.com).
 The showcase is accessible [here](http://demo.appsilondatascience.com/shiny.semantic/components/). 
