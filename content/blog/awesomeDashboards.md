@@ -41,7 +41,7 @@ If you enter the previous code in the R console, you will see:
 </div>
 ```
 
-Basically, all what you write in R will be translated in HTML:
+Basically, all that you write in R will be translated in HTML:
 
 ```
 library(shiny)
@@ -88,8 +88,8 @@ The UI code will be translated as shown below:
 
 In pratice, this is not enough to build beautiful dashboard but it is still a good start.
 With this very simple technic, you will be able to generate any **custom HTML**.
-Moreover, if you are creating a shiny app with an [**HTML template**](https://shiny.rstudio.com/articles/templates.html). I find easier to create inputs (slider, checkboxes) writing them first in R. Once all your
-code is writtent, copy the code to the R console to get the corresponding HTML, 
+Moreover, if you are creating a shiny app with an [**HTML template**](https://shiny.rstudio.com/articles/templates.html), I find easier to create inputs (slider, checkboxes) writing them first in R. Once all your
+code is written, copy it in the R console to get the corresponding HTML, 
 and include this HTML snippet in your full template. I personnaly, prefer seeing the
 code below that the corresponding HTML:
 
@@ -166,7 +166,7 @@ shinyApp(
 )
 ```
 
-You noticed a timeline element that you really want to include in your shinydashboard:
+You noticed a timeline element that you really want to include in your shinydashboard.
 
 According to the following screenshot, open the profile.html page with your
 favorite editor (notepad ++, Rstudio, Xcode, ...). 
@@ -461,7 +461,7 @@ The associated HTML is located in the widgets.html file:
         <!-- /.col -->
 ```
 
-To convert it into R we will use the **tags** function from the htmltools package.
+To convert it into R, we will use the **tags** function from the htmltools package (shiny also includes it).
 Each HTML5 tag will be preceded by tags such as `tags$h5("an example")` or
 `tags$div(class = "col-sm-4")`. Anyway,
 if you enter `tags$` in the console, a list of all valid tags will appear (and I have
@@ -597,10 +597,10 @@ shinyApp(
 )
 ```
 
-Notice that the image is not display because I did not provide any source
-`tags$img(class = "img-circle", src = "", alt = "User Avatar")`. Up to you to provide
+The profile image is not displayed because I did not provide any source
+`tags$img(class = "img-circle", src = "", alt = "User Avatar")`. Up to you to pass
 your own image that should by in the **/www** directory of your application. 
-Of course, it would be better if you wrap this custom R code in your own function like that:
+It would be better if you wrapped this custom R code in your own function like that:
 
 ```
 my_tiny_socialbox <- function(username = "Paul", userposition = "looking for job",
@@ -672,7 +672,7 @@ my_tiny_socialbox <- function(username = "Paul", userposition = "looking for job
 ```
 
 where you would have some fields such as username, userposition, sales, followers and products.
-Notice that I use the **withTags** function that enables me to remove `tags$`.
+I use the **withTags** function that enables me to remove `tags$` (lazyness :)).
 
 ```
 # create your custom box
@@ -837,8 +837,8 @@ other parameters such as the collapsible state, the background color, ...
 When I started shiny app development, I noticed that the boxes were not possible to
 close, which can be useful sometimes. From now, let's make it closable!
 Everything you need is already in adminLTE2, we just have to
-reorder things properly. The box tool box which contains the collapse and close button
-as well as other elements such as badges is implemented as follow in HTML
+reorder things properly. The box toolbox, which contains the collapse and close button
+as well as other elements such as badges, is implemented as follow in HTML:
 
 ```{html}
 <div class="box-tools pull-right">
@@ -850,7 +850,7 @@ as well as other elements such as badges is implemented as follow in HTML
 
 ```
 
-Everything is embeded in a "box-tools pull-right" class. What we actually need is this part
+Everything is embeded in a "box-tools pull-right" class. What we actually need is this part:
 
 ```{html}
 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -897,9 +897,9 @@ code just after the collapseTag):
 ```
 
 Notice that I used `tagAppendChild(collapseTag, closableTag)` to update the collapseTag
-by adding it the closableTag. It would even be better if you created a boxToolTag
-for which you would add collapseTag and closableTag such as (it could be confusing to add
-the closable tag to the collapsivle tag):
+by adding it the closableTag. Since it could be confusing to add
+the closable tag to the collapsible one, it would even be better if you created a boxToolTag
+for which you would add collapseTag and closableTag such as:
 
 ```
 boxToolTag <- NULL
@@ -975,6 +975,9 @@ You should also add the label_status argument to the argument list of the box fu
 The final code is here:
 
 ```
+library(shiny)
+library(shinydashboard)
+
 ##########
 #
 # useful functions
@@ -1122,7 +1125,7 @@ Here is the result.
 I wish you a nice customization :)
 
 ## Some improved version of shinydashboard
-To finish this tutorial, I have some suggestions to improve your dashboard design.
+To finish this tutorial, I have some suggestions to radically pimp your dashboard design.
 
 ### ygdashboard
 
@@ -1251,12 +1254,12 @@ need but it is functional as it is now.
 
 <a href="images/dashboard_rightsidebar.png"><img src="images/dashboard_rightsidebar.png" width="auto" height="auto" alt="blank"></a>
 
-I will let you explore this surprising ygdashboard package!
+I let you now explore this surprising ygdashboard package!
 
 ### gentelella dashboard
 
 A version very similar to adminLTE2. By chance, a shiny implementation is available
-[here](http://code.markedmondson.me/gentelellaShiny/), developed by [Mark Edmonson](https://github.com/MarkEdmondson1234)
+[here](http://code.markedmondson.me/gentelellaShiny/), developed by [Mark Edmonson](https://github.com/MarkEdmondson1234).
 
 <a href="images/shiny_gentelella.png"><img src="images/shiny_gentelella.png" width="auto" height="auto" alt="blank"></a>
 
