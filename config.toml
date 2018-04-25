@@ -28,7 +28,7 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
     weight = 3
     
 [[menu.main]]
-name = "Shiny Server"
+name = "Shiny.Server"
 url = "http://130.60.24.205"
 weight = 4
 
