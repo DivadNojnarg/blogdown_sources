@@ -3,6 +3,15 @@
   date = "2018-03-26"
 +++
 
+## Important Note
+
+I recently released **shinydashboardPlus** on CRAN.
+
+[![Build Status](https://travis-ci.org/DivadNojnarg/shinydashboardPlus.svg?branch=master)](https://travis-ci.org/DivadNojnarg/shinydashboardPlus)
+[![version](http://www.r-pkg.org/badges/version/shinydashboardPlus)](https://CRAN.R-project.org/package=shinydashboardPlus)
+
+Therefore, some of the functions below are now included in the package.
+
 ## Introduction
 
 [shinydashboard](https://rstudio.github.io/shinydashboard/) is without any doubt a great package.
