@@ -5,11 +5,14 @@
 
 ## Introduction
 
+bs4Dash is now a cran package.
+
 [![Build Status](https://travis-ci.org/DivadNojnarg/bs4Dash.svg?branch=master)](https://travis-ci.org/DivadNojnarg/bs4Dash)
+[![version](http://www.r-pkg.org/badges/version/bs4Dash)](https://CRAN.R-project.org/package=bs4Dash)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Project Status](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 
-> **shinydashboard** is currently build on top of [AdminLT2](https://adminlte.io/themes/AdminLTE/index2.html) and uses bootstrap 3. 
+**shinydashboard** is currently build on top of [AdminLT2](https://adminlte.io/themes/AdminLTE/index2.html) and uses bootstrap 3. 
 Yet, bootstrap 4 is already released and nothing was available for shiny, regarding
 dashboards. bs4Dash is built on top of [AdminLTE3](https://github.com/almasaeed2010/AdminLTE/tree/v3-dev) and
 bring also extra components from boostrap 4. 
@@ -17,9 +20,12 @@ The syntax is very close to that of shinydashboard so that users are not lost.
 
 ## Installation
 
-This package is not on CRAN (release soon)
+You can install this package from CRAN or the latest dev version via github:
 
 ```r
+# from CRAN
+install.packages("bs4Dash")
+# devel version
 devtools::install_github("DivadNojnarg/bs4Dash")
 ```
 
@@ -104,8 +110,6 @@ library(bs4Dash)
  )
 ```
 
-<iframe src="http://130.60.24.205/bs4Dash/classic" width="100%" height="720px" frameBorder="0" scrolling= "no">
-
 ### Old school theme
 
 ```r
@@ -154,8 +158,6 @@ library(bs4Dash)
  )
 ```
 
-<iframe src="http://130.60.24.205/bs4Dash/old-school" width="100%" height="720px" frameBorder="0" scrolling= "no">
-
 ### Limitations
 
 Currently, the right and left siderbars are not handled by the old school design,
@@ -174,8 +176,6 @@ library(plotly)
 
 bs4DashGallery()
 ```
-
-<iframe src="http://130.60.24.205/bs4Dash/showcase" width="100%" height="720px" frameBorder="0">
 
 ### Demo code
 
