@@ -29,7 +29,7 @@ Here is the final result on shinyapps.io: [shinyknob](https://dgranjon.shinyapps
 
 The idea is simple:
 
-1. First, you create the file containing the new widget: *input-knob.R*, 
+- First, we create the file containing the new widget: *input-knob.R*, 
 because it is supposed to be a knob (very original). It is widely inspired
 on what you can find on the shiny github R [folder](https://github.com/rstudio/shiny/tree/master/R).
 Below, I quickly describe its content:
@@ -89,6 +89,7 @@ knobInput <- function(inputId, label, value, min = 0, max = 100, step = 1,
   dropNulls <- function(x) {
     x[!vapply(x, is.null, FUN.VALUE = logical(1))]
 }
+
 ```
 
 First of all, all the options available in jQuery knob are included in the function
@@ -119,7 +120,7 @@ work at the moment). **dropNulls** is defined below but could be written in a ut
 Additionally, your /www folder should contain both *jquery.knob.min.js* and *knob-input-binding.js*,
 the later is discussed below.
 
-2. Then, you need to create the related input-binding. This file should be put in the
+- We create the related input-binding. This file should be put in the
 /www folder of the widget. To summarise, the input-binding will make the link between
 shiny and your new widget (see [here](https://shiny.rstudio.com/articles/building-inputs.html)).
 
@@ -282,8 +283,7 @@ It is just copied and paste from jQuery knob library. Then, we define the input 
 - we declare a new variable (not surprisingly "knobInputBinding").
 - we call the **find** method using the class "knob-input", previously defined in our
 *input-knob.R* file. Crucial step!
-- the **initialize** function creates the knob using .knob() (see jQuery knob), where we set 
-the value of the widget.
+- the **initialize** function creates the knob using .knob() (see jQuery knob), where we set the value of the widget.
 - the method **getValue** returns the value of your widget(s).
 - **subscribe** method: one of the most important feature. Without this part, 
 the value of your widget will not be updated in shiny when you change it. We can find
@@ -322,7 +322,7 @@ from 1 to 100 would be sent to the server, which is a bit ridiculous. Rate polic
 when callback has "true" as argument.
 - we register the input binding with the **register** function. 
 
-3. Finally, we create a short demonstration of this widget.
+- Finally, we create a short demonstration of this widget.
 
 ```
 

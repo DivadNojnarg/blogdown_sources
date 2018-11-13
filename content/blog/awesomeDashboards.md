@@ -3,14 +3,9 @@
   date = "2018-03-26"
 +++
 
-## Important Note
+## shinydashboardPlus <img src="/images/ShinyDashboardPlus_FINAL.png" width=200 align="right" />
 
-I recently released **shinydashboardPlus** on CRAN.
-
-[![Build Status](https://travis-ci.org/DivadNojnarg/shinydashboardPlus.svg?branch=master)](https://travis-ci.org/DivadNojnarg/shinydashboardPlus)
-[![version](http://www.r-pkg.org/badges/version/shinydashboardPlus)](https://CRAN.R-project.org/package=shinydashboardPlus)
-
-Therefore, some of the functions below are now included in the package.
+I recently released **shinydashboardPlus** on CRAN. Therefore, some of the functions below are now included in the package. Find out more on [github](https://github.com/DivadNojnarg/shinydashboardPlus).
 
 ## Introduction
 
