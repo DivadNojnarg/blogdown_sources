@@ -28,8 +28,8 @@ publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
     weight = 3
     
 [[menu.main]]
-    name = "Shiny.Server"
-    url = "http://130.60.24.205/server_folder"
+    name = "RinteRface"
+    url = "https://rinterface.com"
     weight = 4
 
 [params]
