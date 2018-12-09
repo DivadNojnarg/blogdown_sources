@@ -8,7 +8,7 @@ theme = "osprey"
 googleAnalytics = ""
 disqusShortname = "divadnojnarg"
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
-publishDir ="/Users/macdavidgranjon/Documents/divadnojnarg.github.io"
+publishDir ="/Users/macdavidgranjon/Documents/Websites/divadnojnarg.github.io"
 
 [permalinks]
     post = "/:year/:month/:day/:slug/"
