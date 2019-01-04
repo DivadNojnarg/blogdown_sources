@@ -4,7 +4,7 @@
   image = "shiny_logo.png"
   alt = "Showcase of my Shiny Apps, sandbox "
   color = ""
-  link1 = "/about-shiny"
-  link2 = "http://130.60.24.205/Model_Reader/"
+  link1 = "/shiny-showcase"
+  link2 = "https://rinterface.com"
 +++
     
