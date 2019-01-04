@@ -30,7 +30,7 @@ img {
 **shinydashboard** is currently built on top of [AdminLT2](https://adminlte.io/themes/AdminLTE/index2.html) and uses bootstrap 3. 
 Yet, bootstrap 4 is already released and nothing was available for shiny, regarding
 dashboards. bs4Dash is built on top of [AdminLTE3](https://github.com/almasaeed2010/AdminLTE/tree/v3-dev) and
-bring also extra components from boostrap 4. 
+bring also extra components from bootstrap 4. 
 The syntax is very close to that of shinydashboard so that users are not lost. 
 Find out more on [github](https://github.com/DivadNojnarg/bs4Dash).
 
