@@ -29,7 +29,7 @@ You probably know that when you write a R shiny code, such as **sliderInput**,
 shiny will generate the corresponding HTML code, to be embeded into an html page. 
 Let's have a look at what happens:
 
-```
+```r
 library(shiny)
 sliderInput("obs", "Number of observations:",
     min = 0, max = 1000, value = 500
@@ -38,7 +38,7 @@ sliderInput("obs", "Number of observations:",
 
 If you enter the previous code in the R console, you will see:
 
-```{html}
+```html
 <div class="form-group shiny-input-container">
   <label class="control-label" for="obs">Number of observations:</label>
   <input class="js-range-slider" id="obs" data-min="0" data-max="1000" data-from="500" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-keyboard-step="0.1" data-data-type="number"/>
@@ -47,7 +47,7 @@ If you enter the previous code in the R console, you will see:
 
 Basically, all that you write in R will be translated in HTML:
 
-```
+```r
 library(shiny)
 library(shinydashboard)
 shinyApp(
@@ -97,7 +97,7 @@ code is written, copy it in the R console to get the corresponding HTML,
 and include this HTML snippet in your full template. I personnaly, prefer seeing the
 code below that the corresponding HTML:
 
-```
+```r
 library(shinyWidgets)
 prettyCheckboxGroup(
   inputId = "checkgroup2",
@@ -156,7 +156,7 @@ on your computer. You can download it from [here](https://adminlte.io) (version 
 
 Let's start with this very preliminary shinydashboard template:
 
-```
+```r
 library(shiny)
 library(shinydashboard)
 shinyApp(
@@ -277,7 +277,7 @@ to the timeline object:
 ```
 
 To include raw HTML code in shiny, you can use the following tips:
-```
+```r
 HTML(
   paste0('
   Your HTML code here
@@ -286,7 +286,7 @@ HTML(
 ```
 Let's go back to our shinydashboard and include this HTML code in the body part:
 
-```
+```r
 library(shiny)
 library(shinydashboard)
 shinyApp(
@@ -473,7 +473,7 @@ no idea of the total number).
 
 The converted code will look like that:
 
-```
+```r
 # col
 tags$div(
   class = "col-md-4",
@@ -532,7 +532,7 @@ tags$div(
 
 Having a try with our own basic shinydashboard template:
 
-```
+```r
 library(shiny)
 library(shinydashboard)
 shinyApp(
@@ -606,7 +606,7 @@ The profile image is not displayed because I did not provide any source
 your own image that should by in the **/www** directory of your application. 
 It would be better if you wrapped this custom R code in your own function like that:
 
-```
+```r
 my_tiny_socialbox <- function(username = "Paul", userposition = "looking for job",
                               sales = NULL, followers = NULL, products = NULL) {
                               
@@ -678,7 +678,7 @@ my_tiny_socialbox <- function(username = "Paul", userposition = "looking for job
 where you would have some fields such as username, userposition, sales, followers and products.
 I use the **withTags** function that enables me to remove `tags$` (lazyness :)).
 
-```
+```r
 # create your custom box
 my_tiny_socialbox <- function(username = "Paul", userposition = "looking for job",
                               sales = NULL, followers = NULL, products = NULL) {
@@ -784,7 +784,7 @@ that is already available `shinydashboard::box`.
 
 Let's analyse this function:
 
-```
+```r
 box <- function (..., title = NULL, footer = NULL, status = NULL, solidHeader = FALSE, 
 background = NULL, width = 6, height = NULL, collapsible = FALSE, 
 collapsed = FALSE) 
@@ -863,7 +863,7 @@ Everything is embeded in a "box-tools pull-right" class. What we actually need i
 The box function from shinydashboard package already contains the collapsible button (if the
 collapsible argument is TRUE). 
 
-```
+```r
 collapseTag <- NULL
   if (collapsible) {
     buttonStatus <- status %OR% "default"
@@ -885,7 +885,7 @@ and ```tags$button(class = paste0("btn btn-box-tool"), `data-widget` = "collapse
 We are just going to add a similar implementation for the closable state (copy this
 code just after the collapseTag):
 
-```
+```r
 # make our box closable
   closableTag <- NULL
   if (closable) {
@@ -905,7 +905,7 @@ by adding it the closableTag. Since it could be confusing to add
 the closable tag to the collapsible one, it would even be better if you created a boxToolTag
 for which you would add collapseTag and closableTag such as:
 
-```
+```r
 boxToolTag <- NULL
 if (collapsible || closable) {
   boxToolTag <- div(class = "box-tools pull-right")
@@ -954,7 +954,7 @@ This is very simple: the HTML code is here:
 
 which gives in R:
 
-```
+```r
 # we first quickly create the label function
 dashboardLabel <- function(..., status = "primary") {
   stopifnot(!is.null(status))
@@ -978,7 +978,7 @@ You should also add the label_status argument to the argument list of the box fu
 
 The final code is here:
 
-```
+```r
 library(shiny)
 library(shinydashboard)
 
@@ -1156,7 +1156,7 @@ any shinydashboard to the semantic design. Besides, you can add any of the
 semantic themes (make either light or dark dashboard), which you cannot do
 with shinydashboard. Amazing!!!
 
-```
+```r
 library(shiny)
 library(shiny.semantic)
 library(semantic.dashboard)

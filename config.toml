@@ -27,9 +27,13 @@ publishDir ="/Users/macdavidgranjon/Documents/Websites/divadnojnarg.github.io"
     email = "dgranjon@ymail.com"
     
     googleTagManger = ""
-    highlightJS = true
     copyright = true
     credits = true
+    
+    # Code highlighting with highlight.js
+    highlightJS = true
+    highlightJSStyle = "/styles/highlight/atom-one-light.css" # For custom highlight.js styles, add your /path/to/styles/default.css
+    highlightJSScript = "/scripts/highlight.min.js" # For custom highlight.js languages config, add your /path/to/highlight.pack.js
     
     # Cache busting of static resources (additional set up required)
     cacheBustCSS = false
