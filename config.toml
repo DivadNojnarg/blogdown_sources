@@ -13,6 +13,40 @@ publishDir ="/Users/macdavidgranjon/Documents/Websites/divadnojnarg.github.io"
 [permalinks]
     post = "/:year/:month/:day/:slug/"
 
+[params]
+    tagline = "Hi, I am David"
+    author = "David Granjon"
+    description = "PhD in Mathematical Physiology, Renal Physiology, Zurich."
+    logoBig = "/images/fractal-logo.png"
+    logoSmall = "/images/fractal-logo.png"
+    
+    linkedin = "david-granjon-88625968"
+    github = "divadnojnarg"
+    twitter = "divadnojnarg"
+    
+    email = "dgranjon@ymail.com"
+    
+    googleTagManger = ""
+    highlightJS = true
+    copyright = true
+    credits = true
+    
+    # Cache busting of static resources (additional set up required)
+    cacheBustCSS = false
+    cacheBustJS = false
+    
+    # Choose either Formspree contact form or Basin contact form
+    ajaxFormspree = true
+    ajaxFormspreeGold = false
+    ajaxBasin = ""
+
+    [params.logo]
+    url = "logo.png"
+    width = 50
+    height = 50
+    alt = "Logo"
+
+
 [[menu.main]]
     name = "Blog"
     url = "/#blog"
@@ -31,27 +65,3 @@ publishDir ="/Users/macdavidgranjon/Documents/Websites/divadnojnarg.github.io"
     name = "RinteRface"
     url = "https://rinterface.com"
     weight = 4
-
-[params]
-    author = "David Granjon"
-    description = "PhD in Mathematical Physiology, Renal Physiology, Zurich."
-    logoBig = "/images/fractal-logo.png"
-    logoSmall = "/images/fractal-logo.png"
-    
-    linkedin = "david-granjon-88625968"
-    github = "divadnojnarg"
-    twitter = "divadnojnarg"
-    
-    email = "dgranjon@ymail.com"
-    
-    googleTagManger = ""
-    highlightJS = true
-    copyright = true
-    credits = true
-
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
-
