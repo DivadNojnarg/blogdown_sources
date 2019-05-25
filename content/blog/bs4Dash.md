@@ -60,7 +60,7 @@ devtools::install_github("DivadNojnarg/bs4Dash")
 </div>
 <div class="col-sm-4" align="center">
 <div class="card">
-<a href="https://rinterface.com/shiny/showcase/ratp" target="_blank"><img src="/images/bs4Dash_ratp.png"></a>
+<a href="https://rinterface.com/shiny/showcase/ratp/" target="_blank"><img src="/images/bs4Dash_ratp.png"></a>
 </div>
 </div>
 </div>
