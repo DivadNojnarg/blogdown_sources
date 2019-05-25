@@ -50,17 +50,17 @@ devtools::install_github("DivadNojnarg/bs4Dash")
 <div class="row">
 <div class="col-sm-4" align="center">
 <div class="card">
-<a href="http://130.60.24.205/Lorenz_parameters/" target="_blank"><img src="/images/bs4Dash_Lorenz.png"></a>
+<a href="https://rinterface.com/shiny/showcase/lorenz/" target="_blank"><img src="/images/bs4Dash_Lorenz.png"></a>
 </div>
 </div>
 <div class="col-sm-4" align="center">
 <div class="card">
-<a href="http://130.60.24.205/Lotka_bdd/" target="_blank"><img src="/images/bs4Dash_Lotka.png"></a>
+<a href="https://rinterface.com/shiny/showcase/lotkaVolterra/" target="_blank"><img src="/images/bs4Dash_Lotka.png"></a>
 </div>
 </div>
 <div class="col-sm-4" align="center">
 <div class="card">
-<a href="http://130.60.24.205/dreamRs_ratp/" target="_blank"><img src="/images/bs4Dash_ratp.png"></a>
+<a href="https://rinterface.com/shiny/showcase/ratp" target="_blank"><img src="/images/bs4Dash_ratp.png"></a>
 </div>
 </div>
 </div>
