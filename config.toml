@@ -1,5 +1,5 @@
 theme = "soho"
-baseurl = "https://divadnojnarg.github.io"
+baseurl = "https://divadnojnarg.github.io/"
 languageCode = "en"
 title = "David Granjon"
 DefaultContentLanguage = "en"
