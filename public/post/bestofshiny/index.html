@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Essential Shiny packages &middot; David Granjon</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Essential Shiny packages">
+<meta itemprop="description" content="I would like to share with you a &ldquo;best of&rdquo; of all Shiny packages you might need to build outstanding applications.">
+
+
+<meta itemprop="datePublished" content="2017-10-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-10-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="919">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/profile.png"/>
+
+<meta name="twitter:title" content="Essential Shiny packages"/>
+<meta name="twitter:description" content="I would like to share with you a &ldquo;best of&rdquo; of all Shiny packages you might need to build outstanding applications."/>
+
+
+<meta property="og:title" content="Essential Shiny packages" />
+<meta property="og:description" content="I would like to share with you a &ldquo;best of&rdquo; of all Shiny packages you might need to build outstanding applications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/bestofshiny/" />
+
+<meta property="og:image" content="/images/profile.png" />
+<meta property="article:published_time" content="2017-10-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-10-22T00:00:00+00:00" /><meta property="og:site_name" content="David Granjon" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>David Granjon</h1>
+
+      
+      <p class="lead">Blog</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/"> About </a>
+        </li><li>
+          <a href="/contact/"> Contact </a>
+        </li><li>
+          <a href="/posts/"> Posts </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://ch.linkedin.com/in/david-granjon-88625968" rel="me" title="Linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/DivadNojnarg" rel="me" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/divadnojnarg" rel="me" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Essential Shiny packages</h1>
+
+  <div class="post-date">
+    <time datetime="2017-10-22T00:00:00Z">Oct 22, 2017</time> · 5 min read
+  </div>
+
+  
+
+<p>I would like to share with you a &ldquo;<strong>best of</strong>&rdquo; of all Shiny packages you might need to build outstanding applications.</p>
+
+<h2 id="enhance-your-apps-with-javascript">Enhance your apps with Javascript</h2>
+
+<h3 id="shinyjs">shinyjs</h3>
+
+<p>The <strong>shinyjs</strong> package was designed by Dean Attali, <a href="https://deanattali.com/shinyjs/">https://deanattali.com/shinyjs/</a>,
+a very famous shiny user.
+In summary, it allows you to add interactivity inside your app for example:</p>
+
+<ul>
+<li>hide/show/toggle widgets, graphs, tables</li>
+<li>reset inputs to their initial value</li>
+<li>enable/disable elements</li>
+</ul>
+
+<p>These are the most noteworthy properties of this package and require just a few
+lines of code to work. You can, for example, make a header disappear/appear each time the mouse leaves/enters its area. Additionnally, if your app uses a lot of inputs such as sliders, text, giving the opportunity of reseting all inputs independently of each other is crucial.</p>
+
+<h3 id="shinyjqui">shinyjqui</h3>
+
+<p><strong>shinyjqui</strong>, developped by Yang Tang <a href="https://cran.r-project.org/web/packages/shinyjqui/vignettes/introduction.html">https://cran.r-project.org/web/packages/shinyjqui/vignettes/introduction.html</a> (<a href="https://github.com/Yang-Tang/shinyjqui">github</a>),
+is an amazing package to allow mouse interactions such as
+dragging/resizing/sorting elements inside your UI. There are also up to 15 animations
+effects that can be applied to each UI elements (slide, bounce, &hellip;). For instance,
+this might be useful to combine help text with these animations. Since I am using custom
+dashboard templates, I prefer:</p>
+
+<pre><code>jqui_sortable(selector, switch = TRUE, options = NULL)
+
+</code></pre>
+
+<p>which allows the user to display each panel as desired, giving a more flexible design.
+However your design has to remain functional!</p>
+
+<h2 id="extend-shiny-input-elements">Extend shiny input elements</h2>
+
+<h3 id="shinywidgets">shinyWidgets</h3>
+
+<p>It is definitely one of my favorite shiny package, developed by the <a href="https://www.dreamrs.fr">dreamRs</a>
+team based in Paris. Besides, it is still under active development (<a href="https://github.com/dreamRs/shinyWidgets">Github</a>).
+<strong>shinyWidgets</strong> offers a wide choice of custom shiny-widgets such as:</p>
+
+<ul>
+<li>switch inputs with both bootstrap and material design</li>
+<li>dropdown buttons</li>
+<li>slider text (my favorite widget) with <strong>customisable range</strong></li>
+<li>sweet alerts (better design than classic boostrap alerts or shinyNotifications).</li>
+</ul>
+
+<p>After installing this package you can preview a showcase as follows:</p>
+
+<pre><code>library(shinyWidgets)
+shinyWidgetsGallery()
+</code></pre>
+
+<p>Keep up the good work Victor!</p>
+
+<p><a href="images/shinyWidgetsDemo.png"><img src="images/shinyWidgetsDemo.png" alt="blank" title="shinyWidgets"></a>
+<br></p>
+
+<h2 id="other-options">Other Options</h2>
+
+<h3 id="shinymenus">shinyMenus</h3>
+
+<p>Another package developed by Eric Bailey. More informations <a href="https://github.com/ebailey78/shinyMenus">here</a>.
+Notice that adding a sliderInput in the menubar (<code>smNavBar(...)</code>) does not work perfectly and will add an ugly extra vertical space. Using the <code>sliderTextInput()</code> of <strong>shinyWidget</strong>
+renders slightly better. To summarise, there is no warranty that each widget will be fully
+integrated without display issues. However, it is likely that you can fix these problems
+by adding custom CSS or playing with options.</p>
+
+<h3 id="shinybs-not-updated-anymore">shinyBS (not updated anymore?)</h3>
+
+<p>This packages extends shiny&rsquo;s capabilities by adding some bootstrap components:</p>
+
+<ul>
+<li>alerts</li>
+<li>create collapsible elements/panels</li>
+<li>adding tooltips and popovers</li>
+<li>modals</li>
+</ul>
+
+<p>You can access the full documentation here:<a href="https://ebailey78.github.io/shinyBS/">https://ebailey78.github.io/shinyBS/</a>.</p>
+
+<p>Be careful: this package is not updated (but still very good!).</p>
+
+<h3 id="extend-shinybs-bsplus-not-updated-anymore">Extend shinyBS: <strong>bsplus</strong> (not updated anymore?)</h3>
+
+<p>In addition to providing extra bootstrap components, such as accordions and carousel,
+a function allows the user to include help text/popover inside shiny inputs, as follows:</p>
+
+<pre><code>numericInput(inputId = &quot;foo&quot;, label = &quot;Enter a number&quot;, value = 0) %&gt;%
+  shinyInput_label_embed(
+    shiny_iconlink() %&gt;%
+    bs_embed_popover(title = &quot;Number&quot;, content = &quot;Not a complex number&quot;)
+  )
+</code></pre>
+
+<p>This could be useful if you want to include a reset button just next to a slider input.
+However, you must handle the reset input on the server side, which is not
+provided by the package.</p>
+
+<h2 id="other-themes-than-bootstrap">Other themes than Bootstrap</h2>
+
+<h3 id="argon-design">Argon Design</h3>
+
+<p>Argon CSS is originally developed by <a href="https://www.creative-tim.com/product/argon-design-system">Creative Tim</a>, from which a <a href="https://demos.creative-tim.com/argon-dashboard/index.html?_ga=2.216152662.1573903653.1542101017-1510997875.1519077344">dashboard</a>
+template was also created.
+I developed 2 new R packages to integrate argon and the argon dashboard template.
+These are respectively called <a href="https://rinterface.github.io/argonR/">argonR</a> and <a href="https://rinterface.github.io/argonDash/">argonDash</a> and will be released soon on CRAN (currently submitted).</p>
+
+<p><a href="images/argonRDemo.png"><img src="images/argonRDemo.png" alt="blank" title="argonR template"></a>
+<br></p>
+
+<p><a href="images/argonDashDemo.png"><img src="images/argonDashDemo.png" alt="blank" title="argonDash example"></a>
+<br></p>
+
+<h3 id="materialize-css">Materialize CSS</h3>
+
+<p><strong>shinymaterial</strong> is a package provided by Eric Anderson (<a href="https://github.com/ericrayanderson/shinymaterial">Github</a>).
+I personally enjoy this custom template taken from the <a href="https://material.io/guidelines/"><strong>material</strong></a> design.
+By the way, a showcase is available <a href="https://ericrayanderson.github.io/shinymaterial/">here</a>.
+A major drawback is that the navbarmenu cannot be customized very easily, unless after some manipulations.</p>
+
+<p><a href="images/shinyMaterialDemo.png"><img src="images/shinyMaterialDemo.png" alt="blank" title="shinymaterial"></a>
+<br></p>
+
+<h3 id="semantic-design">Semantic design</h3>
+
+<p><strong>shiny.semantic</strong> developped by <a href="https://github.com/Appsilon/shiny.semantic">Appsilon</a> is mainly
+dedicated to build dashboards, using the semantic <a href="https://semantic-ui.com">design</a>.
+The showcase is accessible <a href="http://demo.appsilondatascience.com/shiny.semantic/components/">here</a>.
+Notice that this template is not compatible with bootstrap3 and thus requires to desactivate it before:</p>
+
+<pre><code>suppressDependencies(&quot;bootstrap&quot;)
+</code></pre>
+
+<p>A feature I really appreciate is the
+card widget as well as rating but I will have to report that inputs such as sliders are not part of this package, which implies to use input widgets from the shiny base package. I did not spend so much time working with this UI but I think it could be really promising and serious alternative to bootstrap!</p>
+
+<p><a href="images/shinySemanticDemo.png"><img src="images/shinySemanticDemo.png" alt="blank" title="shiny.semantic"></a>
+<br></p>
+
+<h2 id="make-your-app-more-professional">Make your app more professional</h2>
+
+<h3 id="shinycssloaders"><strong>shinycssloaders</strong></h3>
+
+<p>It is convenient for the user to be notified when a shiny is processing data, especially
+when a task lasts more than 2 seconds. In this case, displaying a css-loader will indicate
+your users that your app is still working and did not crash. <strong>shinycssloader</strong> includes
+8 different spinners, whom size can be customized. This package is available
+<a href="https://github.com/andrewsali/shinycssloaders">here</a></p>
+
+<h3 id="improve-alert-messages-sweetalertr">Improve alert messages: <strong>sweetalertR</strong></h3>
+
+<p>Written by Kent Russell, this package enchances the actual alerts provided by bootstrap.
+It is highly customisable and can be downloaded from this <a href="http://timelyportfolio.github.io/buildingwidgets/week25/sweetalert_examples.html">link</a>.</p>
+
+<h3 id="create-a-sofisticated-help-section-rintrojs">Create a sofisticated help section: <strong>rintrojs</strong></h3>
+
+<p>While writing complex shiny apps, this tool can be very useful to create a nice and
+clear help menu. It is displayed similarly as during a powerpoint animation, each time
+focusing on a given element of the UI (that is included in the help text). You will find
+everything you need <a href="https://github.com/carlganz/rintrojs">here</a>.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>As a result, if you aim at building outstanding apps, I would advise to spend some
+time considering these previous packages. Be careful about the compatibility problems,
+before going too far. Indeed, it is better to make some tests to avoid nasty surprises!</p>
+
+<p>I will regularly update this article.</p>
+
+<p>Update: 13/11/18</p>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy; David Granjon 2020
+    ·
+    
+    
+    ·
+    Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

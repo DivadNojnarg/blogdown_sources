@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Extend shinyWidgets: knobInput &middot; David Granjon</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Extend shinyWidgets: knobInput">
+<meta itemprop="description" content="Introduction shiny basic package contains several widgets, available here. This database is continuously extended through the shinyWidget package developed by the dreamRs team.">
+
+
+<meta itemprop="datePublished" content="2017-11-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-11-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1871">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/profile.png"/>
+
+<meta name="twitter:title" content="Extend shinyWidgets: knobInput"/>
+<meta name="twitter:description" content="Introduction shiny basic package contains several widgets, available here. This database is continuously extended through the shinyWidget package developed by the dreamRs team."/>
+
+
+<meta property="og:title" content="Extend shinyWidgets: knobInput" />
+<meta property="og:description" content="Introduction shiny basic package contains several widgets, available here. This database is continuously extended through the shinyWidget package developed by the dreamRs team." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/knobinput/" />
+
+<meta property="og:image" content="/images/profile.png" />
+<meta property="article:published_time" content="2017-11-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-11-21T00:00:00+00:00" /><meta property="og:site_name" content="David Granjon" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>David Granjon</h1>
+
+      
+      <p class="lead">Blog</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/"> About </a>
+        </li><li>
+          <a href="/contact/"> Contact </a>
+        </li><li>
+          <a href="/posts/"> Posts </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://ch.linkedin.com/in/david-granjon-88625968" rel="me" title="Linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/DivadNojnarg" rel="me" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/divadnojnarg" rel="me" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Extend shinyWidgets: knobInput</h1>
+
+  <div class="post-date">
+    <time datetime="2017-11-21T00:00:00Z">Nov 21, 2017</time> · 9 min read
+  </div>
+
+  
+
+<h2 id="introduction">Introduction</h2>
+
+<p><a href="https://shiny.rstudio.com">shiny</a> basic package contains several widgets, available
+<a href="https://shiny.rstudio.com/gallery/widget-gallery.html">here</a>. This database is
+continuously extended through the <a href="https://github.com/dreamRs/shinyWidgets">shinyWidget</a>
+package developed by the <a href="https://www.dreamrs.fr">dreamRs</a> team. Here I present how we
+add a new knobInput widget to shinyWidget, with Victor Perrier from the dreamRs team.</p>
+
+<p>I always wanted to play with some knobs in shiny, similarly as what we do with sliders.
+However, in spite of some research, I found nothing already implemented. Later, I discovered
+this js library called <a href="https://github.com/aterrien">jQuery knob</a>. In parallel, I started to read some tutorials
+on <em>&ldquo;how to extend shiny&rdquo;</em> and decided to create a new RStudio project to include this
+new widget. Since I am not a expert in javascript and jQuery, I asked a <a href="https://stackoverflow.com/questions/47261702/create-a-knobinput-widget-in-shiny-app">question</a>
+on stackoverflow and Victor Perrier nicely solved my problem. Then, we both decided to include
+this new widget in the shinyWidget package. Below is a short explanation on how to build such a custom input,
+which is not trivial but not so hard. I hope it will be useful for you, who are reading this
+blog post.</p>
+
+<p>Here is the final result on shinyapps.io: <a href="https://dgranjon.shinyapps.io/knobinput_example/">shinyknob</a></p>
+
+<iframe src="https://dgranjon.shinyapps.io/knobinput_example/" style="width: 700px; height: 700px; border: none; overflow: hidden;"></iframe>
+
+<h2 id="tutorial">Tutorial</h2>
+
+<p>The idea is simple:</p>
+
+<ul>
+<li><p>First, we create the file containing the new widget: <em>input-knob.R</em>,
+because it is supposed to be a knob (very original). It is widely inspired
+on what you can find on the shiny github R <a href="https://github.com/rstudio/shiny/tree/master/R">folder</a>.
+Below, I quickly describe its content:</p>
+
+<pre><code># Knob Input
+knobInput &lt;- function(inputId, label, value, min = 0, max = 100, step = 1,
+                  angleOffset = 0, angleArc = 360, cursor = FALSE,
+                  thickness = NULL, lineCap = c(&quot;default&quot;, &quot;round&quot;), displayInput = TRUE,
+                  displayPrevious = FALSE, rotation = c(&quot;clockwise&quot;, &quot;anticlockwise&quot;),
+                  fgColor = NULL, inputColor = NULL, bgColor = NULL,
+                  readOnly = FALSE, skin = NULL, width = NULL, height = NULL) {
+value &lt;- shiny::restoreInput(id = inputId, default = value)
+lineCap &lt;- match.arg(lineCap)
+rotation &lt;- match.arg(rotation)
+knobParams &lt;- dropNulls(list(
+id = inputId, type = &quot;text&quot;, class = &quot;knob-input&quot;, 
+value = value, `data-value` = value, `data-skin` = skin,
+`data-min` = min, `data-max` = max, `data-step` = step, 
+`data-angleoffset` = angleOffset, `data-anglearc` = angleArc,
+`data-displayprevious` = displayPrevious, `data-thickness` = thickness,
+`data-displayinput` = displayInput, `data-linecap` = lineCap,
+`data-fgcolor` = fgColor, `data-inputcolor` = inputColor,
+`data-bgcolor` = bgColor, `data-cursor` = cursor,
+`data-rotation` = rotation, `data-readonly` = readOnly,
+`data-width` = width, `data-height` = height
+))
+knobParams &lt;- lapply(knobParams, function(x) {
+if (identical(x, TRUE))
+  &quot;true&quot;
+else if (identical(x, FALSE))
+  &quot;false&quot;
+else x
+})
+inputTag &lt;- do.call(htmltools::tags$input, knobParams)
+knobInputTag &lt;- htmltools::tags$div(
+class = &quot;form-group shiny-input-container&quot;,
+style = if (!is.null(width)) paste0(&quot;width: &quot;, htmltools::validateCssUnit(width), &quot;;&quot;),
+if (!is.null(label)) htmltools::tags$label(`for` = inputId, label),
+if (!is.null(label)) htmltools::tags$br(),
+inputTag
+)
+dep &lt;- htmltools::htmlDependency(
+name = &quot;jquery-knob&quot;, version = &quot;1.2.13&quot;,
+src = c(href = &quot;jquery-knob&quot;),
+script = c(&quot;jquery.knob.min.js&quot;,
+           &quot;knob-input-binding.js&quot;)
+)
+htmltools::attachDependencies(knobInputTag, dep)
+  
+# Change the value of a knob input on the client
+updateKnobInput &lt;- function(session, inputId, label = NULL, value = NULL, readOnly = NULL) {
+message &lt;- dropNulls(list(label = label, value = value, readOnly = readOnly))
+session$sendInputMessage(inputId, message)
+}
+  
+dropNulls &lt;- function(x) {
+x[!vapply(x, is.null, FUN.VALUE = logical(1))]
+}
+
+</code></pre></li>
+</ul>
+
+<p>First of all, all the options available in jQuery knob are included in the function
+arguments. Thus, I highly recommend you to check the corresponding documentation.
+The value is recovered using shiny&rsquo;s <strong>restoreInput</strong> function. linecap and rotation
+can have 2 different values. Therefore, the <strong>match.arg</strong> function allows to select the values.
+All parameters passed in the function are stored in a list called knobParams. Importantly,
+as shown in jQuery knob demo page, type is set as &ldquo;text&rdquo;. We choose to name the class &ldquo;knob-input&rdquo;,
+instead of &ldquo;dial&rdquo; (see the <a href="http://anthonyterrien.com/knob/">documentation</a>), without any consequences.
+Null values are not considered (<strong>dropNulls</strong> function). Since we use a js library, TRUE and FALSE
+cannot be recognized, unless they are converted in true and false, respectively.
+This is done, using the <strong>lapply</strong> and <strong>identical</strong> functions. Our knobParam widget is wrapped in an input div (<code>tags$input</code>),
+as also shown in jQuery knob documentation:</p>
+
+<pre><code class="language-HTML">
+&lt;input type=&quot;text&quot; class=&quot;dial&quot; data-min=&quot;-50&quot; data-max=&quot;50&quot;&gt;
+
+</code></pre>
+
+<p>We store all dependencies in the dep object, via
+<strong>htmlDependency</strong> function from htmltools package. Notice that in the shinyWidget
+<a href="https://github.com/dreamRs/shinyWidgets/blob/master/R/input-knob.R">code</a>, this part is
+slightly modified, since files are organized in another way. We also create an <strong>updateKnobInput</strong> function,
+which will allow the user to update the value and label of the knob (readOnly does not
+work at the moment). <strong>dropNulls</strong> is defined below but could be written in a utils.R file, for instance.</p>
+
+<p>Additionally, your /www folder should contain both <em>jquery.knob.min.js</em> and <em>knob-input-binding.js</em>,
+the later is discussed below.</p>
+
+<ul>
+<li><p>We create the related input-binding. This file should be put in the
+/www folder of the widget. To summarise, the input-binding will make the link between
+shiny and your new widget (see <a href="https://shiny.rstudio.com/articles/building-inputs.html">here</a>).</p>
+
+<pre><code class="language-javascript">
+var exportsKnob = window.Shiny = window.Shiny || {};
+var $escapeKnob = exportsKnob.$escape = function(val) {
+return val.replace(/([!&quot;#$%&amp;'()*+,.\/:;&lt;=&gt;?@\[\\\]^`{|}~])/g, '\\$1');
+};
+
+
+
+function tron_skin() {
+
+// &quot;tron&quot; case
+if (this.$.data('skin') == 'tron') {
+    this.cursorExt = 0.3;
+    var a = this.arc(this.cv) // Arc
+        ,
+        pa // Previous arc
+        , r = 1;
+    this.g.lineWidth = this.lineWidth;
+    if (this.o.displayPrevious) {
+        pa = this.arc(this.v);
+        this.g.beginPath();
+        this.g.strokeStyle = this.pColor;
+        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+        this.g.stroke();
+    }
+    this.g.beginPath();
+    this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+    this.g.stroke();
+    this.g.lineWidth = 2;
+    this.g.beginPath();
+    this.g.strokeStyle = this.o.fgColor;
+    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+    this.g.stroke();
+    return false;
+}
+}
+
+
+// Knob input binding
+
+var knobInputBinding = new Shiny.InputBinding();
+
+
+// An input binding must implement these methods
+$.extend(knobInputBinding, {
+
+// This returns a jQuery object with the DOM element
+find: function(scope) {
+    return $(scope).find('.knob-input');
+},
+
+// this method will be called on initialisation
+initialize: function(el) {
+
+    // extract the value from el
+    // note here our knobInput does not yet exist
+    var value = $(el).data(&quot;value&quot;);
+
+    // initialize our knob based on the extracted state
+    el.value = value;
+
+    // Initialize knob
+    $(el).knob({draw: tron_skin});
+},
+
+// Given the DOM element for the input, return the value
+getValue: function(el) {
+    return parseFloat(el.value);
+},
+
+// Set up the event listeners so that interactions with the
+// input will result in data being sent to server.
+// callback is a function that queues data to be sent to
+// the server.
+subscribe: function(el, callback) {
+    $(el).on('keyup.knobInputBinding', function(event) {
+        callback(true);
+        // When called with true, it will use the rate policy,
+        // which in this case is to debounce at 500ms.
+    });
+
+    $(el).trigger('configure', {
+        'change': function(v) {
+            callback(false);
+        },
+        'release' : function (v) { 
+            callback(false);
+        }
+    });
+        
+    $(el).on('change.knobInputBinding', function(event) {
+        callback(false);
+        // When called with false, it will NOT use the rate policy,
+        // so changes will be sent immediately
+    });
+},
+
+// Remove the event listeners
+unsubscribe: function(el) {
+    $(el).off('.knobInputBinding');
+},
+
+// Receive messages from the server.
+// Messages sent by updateknobInput() are received by this function.
+receiveMessage: function(el, data) {
+    if (data.hasOwnProperty('value')) {
+        $(el)
+            .val(data.value)
+            .trigger('change');
+    }
+
+    if (data.hasOwnProperty('readOnly')) {
+        $(el).trigger(
+            'configure', {
+                &quot;readOnly&quot;: data.readOnly
+            }
+        );
+    }
+
+
+    if (data.hasOwnProperty('label'))
+        $(el).parent().parent().find('label[for=&quot;' + $escapeKnob(el.id) + '&quot;]').text(data.label);
+
+    $(el).trigger('change');
+},
+
+// This returns a full description of the input's state.
+// Note that some inputs may be too complex for a full description of the
+// state to be feasible.
+getState: function(el) {
+    return {
+        label: $(el).parent().parent().find('label[for=&quot;' + $escapeKnob(el.id) + '&quot;]').text(),
+        value: el.value
+    };
+},
+
+// The input rate limiting policy
+getRatePolicy: function() {
+    return {
+        // Can be 'debounce' or 'throttle'
+        policy: 'debounce',
+        delay: 500
+    };
+}
+
+});
+
+Shiny.inputBindings.register(knobInputBinding, 'shiny.knobInput');
+
+</code></pre></li>
+</ul>
+
+<p>The first part of this binding contain a javascript code when the &ldquo;tron&rdquo; skin is used.
+It is just copied and paste from jQuery knob library. Then, we define the input binding as follows:</p>
+
+<ul>
+<li>we declare a new variable (not surprisingly &ldquo;knobInputBinding&rdquo;).</li>
+<li>we call the <strong>find</strong> method using the class &ldquo;knob-input&rdquo;, previously defined in our
+<em>input-knob.R</em> file. Crucial step!</li>
+<li>the <strong>initialize</strong> function creates the knob using .knob() (see jQuery knob), where we set the value of the widget.</li>
+<li>the method <strong>getValue</strong> returns the value of your widget(s).</li>
+
+<li><p><strong>subscribe</strong> method: one of the most important feature. Without this part,
+the value of your widget will not be updated in shiny when you change it. We can find
+several methods inside:</p>
+
+<pre><code class="language-javascript">$(el).on('keyup.knobInputBinding', function(event) {
+        callback(true);
+        // When called with true, it will use the rate policy,
+        // which in this case is to debounce at 500ms.
+    });
+</code></pre></li>
+</ul>
+
+<p><strong>keyup</strong> method is related to events on the user keyboard (especially multidirectional arrows).</p>
+
+<pre><code class="language-javascript">$(el).trigger('configure', {
+            'change': function(v) {
+                callback(false);
+            },
+            'release' : function (v) { 
+                callback(false);
+            }
+        });
+</code></pre>
+
+<p>The <strong>configure</strong> method enables to dynamically configure the widget.
+The <strong>change</strong> method is used when the value of the input changes. Without <strong>release</strong>,
+scrolling with the mouse wheel will not update the value in shiny. We found relevant
+to set this kind of behavious.</p>
+
+<p>Besides, the <strong>callback</strong> function is useful to set a rate policy for the widget (see below).</p>
+
+<ul>
+<li><strong>getRatePolicy</strong> will avoid to send to much requests to the server. For example,
+let&rsquo;s say the user wants to move the knob from 1 to 100. Without rate policy, each change
+from 1 to 100 would be sent to the server, which is a bit ridiculous. Rate policy is called
+when callback has &ldquo;true&rdquo; as argument.</li>
+
+<li><p>we register the input binding with the <strong>register</strong> function.</p></li>
+
+<li><p>Finally, we create a short demonstration of this widget.</p>
+
+<pre><code>
+# knob --------------------------------------------------------------------
+
+# Package
+library(&quot;shiny&quot;)
+
+# Fun
+source(&quot;input-knob.R&quot;)
+
+# HTML dep
+shiny::addResourcePath('jquery-knob', file.path(getwd(), &quot;www&quot;))
+
+
+
+
+# ui ---- 
+ui &lt;- fluidPage(
+tags$h1(&quot;knob input examples&quot;), 
+tags$h4(&quot;made by Victor Perrier (shinyWidgets) and David Granjon&quot;),
+tags$h4(&quot;based on&quot;, a(&quot;jQuery knob&quot;, href = &quot;https://github.com/aterrien/jQuery-Knob&quot;)),
+br(),
+  
+fluidRow(
+    
+column(
+  width = 4,
+  knobInput(inputId = &quot;knob1&quot;, label = &quot;Default:&quot;, value = 10),
+  verbatimTextOutput(outputId = &quot;res1&quot;),
+      
+  knobInput(inputId = &quot;knob2&quot;, label = &quot;Color:&quot;, value = 1, fgColor = &quot;#D9534F&quot;, displayInput = FALSE),
+  verbatimTextOutput(outputId = &quot;res2&quot;),
+      
+  knobInput(inputId = &quot;knob3&quot;, label = &quot;Read only:&quot;, value = 65, readOnly = TRUE),
+  verbatimTextOutput(outputId = &quot;res3&quot;)
+),
+    
+column(
+  width = 4,
+  knobInput(inputId = &quot;knob6&quot;, label = &quot;Cursor mode:&quot;, value = 50, thickness = 0.3, cursor = TRUE, width = 150, height = 150), # must specify width
+  verbatimTextOutput(outputId = &quot;res6&quot;),
+      
+  knobInput(inputId = &quot;knob7&quot;, label = &quot;Display previous:&quot;, value = 50, min = -100, displayPrevious = TRUE, fgColor = &quot;#428BCA&quot;, inputColor = &quot;#428BCA&quot;),
+  verbatimTextOutput(outputId = &quot;res7&quot;),
+      
+  tags$div(
+    style = &quot;background-color: #000;&quot;,
+    knobInput(inputId = &quot;knob8&quot;, label = tags$span(&quot;Tron skin:&quot;, style = &quot;color: #FFF;&quot;), value = 50, width = 75, fgColor = &quot;#ffec03&quot;, inputColor = &quot;#ffec03&quot;, skin = &quot;tron&quot;)
+  ),
+  verbatimTextOutput(outputId = &quot;res8&quot;)
+),
+    
+column(
+  width = 4,
+  knobInput(inputId = &quot;knob11&quot;, label = &quot;Angle offset:&quot;, value = 75, angleOffset = 90, lineCap = &quot;round&quot;),
+  verbatimTextOutput(outputId = &quot;res11&quot;),
+      
+  knobInput(inputId = &quot;knob12&quot;, label = &quot;Angle offset and arc:&quot;, value = 50, angleOffset = -125, angleArc = 250),
+  verbatimTextOutput(outputId = &quot;res12&quot;),
+      
+  knobInput(inputId = &quot;knob13&quot;, label = &quot;4-digit, step 0.1:&quot;, value = 0, min = -1000, max = 1000, step = 0.1, displayPrevious = TRUE),
+  verbatimTextOutput(outputId = &quot;res13&quot;)
+)
+    
+)
+)
+
+
+# server ----
+server &lt;- function(input, output, session) {
+
+lapply(1:13, function(x) {
+output[[paste0(&quot;res&quot;, x)]] &lt;- renderPrint(input[[paste0(&quot;knob&quot;, x)]])
+})
+  
+}
+
+
+# app ----
+shinyApp(ui = ui, server = server)
+
+</code></pre></li>
+</ul>
+
+<p>Basically, there are 4 ways you can change the input:</p>
+
+<ul>
+<li>using multidirectional arrows</li>
+<li>entering text in the input field (when it is present, ie displayInput is set to TRUE)</li>
+<li>dragging the knob with the mouse</li>
+<li>scrolling with the mouse wheel.</li>
+</ul>
+
+<p>For the moment, the readOnly argument does not work with the updateKnobInput function.</p>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy; David Granjon 2020
+    ·
+    
+    
+    ·
+    Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Make beautiful CVs with shiny and AdminLTE2 &middot; David Granjon</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Make beautiful CVs with shiny and AdminLTE2">
+<meta itemprop="description" content="shinyCV  Amazing HTML CVs based upon adminLTE2 template">
+
+
+<meta itemprop="datePublished" content="2018-03-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1700">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/profile.png"/>
+
+<meta name="twitter:title" content="Make beautiful CVs with shiny and AdminLTE2"/>
+<meta name="twitter:description" content="shinyCV  Amazing HTML CVs based upon adminLTE2 template"/>
+
+
+<meta property="og:title" content="Make beautiful CVs with shiny and AdminLTE2" />
+<meta property="og:description" content="shinyCV  Amazing HTML CVs based upon adminLTE2 template" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/shinycvs/" />
+
+<meta property="og:image" content="/images/profile.png" />
+<meta property="article:published_time" content="2018-03-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-03-13T00:00:00+00:00" /><meta property="og:site_name" content="David Granjon" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>David Granjon</h1>
+
+      
+      <p class="lead">Blog</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/"> About </a>
+        </li><li>
+          <a href="/contact/"> Contact </a>
+        </li><li>
+          <a href="/posts/"> Posts </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://ch.linkedin.com/in/david-granjon-88625968" rel="me" title="Linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/DivadNojnarg" rel="me" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/divadnojnarg" rel="me" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Make beautiful CVs with shiny and AdminLTE2</h1>
+
+  <div class="post-date">
+    <time datetime="2018-03-13T00:00:00Z">Mar 13, 2018</time> · 8 min read
+  </div>
+
+  
+
+<h1 id="shinycv">shinyCV</h1>
+
+<blockquote>
+<p>Amazing HTML CVs based upon adminLTE2 template</p>
+</blockquote>
+
+<ul>
+<li><a href="https://adminlte.io/themes/AdminLTE">https://adminlte.io/themes/AdminLTE</a> ( main theme)</li>
+<li>Will be released to CRAN as soon as possible</li>
+</ul>
+
+<h2 id="package-installation">Package Installation</h2>
+
+<pre><code class="language-r">library(devtools)
+install_github(&quot;DivadNojnarg/shinyCV&quot;)
+library(shinyCV)
+</code></pre>
+
+<h2 id="introduction-basic-workflow">Introduction: Basic Workflow</h2>
+
+<p>This package offers two ways of creating remarkable CVs based on the AdminLTE2 template.</p>
+
+<h3 id="with-the-build-shinycv-function">With the build_shinyCV function</h3>
+
+<ul>
+<li><p>Launch the builder by using:</p>
+
+<pre><code class="language-r">build_shinyCV()
+</code></pre></li>
+</ul>
+
+<p>Fill the form to build your cv step by step and save the current state at any time.
+Indeed, it may take some time to fill it properly. If you reload your app, it will
+be launched in the previous state.
+The saved files are stored in a &ldquo;data_cv.rds&rdquo; as well as in the
+&ldquo;Publication_img_saved&rdquo; and &ldquo;Profile_img_saved&rdquo; folders.</p>
+
+<ul>
+<li><p>Initialization of your main CV folder.</p>
+
+<pre><code class="language-r">init_shinyCV(cv_path = your_path)
+</code></pre></li>
+</ul>
+
+<p>which will create a folder where all your CV datas and images will be stored.</p>
+
+<ul>
+<li><p>At any time, you can preview your cv by running the dedicated function:</p>
+
+<pre><code class="language-r">preview_shinyCV(cv_path, cv_mode = &quot;basic&quot;, data_source = &quot;from_cvbuilder&quot;, datas = NULL)
+</code></pre></li>
+</ul>
+
+<p>which will launch the previously built CV in a showcase mode. The <strong>cv_path</strong> argument
+is where you CV is stored for instance &ldquo;user/desktop/&hellip;&rdquo; or whatever you choose
+when you initialized your CV (step 2). The <strong>cv_mode</strong> argument
+is a filter to only display the content which is relevant for you (see documentation).
+If you do not have any scientific publications, it makes more sens to disable them.
+The <strong>data_source</strong> argument is sets to &ldquo;from_cvbuilder&rdquo;, which means that preview_shinyCV will load (if they exist)
+datas generated by build_shinyCV(). It is possible to use &ldquo;manual&rdquo;, which will allow
+you to feed the CV with your own data (see next part). Finally, the datas argument is
+ignored if data_source is set to &ldquo;from_cvbuilder&rdquo;.</p>
+
+<ul>
+<li><p>If you want to change your CV, reload <code>build_shinyCV()</code> and change what you want.
+You do not need to run <code>init_shinyCV(cv_path = your_path)</code> but you should
+update your CV folder with <code>preview_shinyCV(cv_path, cv_mode = &quot;basic&quot;, data_source = &quot;from_cvbuilder&quot;, datas = NULL)</code></p></li>
+
+<li><p>Once you are satisfied, you can publish your cv online to shinyapps.io.
+Be careful, it will not work if you do not have a shinyapps.io account. See
+<a href="https://shiny.rstudio.com/articles/shinyapps.html">here</a> to configure your shinyapps.io account.
+As soon as you are ready:</p>
+
+<pre><code class="language-r">publish_shinyCV(cv_path)
+</code></pre></li>
+</ul>
+
+<p>where <strong>cv_path</strong> is again the folder where all your CV files are stored. Again,
+to update your CV, just reload <code>publish_shinyCV(cv_path)</code>. You will be prompted if
+you want to update your application (say yes if it is ok).
+It takes around 45s-1min to push your CV to shinyapps.io!</p>
+
+<h4 id="be-careful">Be careful</h4>
+
+<p>Each time this package is reinstalled for any reason (update, &hellip;),
+the CV datas of the builder are <strong>erased</strong>. Therefore, if you run <code>build_shinyCV()</code>
+the CV will be empty. You should not use <code>preview_shinyCV()</code> right after
+(unless you want to erase your local CV), since it will erase your local CV folder.</p>
+
+<p>Instead, you have to pass the argument <strong>import_datas</strong> to the location
+where you store your CV datas (let&rsquo;s say your_name/desktop/www, <em>never</em> forget the www),
+the CV will be imported in the builder and you will be able to work as before.</p>
+
+<p>In summary:</p>
+
+<pre><code class="language-r"># you want to reinstall or update shinyCV package
+library(devtools)
+install_github(&quot;DivadNojnarg/shinyCV&quot;)
+
+# set the path of your CV folder to import your old CV datas
+# Do not forget the www 
+path &lt;- &quot;blabla/blabla/www&quot;
+build_shinyCV(import_datas = path)
+
+# you can then update your local CV folder
+preview_shinyCV(cv_path, cv_mode = &quot;basic&quot;, data_source = &quot;from_cvbuilder&quot;, datas = NULL)
+
+</code></pre>
+
+<h2 id="a-second-approach-feed-the-viewer-with-your-own-datas">A second approach: feed the viewer with your own datas!</h2>
+
+<p>The workflow is similar to that when you use the builder interface.</p>
+
+<ul>
+<li><p>Initialization of your main CV folder.</p>
+
+<pre><code class="language-r">init_shinyCV(cv_path = your_path)
+</code></pre></li>
+</ul>
+
+<p>which will create a folder where all your CV datas and images will be stored.</p>
+
+<ul>
+<li><p>Preview your cv by running the dedicated function:</p>
+
+<pre><code class="language-r">preview_shinyCV(cv_path, cv_mode = &quot;basic&quot;, data_source = &quot;manual&quot;, datas = NULL)
+</code></pre></li>
+</ul>
+
+<p>Notice that the <strong>data_source</strong> argument is set to manual and <strong>datas</strong> are NULL.
+This configuration will launch the showcase mode of the manual version of shinyCV.</p>
+
+<p>If you want to pass your very own datas, I created a new function called feed_shinyCV
+which allows users to provide their own datas, according to a specific structure.
+If you do not have any data, you can preview shiny CV will load a demo dataset.
+Below is an example of these datas:</p>
+
+<pre><code class="language-r"># datas for the profile example
+  temp_profile &lt;- list(
+    my_name = &quot;Jean Bob&quot;,
+    my_position = &quot;Looking for a Job&quot;,
+    my_age = 35,
+    my_interests = c(&quot;Mathematics&quot;, &quot;Physics&quot;),
+    my_website = &quot;http://google.com&quot;,
+    my_teaser = &quot;Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation
+    ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in
+    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.&quot;,
+    my_image = list(
+      src = system.file(&quot;App/cv_viewer/www/man.png&quot;, package = &quot;shinyCV&quot;),
+      # very important to keep the adminLTE image border
+      class = &quot;profile-user-img img-responsive img-circle&quot;,
+      alt = &quot;User profile picture&quot;
+    )
+  )
+
+  # datas for about example
+  temp_about &lt;- data.frame(
+    my_phone = &quot;+44 650 36 47&quot;,
+    my_mail = &quot;bobatgmail.com&quot;,
+    my_location = &quot;Los Angeles&quot;,
+    my_linkedin = &quot;linkedin&quot;,
+    my_twitter = &quot;twitter&quot;,
+    my_facebook = &quot;facebook&quot;,
+    my_github = &quot;github&quot;
+  )
+
+  # datas for skills example
+  temp_skills &lt;- data.frame(
+    variable = c(&quot;R&quot;, &quot;Javascript&quot;, &quot;HTML&quot;),
+    value = c(80, 50, 60)
+  )
+
+  # datas for language example
+  temp_languages &lt;- data.frame(
+    variable = c(&quot;french&quot;, &quot;english&quot;),
+    value = c(10, 90)
+  )
+
+  # datas for network example
+  temp_network &lt;- data.frame(
+    title = c(&quot;Dr.&quot;, &quot;Pr.&quot;, &quot;&quot;),
+    sex = c(&quot;male&quot;, &quot;female&quot;, &quot;female&quot;),
+    name = c(&quot;Janine&quot;, &quot;Huguette&quot;, &quot;Jean Raymond&quot;),
+    mail = c(&quot;janineatgmail.com&quot;, &quot;huguetteatgmail.com&quot;,
+             &quot;raymondatgmail.com&quot;),
+    phone = c(&quot;+44 650 36 47&quot;, &quot;+44 650 36 47&quot;, &quot;+44 650 36 47&quot;)
+  )
+
+  # datas for formation example
+  temp_formations &lt;- data.frame(
+    title = c(&quot;Bachelor Degree&quot;, &quot;Master Degree&quot;, &quot;PhD in Biostatistics&quot;),
+    topic = rep(&quot;database&quot;, 3),
+    from = rep(&quot;1900-01-01&quot;, 3),
+    to = rep(&quot;1900-01-01&quot;, 3),
+    summary = c(&quot;My bachelor degree&quot;, &quot;My master degree&quot;, &quot;My PhD&quot;),
+    place = rep(&quot;Somewhere&quot;, 3),
+    supervisor = rep(&quot;Somebody&quot;, 3),
+    grade = c(3, 4, 5),
+    extra = rep(&quot;&quot;, 3)
+  )
+
+  # datas for task example
+  temp_tasks &lt;- list(
+    # one task dataframe per project
+    project1 = data.frame(
+      name = c(&quot;task 1&quot;, &quot;task 2&quot;),
+      status = rep(&quot;wip&quot;, 2)
+    ),
+    project2 = data.frame(
+      name = c(&quot;task 1&quot;, &quot;task 2&quot;),
+      status = rep(&quot;completed&quot;, 2)
+    ),
+    project3 = data.frame(
+      name = c(&quot;task 1&quot;, &quot;task 2&quot;),
+      status = rep(&quot;wip&quot;, 2)
+    ),
+    project4 = data.frame(
+      name = c(&quot;task 1&quot;, &quot;task 2&quot;),
+      status = rep(&quot;completed&quot;, 2)
+    )
+  )
+
+  # datas for project example
+  temp_projects &lt;- data.frame(
+    title = c(&quot;My project 1&quot;, &quot;My_project 2&quot;,
+              &quot;My project 3&quot;, &quot;My project 4&quot;),
+    position = c(&quot;Big Boss&quot;, &quot;Slave&quot;, &quot;Big Boss&quot;, &quot;Slave&quot;),
+    overview = rep(&quot;an amazing project&quot;, 4),
+    supervisors = rep(&quot;Jean Eude&quot;, 4),
+    place = rep(&quot;Somewhere&quot;, 4)
+  )
+
+  # datas for publications screenshots
+  demo_list &lt;- list(
+    class = &quot;img-responsive pad&quot;,
+    src = system.file(&quot;App/cv_viewer/www/text-lines.svg&quot;, package = &quot;shinyCV&quot;),
+    style = &quot;height: 100px; display: block;
+    margin-left: auto; margin-right: auto;&quot;
+  )
+  temp_publications_screenshots &lt;- list(demo_list, demo_list, demo_list)
+
+ # data for publication example
+  temp_publications &lt;- data.frame(
+    reference = rep(&quot;Your name et al., Journal Title, 2018&quot;, 3),
+    abstract = rep(&quot;Lorem ipsum dolor sit amet, consectetur
+                   adipiscing elit, sed do eiusmod tempor
+                   incididunt ut labore et dolore magna aliqua.
+                   Ut enim ad minim veniam, quis nostrud exercitation
+                   ullamco laboris nisi ut aliquip ex ea commodo
+                   consequat. Duis aute irure dolor in reprehenderit in
+                   voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                   Excepteur sint occaecat cupidatat non proident, sunt in
+                   culpa qui officia deserunt mollit anim id est laborum.&quot;, 3),
+    pubmed_link = rep(&quot;https://www.ncbi.nlm.nih.gov/pubmed&quot;, 3)
+  )
+
+
+  # datas for talk example
+  temp_talks &lt;- data.frame(
+    title = rep(&quot;My Talk&quot;, 5),
+    from = rep(&quot;1900-01-01&quot;, 5),
+    to = rep(&quot;1900-01-01&quot;, 5),
+    summary = rep(&quot;Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in
+                  voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint occaecat cupidatat non proident, sunt in
+                  culpa qui officia deserunt mollit anim id est laborum.&quot;, 5),
+    place = rep(&quot;Somewhere&quot;, 5),
+    price = c(rep(&quot;yes&quot;, 3), rep(&quot;no&quot;, 2)),
+    website = rep(&quot;http://google.com&quot;, 5)
+  )
+
+  # datas for course example
+  temp_courses &lt;- data.frame(
+    title = rep(&quot;My course&quot;, 4),
+    topic = rep(&quot;my topic&quot;, 4),
+    nb_students = c(10, 100, 4, 250),
+    nb_hours = c(5, 45, 8, 45),
+    from = rep(&quot;1900-01-01&quot;, 4),
+    to = rep(&quot;1900-01-01&quot;, 4),
+    place = rep(&quot;Somewhere&quot;, 4),
+    supervisor = rep(&quot;Somebody&quot;, 4),
+    syllabus = rep(&quot;http://google.com&quot;, 4)
+  )
+
+  # datas for internship example
+  temp_internships &lt;- data.frame(
+    title = c(&quot;My Internship 1&quot;, &quot;My Internship 2&quot;,
+              &quot;My Internship 3&quot;, &quot;My Internship 4&quot;),
+    topic = rep(&quot;some topic&quot;, 4),
+    from = rep(&quot;1900-01-01&quot;, 4),
+    to = rep(&quot;1900-01-01&quot;, 4),
+    place = rep(&quot;Somewhere&quot;, 4),
+    supervisor = rep(&quot;Somebody&quot;, 4),
+    level = c(&quot;bachelor&quot;, &quot;master&quot;, &quot;PhD&quot;, &quot;PostDoc&quot;),
+    advert = rep(&quot;http://google.com&quot;, 4)
+  )
+</code></pre>
+
+<p>It is up to you to modify this structure to create your own datas.
+Then, you can inject these datas in feed_shinyCV() and run view_shinyCV:</p>
+
+<pre><code class="language-r"> feed_datas &lt;- feed_shinyCV(temp_profile, temp_about, temp_skills, temp_languages, 
+                            temp_network, temp_formations, temp_projects, temp_tasks, 
+                            temp_publications, publications_screenshots = list(),
+                            temp_talks, temp_courses, temp_internships)
+                            
+ preview_shinyCV(cv_path, cv_mode = &quot;academic&quot;, data_source = &quot;manual&quot;, datas = feed_datas)
+</code></pre>
+
+<p>Notice that this time, <strong>datas</strong> are not NULL.</p>
+
+<ul>
+<li><p>If you want to change your CV, reload <code>feed_shinyCV()</code> with your new datas.
+You do not need to run <code>init_shinyCV(cv_path = your_path)</code> but you should
+update your CV folder with <code>preview_shinyCV(cv_path, cv_mode = &quot;basic&quot;, data_source = &quot;manual&quot;, datas = feed_datas)</code></p></li>
+
+<li><p>Once you are satisfied, you can publish your cv online to shinyapps.io.
+Be careful, it will not work if you do not have a shinyapps.io account. See
+<a href="https://shiny.rstudio.com/articles/shinyapps.html">here</a> to configure your shinyapps.io account.
+As soon as you are ready:</p>
+
+<pre><code class="language-r">publish_shinyCV(cv_path)
+</code></pre></li>
+</ul>
+
+<p>where <strong>cv_path</strong> is again the folder where all your CV files are stored. Again,
+to update your CV, just reload <code>publish_shinyCV(cv_path)</code>. You will be prompted if
+you want to update your application (say yes if it is ok).
+It takes around 45s-1min to push your CV to shinyapps.io!</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>Below are some preview pictures of the builder mode:</p>
+
+<p><a href="images/shinyCV_preview_1.png"><img src="images/shinyCV_preview_1.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p><a href="images/shinyCV_options.png"><img src="images/shinyCV_options.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p><a href="images/shinyCV_timeline.png"><img src="images/shinyCV_timeline.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p><a href="images/shinyCV_projects.png"><img src="images/shinyCV_projects.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p><a href="images/shinyCV_projects2.png"><img src="images/shinyCV_projects2.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p><a href="images/shinyCV_teaching.png"><img src="images/shinyCV_teaching.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p><a href="images/shinyCV_newdesign.png"><img src="images/shinyCV_newdesign.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h2 id="upcoming-features">Upcoming features</h2>
+
+<ul>
+<li>add an editor button to the CV builder interface (currently there are only, add and remove)</li>
+<li>manually reorder panels using shinyjqui</li>
+<li>implement the right sidebar in R</li>
+<li>new timeline boxes</li>
+<li>integrate Github calendar activity to the CV: <a href="http://ionicabizau.github.io/github-calendar/example/">http://ionicabizau.github.io/github-calendar/example/</a></li>
+</ul>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy; David Granjon 2020
+    ·
+    
+    
+    ·
+    Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Create a simple webviewer for shiny (IOs/Xcode) &middot; David Granjon</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Create a simple webviewer for shiny (IOs/Xcode)">
+<meta itemprop="description" content="Important Note This blog post is a summary of this brief but excellent tutorial.">
+
+
+<meta itemprop="datePublished" content="2018-10-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-10-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="324">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/profile.png"/>
+
+<meta name="twitter:title" content="Create a simple webviewer for shiny (IOs/Xcode)"/>
+<meta name="twitter:description" content="Important Note This blog post is a summary of this brief but excellent tutorial."/>
+
+
+<meta property="og:title" content="Create a simple webviewer for shiny (IOs/Xcode)" />
+<meta property="og:description" content="Important Note This blog post is a summary of this brief but excellent tutorial." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/shiny_webview/" />
+
+<meta property="og:image" content="/images/profile.png" />
+<meta property="article:published_time" content="2018-10-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-10-04T00:00:00+00:00" /><meta property="og:site_name" content="David Granjon" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>David Granjon</h1>
+
+      
+      <p class="lead">Blog</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/"> About </a>
+        </li><li>
+          <a href="/contact/"> Contact </a>
+        </li><li>
+          <a href="/posts/"> Posts </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://ch.linkedin.com/in/david-granjon-88625968" rel="me" title="Linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/DivadNojnarg" rel="me" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/divadnojnarg" rel="me" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Create a simple webviewer for shiny (IOs/Xcode)</h1>
+
+  <div class="post-date">
+    <time datetime="2018-10-04T00:00:00Z">Oct 4, 2018</time> · 2 min read
+  </div>
+
+  
+
+<h2 id="important-note">Important Note</h2>
+
+<p>This blog post is a summary of this brief but excellent <a href="https://www.youtube.com/watch?v=6tr6tpKC8Tg">tutorial</a>.
+What you need is macOS with Xcode.</p>
+
+<h2 id="getting-started-with-xcode">Getting started with Xcode</h2>
+
+<ul>
+<li>Open Xcode</li>
+<li>Create a new Xcode Project</li>
+<li>Select &ldquo;Single View App&rdquo;&rdquo; (by default on my machine) then Next</li>
+<li>Add a name to the project then click on Next. The default language is Swift, do not
+change anything!</li>
+<li>Choose a folder where to store your project and click on create</li>
+<li>On the left panel, select the Main.storyboard file</li>
+<li>Choose &ldquo;WebKit View&rdquo; on the bottom right panel and drag it in the central panel (where the IOs screen appears)</li>
+<li>Resize it to cover the whole screen</li>
+<li>Click on the code editor (second button of the top right toolbox)</li>
+</ul>
+
+<p><a href="images/shiny_webview_wrapup.png"><img src="images/shiny_webview_wrapup.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h2 id="the-code">The code</h2>
+
+<p>After following all steps, you should end up with this code:</p>
+
+<pre><code class="language-javascript">//
+//  ViewController.swift
+//  test
+//
+//  Created by David Granjon on 04/10/2018.
+//  Copyright © 2018 David Granjon. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+</code></pre>
+
+<p>Replace it by what follows:</p>
+
+<pre><code class="language-javascript">//
+//  ViewController.swift
+//  shinyLove
+//
+//  Created by David Granjon on 04/10/2018.
+//  Copyright © 2018 David Granjon. All rights reserved.
+//
+
+import UIKit
+import WebKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var webview: WKWebView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        let url = URL(string: &quot;https://dgranjon.shinyapps.io/bs4DashDemo/&quot;)
+        let urlRequest = URLRequest(url: url!)
+        
+        webview.load(urlRequest)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+</code></pre>
+
+<p>where the url could be replace by anything, for instance google.com.</p>
+
+<h2 id="app-preview">App Preview</h2>
+
+<p>A large range of devices is available: Ipad Air, Ipad Pro 12.9, Iphone 8, &hellip;
+so that you can test you app on multiple screen size.</p>
+
+<video width="800" height="600" controls>
+  <source src="videos/shiny_webview.mp4" type="video/mp4">
+</video>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy; David Granjon 2020
+    ·
+    
+    
+    ·
+    Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

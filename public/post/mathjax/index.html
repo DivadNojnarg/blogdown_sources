@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Setting MathJax with Hugo &middot; David Granjon</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Setting MathJax with Hugo">
+<meta itemprop="description" content="The classical approach MathJax is a javascript library which allows the user to integrate math expressions in a website or a blog.">
+
+
+<meta itemprop="datePublished" content="2017-05-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-05-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="739">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/profile.png"/>
+
+<meta name="twitter:title" content="Setting MathJax with Hugo"/>
+<meta name="twitter:description" content="The classical approach MathJax is a javascript library which allows the user to integrate math expressions in a website or a blog."/>
+
+
+<meta property="og:title" content="Setting MathJax with Hugo" />
+<meta property="og:description" content="The classical approach MathJax is a javascript library which allows the user to integrate math expressions in a website or a blog." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/mathjax/" />
+
+<meta property="og:image" content="/images/profile.png" />
+<meta property="article:published_time" content="2017-05-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-22T00:00:00+00:00" /><meta property="og:site_name" content="David Granjon" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>David Granjon</h1>
+
+      
+      <p class="lead">Blog</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/"> About </a>
+        </li><li>
+          <a href="/contact/"> Contact </a>
+        </li><li>
+          <a href="/posts/"> Posts </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://ch.linkedin.com/in/david-granjon-88625968" rel="me" title="Linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/DivadNojnarg" rel="me" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/divadnojnarg" rel="me" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Setting MathJax with Hugo</h1>
+
+  <div class="post-date">
+    <time datetime="2017-05-22T00:00:00Z">May 22, 2017</time> · 4 min read
+  </div>
+
+  
+
+<h2 id="the-classical-approach">The classical approach</h2>
+
+<p><a href="https://www.mathjax.org">MathJax</a> is a javascript library which allows the user to integrate math expressions in a website or a blog. However, its <a href="http://docs.mathjax.org/en/latest/configuration.html">configuration</a> can be quite complex for beginners. In my previous website powered by Jekyll, I easily managed to install MathJax, whereas I encountered some problems with Hugo.</p>
+
+<h3 id="1-installing-mathjax-via-hugo-s-documentation">1. Installing MathJax via Hugo&rsquo;s documentation</h3>
+
+<p>Everything you need can be found <a href="https://gohugo.io/tutorials/mathjax/">here</a>. You have to insert the code below in the <em>/layout/partials</em> folder of your website: it is even better to create a file named <strong>mathjax_support.html</strong>, for example.</p>
+
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;
+  src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: &quot;AMS&quot; },
+         extensions: [&quot;AMSmath.js&quot;, &quot;AMSsymbols.js&quot;] }
+  }
+});
+&lt;/script&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+  MathJax.Hub.Queue(function() {
+    // Fix &lt;code&gt; tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i &lt; all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>Then, you will have to include <strong>mathjax_support.html</strong> in <strong>footer.html</strong> or <strong>header.html</strong>. In my case, I chose to put it in <strong>header.html</strong> just before the closing <code>&lt;/head&gt;</code> as follows:</p>
+
+<pre><code>{{ partial &quot;mathjax_support.html&quot; . }}
+</code></pre>
+
+<p>If you are as lucky as me, it should not work at all :).</p>
+
+<h3 id="2-a-second-method">2. A second method</h3>
+
+<p>I found a <a href="https://discuss.gohugo.io/t/solved-mathjax-stopped-working/5946">solution</a> after some google research and I warmly thanks its author! The idea is to slightly modify the previous code by including everything in the same <code>&lt;script&gt;</code> and adding <em>async</em>:</p>
+
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot; async
+  src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: &quot;AMS&quot; },
+         extensions: [&quot;AMSmath.js&quot;, &quot;AMSsymbols.js&quot;] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    // Fix &lt;code&gt; tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i &lt; all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  // Autonumbering by mathjax
+  TeX: { equationNumbers: { autoNumber: &quot;AMS&quot; } }
+  });
+&lt;/script&gt;
+</code></pre>
+
+<p>Now, your <strong>mathjax_support.html</strong> should look like the above code and you should be able to play with latex!</p>
+
+<p><span style="color:red"><strong>According to MathJax, their CDN is being <a href="https://www.mathjax.org/cdn-shutting-down/">discontinued</a>, you are not concerned if you use the previous code.</strong></span></p>
+
+<h2 id="latex-rendering-errors">Latex rendering errors</h2>
+
+<p>There are some differences with classical Latex expressions and the syntax to use in a markdown document. For example, <code>\sum_</code> does not render with Hugo and you should use <code>\sum\_</code> instead (notice the second backslash before the underscore). I noticed that it is the same thing for <code>\int_</code> (so <code>\int\_</code>). Of course, this will tighly depend on the configuration you chose for MathJax. Moreover, the following system of equations does not render properly:</p>
+
+<p>$$
+\left{
+\begin{align}
+\dot{x} &amp; = \sigma(y-x) \newline
+\dot{y} &amp; = \rho x - y - xz \newline
+\dot{z} &amp; = -\beta z + xy
+\end{align}
+\right.
+$$</p>
+
+<p>What follows is better:</p>
+
+<p>$$
+\left\{
+\begin{align}
+\dot{x} &amp; = \sigma(y-x) \newline
+\dot{y} &amp; = \rho x - y - xz \newline
+\dot{z} &amp; = -\beta z + xy
+\end{align}
+\right.
+$$</p>
+
+<p>by simply changing <code>\left\{</code> to <code>\left\\{</code>. Yet, <code>{</code> should be displayed in the center and not in the left, a problem that I did not have with Jekyll. Thus, I replaced <code>\begin{align}</code> by <code>\begin{cases}</code>:</p>
+
+<p>$$
+\begin{cases}
+\dot{x} &amp; = \sigma(y-x) \newline
+\dot{y} &amp; = \rho x - y - xz \newline
+\dot{z} &amp; = -\beta z + xy
+\end{cases}
+$$</p>
+
+<p>which works, except that we lost equations numbering.</p>
+
+<h2 id="latex-showcase">Latex Showcase</h2>
+
+<p>$$
+\left( \sum_{k=1}^n a_k b_k \right)^{2} \leq
+ \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+$$</p>
+
+<p>$$
+\mathbf{V}_1 \times \mathbf{V}_2 =
+   \begin{vmatrix}
+    \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \newline
+    \frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \newline
+    \frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0 \newline
+   \end{vmatrix}
+$$</p>
+
+<p>$$
+\frac{1}{(\sqrt{\phi \sqrt{5}}-\phi) e^{\frac25 \pi}} =
+     1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+      {1+\frac{e^{-8\pi}} {1+\ldots} } } }
+$$</p>
+
+<p>$$
+1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+    \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+     \quad\quad \text{for $|q|&lt;1$}.
+$$</p>
+
+<p>$$
+\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
+  \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \newline
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \newline
+  \nabla \cdot \vec{\mathbf{B}} &amp; = 0
+\end{align}
+$$</p>
+
+<p>$$
+\begin{equation}
+x(t) = e^{\int_{t_0}^tp(s)ds}\Bigg(\int_{t_0}^t\Big(q(s)e^{-\int_{t_0}^sp(\tau)d\tau}\Big)ds + x_0\Bigg).
+\end{equation}
+$$</p>
+
+<p>Here is inline math: $\sqrt{3x-1}+(1+x)^2$.</p>
+
+<p><strong>I will update this part as frequently as possible&hellip;</strong></p>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy; David Granjon 2020
+    ·
+    
+    
+    ·
+    Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

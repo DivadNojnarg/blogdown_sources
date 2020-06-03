@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Build Bootstrap 4 dashboards with bs4Dash &middot; David Granjon</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Build Bootstrap 4 dashboards with bs4Dash">
+<meta itemprop="description" content=".card { box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.">
+
+
+<meta itemprop="datePublished" content="2018-07-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="153">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/profile.png"/>
+
+<meta name="twitter:title" content="Build Bootstrap 4 dashboards with bs4Dash"/>
+<meta name="twitter:description" content=".card { box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0."/>
+
+
+<meta property="og:title" content="Build Bootstrap 4 dashboards with bs4Dash" />
+<meta property="og:description" content=".card { box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/bs4dash/" />
+
+<meta property="og:image" content="/images/profile.png" />
+<meta property="article:published_time" content="2018-07-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-07-05T00:00:00+00:00" /><meta property="og:site_name" content="David Granjon" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>David Granjon</h1>
+
+      
+      <p class="lead">Blog</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/"> About </a>
+        </li><li>
+          <a href="/contact/"> Contact </a>
+        </li><li>
+          <a href="/posts/"> Posts </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://ch.linkedin.com/in/david-granjon-88625968" rel="me" title="Linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/DivadNojnarg" rel="me" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/divadnojnarg" rel="me" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Build Bootstrap 4 dashboards with bs4Dash</h1>
+
+  <div class="post-date">
+    <time datetime="2018-07-05T00:00:00Z">Jul 5, 2018</time> · 1 min read
+  </div>
+
+  
+
+<style type='text/css'>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+    border-radius: 5px 5px 5px 5px;
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+</style>
+
+<h2 id="introduction-img-src-images-bs4dash1-png-width-200-align-right">Introduction <img src="/images/bs4Dash1.png" width=200 align="right" /></h2>
+
+<p><strong>shinydashboard</strong> is currently built on top of <a href="https://adminlte.io/themes/AdminLTE/index2.html">AdminLT2</a> and uses bootstrap 3.
+Yet, bootstrap 4 is already released and nothing was available for shiny, regarding
+dashboards. bs4Dash is built on top of <a href="https://github.com/almasaeed2010/AdminLTE/tree/v3-dev">AdminLTE3</a> and
+bring also extra components from bootstrap 4.
+The syntax is very close to that of shinydashboard so that users are not lost.
+Find out more on <a href="https://github.com/DivadNojnarg/bs4Dash">github</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>You can install this package from CRAN or the latest dev version via github:</p>
+
+<pre><code class="language-r"># from CRAN
+install.packages(&quot;bs4Dash&quot;)
+# devel version
+devtools::install_github(&quot;DivadNojnarg/bs4Dash&quot;)
+</code></pre>
+
+<h2 id="showcase">Showcase</h2>
+
+<div class="row">
+<div class="col-sm-4" align="center">
+<div class="card">
+<a href="https://rinterface.com/shiny/showcase/lorenz/" target="_blank"><img src="/images/bs4Dash_Lorenz.png"></a>
+</div>
+</div>
+<div class="col-sm-4" align="center">
+<div class="card">
+<a href="https://rinterface.com/shiny/showcase/lotkaVolterra/" target="_blank"><img src="/images/bs4Dash_Lotka.png"></a>
+</div>
+</div>
+<div class="col-sm-4" align="center">
+<div class="card">
+<a href="https://rinterface.com/shiny/showcase/ratp/" target="_blank"><img src="/images/bs4Dash_ratp.png"></a>
+</div>
+</div>
+</div>
+
+<p><br></p>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy; David Granjon 2020
+    ·
+    
+    
+    ·
+    Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

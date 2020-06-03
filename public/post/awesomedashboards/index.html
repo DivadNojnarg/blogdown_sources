@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Build awesome dashboards with shiny &middot; David Granjon</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Build awesome dashboards with shiny">
+<meta itemprop="description" content="shinydashboardPlus  I recently released shinydashboardPlus on CRAN. Therefore, some of the functions below are now included in the package.">
+
+
+<meta itemprop="datePublished" content="2018-03-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="4126">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/profile.png"/>
+
+<meta name="twitter:title" content="Build awesome dashboards with shiny"/>
+<meta name="twitter:description" content="shinydashboardPlus  I recently released shinydashboardPlus on CRAN. Therefore, some of the functions below are now included in the package."/>
+
+
+<meta property="og:title" content="Build awesome dashboards with shiny" />
+<meta property="og:description" content="shinydashboardPlus  I recently released shinydashboardPlus on CRAN. Therefore, some of the functions below are now included in the package." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/awesomedashboards/" />
+
+<meta property="og:image" content="/images/profile.png" />
+<meta property="article:published_time" content="2018-03-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-03-26T00:00:00+00:00" /><meta property="og:site_name" content="David Granjon" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>David Granjon</h1>
+
+      
+      <p class="lead">Blog</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/"> About </a>
+        </li><li>
+          <a href="/contact/"> Contact </a>
+        </li><li>
+          <a href="/posts/"> Posts </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://ch.linkedin.com/in/david-granjon-88625968" rel="me" title="Linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/DivadNojnarg" rel="me" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/divadnojnarg" rel="me" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Build awesome dashboards with shiny</h1>
+
+  <div class="post-date">
+    <time datetime="2018-03-26T00:00:00Z">Mar 26, 2018</time> · 20 min read
+  </div>
+
+  
+
+<h2 id="shinydashboardplus-img-src-images-shinydashboardplus-final-png-width-200-align-right">shinydashboardPlus <img src="/images/ShinyDashboardPlus_FINAL.png" width=200 align="right" /></h2>
+
+<p>I recently released <strong>shinydashboardPlus</strong> on CRAN. Therefore, some of the functions below are now included in the package. Find out more on <a href="https://github.com/DivadNojnarg/shinydashboardPlus">github</a>.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p><a href="https://rstudio.github.io/shinydashboard/">shinydashboard</a> is without any doubt a great package.
+Even though built upon the famous free <a href="https://adminlte.io/themes/AdminLTE/index.html">adminLTE2</a> dashboard template (boostrap 3), most of the dashboard I see almost look the same. In the <strong>shinydashboard</strong>
+package, some adminLTE2 components are not implemented such as the right sidebar, which
+can be extremely useful: contains input, parameters, &hellip; But everything you need is
+hidden under the hood, in the inst/AdminLTE folder (shinydashboard <a href="https://github.com/rstudio/shinydashboard">github</a>).</p>
+
+<p>In the following, I will show you how you could implement any of the adminLTE2 elements,
+when they are not already included in the shinydashboard package.</p>
+
+<p><a href="images/adminLTE2_dashboard.png"><img src="images/adminLTE2_dashboard.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h2 id="from-r-to-html">From R to HTML</h2>
+
+<p>Before going deeper in the adminLTE2 features, it is crucial to understand what
+does shiny!</p>
+
+<p>You probably know that when you write a R shiny code, such as <strong>sliderInput</strong>,
+shiny will generate the corresponding HTML code, to be embeded into an html page.
+Let&rsquo;s have a look at what happens:</p>
+
+<pre><code class="language-r">library(shiny)
+sliderInput(&quot;obs&quot;, &quot;Number of observations:&quot;,
+    min = 0, max = 1000, value = 500
+  )
+</code></pre>
+
+<p>If you enter the previous code in the R console, you will see:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;form-group shiny-input-container&quot;&gt;
+  &lt;label class=&quot;control-label&quot; for=&quot;obs&quot;&gt;Number of observations:&lt;/label&gt;
+  &lt;input class=&quot;js-range-slider&quot; id=&quot;obs&quot; data-min=&quot;0&quot; data-max=&quot;1000&quot; data-from=&quot;500&quot; data-step=&quot;1&quot; data-grid=&quot;true&quot; data-grid-num=&quot;10&quot; data-grid-snap=&quot;false&quot; data-prettify-separator=&quot;,&quot; data-prettify-enabled=&quot;true&quot; data-keyboard=&quot;true&quot; data-keyboard-step=&quot;0.1&quot; data-data-type=&quot;number&quot;/&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Basically, all that you write in R will be translated in HTML:</p>
+
+<pre><code class="language-r">library(shiny)
+library(shinydashboard)
+shinyApp(
+  ui = dashboardPage(
+    dashboardHeader(),
+    dashboardSidebar(),
+    dashboardBody(),
+    title = &quot;Dashboard example&quot;
+  ),
+  server = function(input, output) { }
+)
+</code></pre>
+
+<p>The UI code will be translated as shown below:</p>
+
+<pre><code class="language-html">&lt;body class=&quot;skin-blue&quot; style=&quot;min-height: 611px;&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;header class=&quot;main-header&quot;&gt;
+      &lt;span class=&quot;logo&quot;&gt;&lt;/span&gt;
+      &lt;nav class=&quot;navbar navbar-static-top&quot; role=&quot;navigation&quot;&gt;
+        &lt;span style=&quot;display:none;&quot;&gt;
+          &lt;i class=&quot;fa fa-bars&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+        &lt;a href=&quot;#&quot; class=&quot;sidebar-toggle&quot; data-toggle=&quot;offcanvas&quot; role=&quot;button&quot;&gt;
+          &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;div class=&quot;navbar-custom-menu&quot;&gt;
+          &lt;ul class=&quot;nav navbar-nav&quot;&gt;&lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;aside class=&quot;main-sidebar&quot; data-collapsed=&quot;false&quot;&gt;
+      &lt;section class=&quot;sidebar&quot;&gt;&lt;/section&gt;
+    &lt;/aside&gt;
+    &lt;div class=&quot;content-wrapper&quot;&gt;
+      &lt;section class=&quot;content&quot;&gt;&lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>In pratice, this is not enough to build beautiful dashboard but it is still a good start.
+With this very simple technic, you will be able to generate any <strong>custom HTML</strong>.
+Moreover, if you are creating a shiny app with an <a href="https://shiny.rstudio.com/articles/templates.html"><strong>HTML template</strong></a>, I find easier to create inputs (slider, checkboxes) writing them first in R. Once all your
+code is written, copy it in the R console to get the corresponding HTML,
+and include this HTML snippet in your full template. I personnaly, prefer seeing the
+code below that the corresponding HTML:</p>
+
+<pre><code class="language-r">library(shinyWidgets)
+prettyCheckboxGroup(
+  inputId = &quot;checkgroup2&quot;,
+  label = &quot;Click me!&quot;, thick = TRUE,
+  choices = c(&quot;Click me !&quot;, &quot;Me !&quot;, &quot;Or me !&quot;),
+  animation = &quot;pulse&quot;, status = &quot;info&quot;
+)
+</code></pre>
+
+<p>This code is only 7 lines long and very clear. The HTML translation
+is widely less clear:</p>
+
+<pre><code class="language-html">&lt;div id=&quot;checkgroup2&quot; class=&quot;form-group shiny-input-checkboxgroup shiny-input-container&quot;&gt;
+  &lt;label class=&quot;control-label&quot; for=&quot;checkgroup2&quot;&gt;Click me!&lt;/label&gt;
+  &lt;div class=&quot;shiny-options-group&quot;&gt;
+    &lt;div style=&quot;height:7px;&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;pretty p-default p-thick p-pulse&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;checkgroup2&quot; value=&quot;Click me !&quot;/&gt;
+      &lt;div class=&quot;state p-info&quot;&gt;
+        &lt;label&gt;
+          &lt;span&gt;Click me !&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;height:3px;&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;pretty p-default p-thick p-pulse&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;checkgroup2&quot; value=&quot;Me !&quot;/&gt;
+      &lt;div class=&quot;state p-info&quot;&gt;
+        &lt;label&gt;
+          &lt;span&gt;Me !&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;height:3px;&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;pretty p-default p-thick p-pulse&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;checkgroup2&quot; value=&quot;Or me !&quot;/&gt;
+      &lt;div class=&quot;state p-info&quot;&gt;
+        &lt;label&gt;
+          &lt;span&gt;Or me !&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;height:3px;&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>What to do if you find an interesting HTML object (boostrap 3 compatible)
+that you want to integrate in your shiny app?</p>
+
+<h2 id="from-html-to-r">From HTML to R</h2>
+
+<h3 id="import-html-code-into-shiny">Import HTML code into shiny</h3>
+
+<p>Before going further, make sure that the adminLTE2 source code is available somewhere
+on your computer. You can download it from <a href="https://adminlte.io">here</a> (version 2.4.2).</p>
+
+<p>Let&rsquo;s start with this very preliminary shinydashboard template:</p>
+
+<pre><code class="language-r">library(shiny)
+library(shinydashboard)
+shinyApp(
+  ui = dashboardPage(
+    dashboardHeader(),
+    dashboardSidebar(),
+    dashboardBody(),
+    title = &quot;Dashboard example&quot;
+  ),
+  server = function(input, output) { }
+)
+</code></pre>
+
+<p>You noticed a timeline element that you really want to include in your shinydashboard.</p>
+
+<p>According to the following screenshot, open the profile.html page with your
+favorite editor (notepad ++, Rstudio, Xcode, &hellip;).</p>
+
+<p><a href="images/adminLTE2_folder.png"><img src="images/adminLTE2_folder.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>Go to find, type &ldquo;The timeline&rdquo; and copy the following code, which corresponds
+to the timeline object:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;tab-pane&quot; id=&quot;timeline&quot;&gt;
+                &lt;!-- The timeline --&gt;
+                &lt;ul class=&quot;timeline timeline-inverse&quot;&gt;
+                  &lt;!-- timeline time label --&gt;
+                  &lt;li class=&quot;time-label&quot;&gt;
+                        &lt;span class=&quot;bg-red&quot;&gt;
+                          10 Feb. 2014
+                        &lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;!-- /.timeline-label --&gt;
+                  &lt;!-- timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-envelope bg-blue&quot;&gt;&lt;/i&gt;
+
+                    &lt;div class=&quot;timeline-item&quot;&gt;
+                      &lt;span class=&quot;time&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 12:05&lt;/span&gt;
+
+                      &lt;h3 class=&quot;timeline-header&quot;&gt;&lt;a href=&quot;#&quot;&gt;Support Team&lt;/a&gt; sent you an email&lt;/h3&gt;
+
+                      &lt;div class=&quot;timeline-body&quot;&gt;
+                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                        quora plaxo ideeli hulu weebly balihoo...
+                      &lt;/div&gt;
+                      &lt;div class=&quot;timeline-footer&quot;&gt;
+                        &lt;a class=&quot;btn btn-primary btn-xs&quot;&gt;Read more&lt;/a&gt;
+                        &lt;a class=&quot;btn btn-danger btn-xs&quot;&gt;Delete&lt;/a&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;!-- END timeline item --&gt;
+                  &lt;!-- timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-user bg-aqua&quot;&gt;&lt;/i&gt;
+
+                    &lt;div class=&quot;timeline-item&quot;&gt;
+                      &lt;span class=&quot;time&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 5 mins ago&lt;/span&gt;
+
+                      &lt;h3 class=&quot;timeline-header no-border&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sarah Young&lt;/a&gt; accepted your friend request
+                      &lt;/h3&gt;
+                    &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;!-- END timeline item --&gt;
+                  &lt;!-- timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-comments bg-yellow&quot;&gt;&lt;/i&gt;
+
+                    &lt;div class=&quot;timeline-item&quot;&gt;
+                      &lt;span class=&quot;time&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 27 mins ago&lt;/span&gt;
+
+                      &lt;h3 class=&quot;timeline-header&quot;&gt;&lt;a href=&quot;#&quot;&gt;Jay White&lt;/a&gt; commented on your post&lt;/h3&gt;
+
+                      &lt;div class=&quot;timeline-body&quot;&gt;
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      &lt;/div&gt;
+                      &lt;div class=&quot;timeline-footer&quot;&gt;
+                        &lt;a class=&quot;btn btn-warning btn-flat btn-xs&quot;&gt;View comment&lt;/a&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;!-- END timeline item --&gt;
+                  &lt;!-- timeline time label --&gt;
+                  &lt;li class=&quot;time-label&quot;&gt;
+                        &lt;span class=&quot;bg-green&quot;&gt;
+                          3 Jan. 2014
+                        &lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;!-- /.timeline-label --&gt;
+                  &lt;!-- timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-camera bg-purple&quot;&gt;&lt;/i&gt;
+
+                    &lt;div class=&quot;timeline-item&quot;&gt;
+                      &lt;span class=&quot;time&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 2 days ago&lt;/span&gt;
+
+                      &lt;h3 class=&quot;timeline-header&quot;&gt;&lt;a href=&quot;#&quot;&gt;Mina Lee&lt;/a&gt; uploaded new photos&lt;/h3&gt;
+
+                      &lt;div class=&quot;timeline-body&quot;&gt;
+                        &lt;img src=&quot;http://placehold.it/150x100&quot; alt=&quot;...&quot; class=&quot;margin&quot;&gt;
+                        &lt;img src=&quot;http://placehold.it/150x100&quot; alt=&quot;...&quot; class=&quot;margin&quot;&gt;
+                        &lt;img src=&quot;http://placehold.it/150x100&quot; alt=&quot;...&quot; class=&quot;margin&quot;&gt;
+                        &lt;img src=&quot;http://placehold.it/150x100&quot; alt=&quot;...&quot; class=&quot;margin&quot;&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;!-- END timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-clock-o bg-gray&quot;&gt;&lt;/i&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+</code></pre>
+
+<p>To include raw HTML code in shiny, you can use the following tips:</p>
+
+<pre><code class="language-r">HTML(
+  paste0('
+  Your HTML code here
+  ')
+)
+</code></pre>
+
+<p>Let&rsquo;s go back to our shinydashboard and include this HTML code in the body part:</p>
+
+<pre><code class="language-r">library(shiny)
+library(shinydashboard)
+shinyApp(
+  ui = dashboardPage(
+    dashboardHeader(),
+    dashboardSidebar(),
+    dashboardBody(
+      HTML(
+        paste0('
+          &lt;div class=&quot;tab-pane&quot; id=&quot;timeline&quot;&gt;
+                &lt;!-- The timeline --&gt;
+                &lt;ul class=&quot;timeline timeline-inverse&quot;&gt;
+                  &lt;!-- timeline time label --&gt;
+                  &lt;li class=&quot;time-label&quot;&gt;
+                        &lt;span class=&quot;bg-red&quot;&gt;
+                          10 Feb. 2014
+                        &lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;!-- /.timeline-label --&gt;
+                  &lt;!-- timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-envelope bg-blue&quot;&gt;&lt;/i&gt;
+
+                    &lt;div class=&quot;timeline-item&quot;&gt;
+                      &lt;span class=&quot;time&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 12:05&lt;/span&gt;
+
+                      &lt;h3 class=&quot;timeline-header&quot;&gt;&lt;a href=&quot;#&quot;&gt;Support Team&lt;/a&gt; sent you an email&lt;/h3&gt;
+
+                      &lt;div class=&quot;timeline-body&quot;&gt;
+                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                        quora plaxo ideeli hulu weebly balihoo...
+                      &lt;/div&gt;
+                      &lt;div class=&quot;timeline-footer&quot;&gt;
+                        &lt;a class=&quot;btn btn-primary btn-xs&quot;&gt;Read more&lt;/a&gt;
+                        &lt;a class=&quot;btn btn-danger btn-xs&quot;&gt;Delete&lt;/a&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;!-- END timeline item --&gt;
+                  &lt;!-- timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-user bg-aqua&quot;&gt;&lt;/i&gt;
+
+                    &lt;div class=&quot;timeline-item&quot;&gt;
+                      &lt;span class=&quot;time&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 5 mins ago&lt;/span&gt;
+
+                      &lt;h3 class=&quot;timeline-header no-border&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sarah Young&lt;/a&gt; accepted your friend request
+                      &lt;/h3&gt;
+                    &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;!-- END timeline item --&gt;
+                  &lt;!-- timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-comments bg-yellow&quot;&gt;&lt;/i&gt;
+
+                    &lt;div class=&quot;timeline-item&quot;&gt;
+                      &lt;span class=&quot;time&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 27 mins ago&lt;/span&gt;
+
+                      &lt;h3 class=&quot;timeline-header&quot;&gt;&lt;a href=&quot;#&quot;&gt;Jay White&lt;/a&gt; commented on your post&lt;/h3&gt;
+
+                      &lt;div class=&quot;timeline-body&quot;&gt;
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      &lt;/div&gt;
+                      &lt;div class=&quot;timeline-footer&quot;&gt;
+                        &lt;a class=&quot;btn btn-warning btn-flat btn-xs&quot;&gt;View comment&lt;/a&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;!-- END timeline item --&gt;
+                  &lt;!-- timeline time label --&gt;
+                  &lt;li class=&quot;time-label&quot;&gt;
+                        &lt;span class=&quot;bg-green&quot;&gt;
+                          3 Jan. 2014
+                        &lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;!-- /.timeline-label --&gt;
+                  &lt;!-- timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-camera bg-purple&quot;&gt;&lt;/i&gt;
+
+                    &lt;div class=&quot;timeline-item&quot;&gt;
+                      &lt;span class=&quot;time&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 2 days ago&lt;/span&gt;
+
+                      &lt;h3 class=&quot;timeline-header&quot;&gt;&lt;a href=&quot;#&quot;&gt;Mina Lee&lt;/a&gt; uploaded new photos&lt;/h3&gt;
+
+                      &lt;div class=&quot;timeline-body&quot;&gt;
+                        &lt;img src=&quot;http://placehold.it/150x100&quot; alt=&quot;...&quot; class=&quot;margin&quot;&gt;
+                        &lt;img src=&quot;http://placehold.it/150x100&quot; alt=&quot;...&quot; class=&quot;margin&quot;&gt;
+                        &lt;img src=&quot;http://placehold.it/150x100&quot; alt=&quot;...&quot; class=&quot;margin&quot;&gt;
+                        &lt;img src=&quot;http://placehold.it/150x100&quot; alt=&quot;...&quot; class=&quot;margin&quot;&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;!-- END timeline item --&gt;
+                  &lt;li&gt;
+                    &lt;i class=&quot;fa fa-clock-o bg-gray&quot;&gt;&lt;/i&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+        ')
+      )
+    ),
+    title = &quot;Dashboard example&quot;
+  ),
+  server = function(input, output) { }
+)
+</code></pre>
+
+<p>You should see something like that:</p>
+
+<p><a href="images/dashboard_timeline.png"><img src="images/dashboard_timeline.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>Congratulations!!! Actually and in my opinion, if you write a
+shiny app, it is more consistent to write everything in R and not mix HTML and R,
+or at least not too much. Below, I explain you how to translate this HTML code
+in R.</p>
+
+<h3 id="convert-this-code-from-html-to-r">Convert this code from HTML to R</h3>
+
+<p>For this part, I will take the HTML code corresponding to a social box
+from adminLTE2.</p>
+
+<p><a href="images/socialbox_example.png"><img src="images/socialbox_example.png" width="400" height="200" alt="blank"></a></p>
+
+<p>The associated HTML is located in the widgets.html file:</p>
+
+<pre><code class="language-html">&lt;!-- /.col --&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+          &lt;!-- Widget: user widget style 1 --&gt;
+          &lt;div class=&quot;box box-widget widget-user&quot;&gt;
+            &lt;!-- Add the bg color to the header using any of the bg-* classes --&gt;
+            &lt;div class=&quot;widget-user-header bg-aqua-active&quot;&gt;
+              &lt;h3 class=&quot;widget-user-username&quot;&gt;Alexander Pierce&lt;/h3&gt;
+              &lt;h5 class=&quot;widget-user-desc&quot;&gt;Founder &amp;amp; CEO&lt;/h5&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;widget-user-image&quot;&gt;
+              &lt;img class=&quot;img-circle&quot; src=&quot;../dist/img/user1-128x128.jpg&quot; alt=&quot;User Avatar&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;box-footer&quot;&gt;
+              &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-sm-4 border-right&quot;&gt;
+                  &lt;div class=&quot;description-block&quot;&gt;
+                    &lt;h5 class=&quot;description-header&quot;&gt;3,200&lt;/h5&gt;
+                    &lt;span class=&quot;description-text&quot;&gt;SALES&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;!-- /.description-block --&gt;
+                &lt;/div&gt;
+                &lt;!-- /.col --&gt;
+                &lt;div class=&quot;col-sm-4 border-right&quot;&gt;
+                  &lt;div class=&quot;description-block&quot;&gt;
+                    &lt;h5 class=&quot;description-header&quot;&gt;13,000&lt;/h5&gt;
+                    &lt;span class=&quot;description-text&quot;&gt;FOLLOWERS&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;!-- /.description-block --&gt;
+                &lt;/div&gt;
+                &lt;!-- /.col --&gt;
+                &lt;div class=&quot;col-sm-4&quot;&gt;
+                  &lt;div class=&quot;description-block&quot;&gt;
+                    &lt;h5 class=&quot;description-header&quot;&gt;35&lt;/h5&gt;
+                    &lt;span class=&quot;description-text&quot;&gt;PRODUCTS&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;!-- /.description-block --&gt;
+                &lt;/div&gt;
+                &lt;!-- /.col --&gt;
+              &lt;/div&gt;
+              &lt;!-- /.row --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;!-- /.widget-user --&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col --&gt;
+</code></pre>
+
+<p>To convert it into R, we will use the <strong>tags</strong> function from the htmltools package (shiny also includes it).
+Each HTML5 tag will be preceded by tags such as <code>tags$h5(&quot;an example&quot;)</code> or
+<code>tags$div(class = &quot;col-sm-4&quot;)</code>. Anyway,
+if you enter <code>tags$</code> in the console, a list of all valid tags will appear (and I have
+no idea of the total number).</p>
+
+<p>The converted code will look like that:</p>
+
+<pre><code class="language-r"># col
+tags$div(
+  class = &quot;col-md-4&quot;,
+  # Widget: user widget style 1
+  tags$div(
+    class = &quot;box box-widget widget-user&quot;,
+    # Add the bg color to the header using any of the bg-* classes
+    ## Box Header ##
+    tags$div(
+      class = &quot;widget-user-header bg-aqua-active&quot;,
+      tags$h3(class = &quot;widget-user-username&quot;, &quot;Alexander Pierce&quot;),
+      tags$h5(class = &quot;widget-user-desc&quot;, &quot;Founder at CEO&quot;)
+    )
+    ## Box Image ##
+    tags$div(
+      class = &quot;widget-user-image&quot;,
+      tags$img(class = &quot;img-circle&quot;, src = &quot;&quot;, alt = &quot;User Avatar&quot;)
+    ),
+    ## Box Footer ##
+    tags$div(
+      class = &quot;box-footer&quot;,
+      tags$div(
+        class = &quot;row&quot;,
+        # first column
+        tags$div(
+          class = &quot;col-sm-4 border-right&quot;,
+          tags$div(
+            class = &quot;description-block&quot;,
+            tags$h5(class = &quot;description-header&quot;, &quot;3200&quot;),
+            tags$span(class = &quot;description-text&quot;, &quot;SALES&quot;)
+          )
+        ),
+        # second column
+        tags$div(
+          class = &quot;col-sm-4 border-right&quot;,
+          tags$div(
+            class = &quot;description-block&quot;,
+            tags$h5(class = &quot;description-header&quot;, &quot;13000&quot;),
+            tags$span(class = &quot;description-text&quot;, &quot;FOLLOWERS&quot;)
+          )
+        ),
+        # third column
+        tags$div(
+          class = &quot;col-sm-4 border-right&quot;,
+          tags$div(
+            class = &quot;description-block&quot;,
+            tags$h5(class = &quot;description-header&quot;, &quot;35&quot;),
+            tags$span(class = &quot;description-text&quot;, &quot;PRODUCTS&quot;)
+          )
+        )
+      )
+    )
+  )
+)
+</code></pre>
+
+<p>Having a try with our own basic shinydashboard template:</p>
+
+<pre><code class="language-r">library(shiny)
+library(shinydashboard)
+shinyApp(
+  ui = dashboardPage(
+    dashboardHeader(),
+    dashboardSidebar(),
+    dashboardBody(
+      # col
+      tags$div(
+        class = &quot;col-md-4&quot;,
+        # Widget: user widget style 1
+        tags$div(
+          class = &quot;box box-widget widget-user&quot;,
+          # Add the bg color to the header using any of the bg-* classes
+          ## Box Header ##
+          tags$div(
+            class = &quot;widget-user-header bg-aqua-active&quot;,
+            tags$h3(class = &quot;widget-user-username&quot;, &quot;Alexander Pierce&quot;),
+            tags$h5(class = &quot;widget-user-desc&quot;, &quot;Founder at CEO&quot;)
+          ),
+          ## Box Image ##
+          tags$div(
+            class = &quot;widget-user-image&quot;,
+            tags$img(class = &quot;img-circle&quot;, src = &quot;&quot;, alt = &quot;User Avatar&quot;)
+          ),
+          ## Box Footer ##
+          tags$div(
+            class = &quot;box-footer&quot;,
+            tags$div(
+              class = &quot;row&quot;,
+              # first column
+              tags$div(
+                class = &quot;col-sm-4 border-right&quot;,
+                tags$div(
+                  class = &quot;description-block&quot;,
+                  tags$h5(class = &quot;description-header&quot;, &quot;3200&quot;),
+                  tags$span(class = &quot;description-text&quot;, &quot;SALES&quot;)
+                )
+              ),
+              # second column
+              tags$div(
+                class = &quot;col-sm-4 border-right&quot;,
+                tags$div(
+                  class = &quot;description-block&quot;,
+                  tags$h5(class = &quot;description-header&quot;, &quot;13000&quot;),
+                  tags$span(class = &quot;description-text&quot;, &quot;FOLLOWERS&quot;)
+                )
+              ),
+              # third column
+              tags$div(
+                class = &quot;col-sm-4 border-right&quot;,
+                tags$div(
+                  class = &quot;description-block&quot;,
+                  tags$h5(class = &quot;description-header&quot;, &quot;35&quot;),
+                  tags$span(class = &quot;description-text&quot;, &quot;PRODUCTS&quot;)
+                )
+              )
+            )
+          )
+        )
+      )
+    ),
+    title = &quot;Dashboard example&quot;
+  ),
+  server = function(input, output) { }
+)
+</code></pre>
+
+<p>The profile image is not displayed because I did not provide any source
+<code>tags$img(class = &quot;img-circle&quot;, src = &quot;&quot;, alt = &quot;User Avatar&quot;)</code>. Up to you to pass
+your own image that should by in the <strong>/www</strong> directory of your application.
+It would be better if you wrapped this custom R code in your own function like that:</p>
+
+<pre><code class="language-r">my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
+                              sales = NULL, followers = NULL, products = NULL) {
+                              
+  # check some inputs
+  stopifnot(is.numeric(sales))
+  stopifnot(is.numeric(followers))
+  stopifnot(is.numeric(products))
+  
+  # the box tags
+  withTags(
+    # col
+    div(
+      class = &quot;col-md-4&quot;,
+      # Widget: user widget style 1
+      div(
+        class = &quot;box box-widget widget-user&quot;,
+        # Add the bg color to the header using any of the bg-* classes
+        ## Box Header ##
+        div(
+          class = &quot;widget-user-header bg-aqua-active&quot;,
+          h3(class = &quot;widget-user-username&quot;, username),
+          h5(class = &quot;widget-user-desc&quot;, userposition)
+        ),
+        ## Box Image ##
+        div(
+          class = &quot;widget-user-image&quot;,
+          img(class = &quot;img-circle&quot;, src = &quot;&quot;, alt = &quot;User Avatar&quot;)
+        ),
+        ## Box Footer ##
+        div(
+          class = &quot;box-footer&quot;,
+          div(
+            class = &quot;row&quot;,
+            # first column
+            div(
+              class = &quot;col-sm-4 border-right&quot;,
+              div(
+                class = &quot;description-block&quot;,
+                h5(class = &quot;description-header&quot;, sales),
+                span(class = &quot;description-text&quot;, &quot;SALES&quot;)
+              )
+            ),
+            # second column
+            div(
+              class = &quot;col-sm-4 border-right&quot;,
+              div(
+                class = &quot;description-block&quot;,
+                h5(class = &quot;description-header&quot;, followers),
+                span(class = &quot;description-text&quot;, &quot;FOLLOWERS&quot;)
+              )
+            ),
+            # third column
+            div(
+              class = &quot;col-sm-4 border-right&quot;,
+              div(
+                class = &quot;description-block&quot;,
+                h5(class = &quot;description-header&quot;, products),
+                span(class = &quot;description-text&quot;, &quot;PRODUCTS&quot;)
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+}
+</code></pre>
+
+<p>where you would have some fields such as username, userposition, sales, followers and products.
+I use the <strong>withTags</strong> function that enables me to remove <code>tags$</code> (lazyness :)).</p>
+
+<pre><code class="language-r"># create your custom box
+my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
+                              sales = NULL, followers = NULL, products = NULL) {
+                              
+  # check some inputs
+  stopifnot(is.numeric(sales))
+  stopifnot(is.numeric(followers))
+  stopifnot(is.numeric(products))
+  
+  # the box tags
+  withTags(
+    # col
+    div(
+      class = &quot;col-md-4&quot;,
+      # Widget: user widget style 1
+      div(
+        class = &quot;box box-widget widget-user&quot;,
+        # Add the bg color to the header using any of the bg-* classes
+        ## Box Header ##
+        div(
+          class = &quot;widget-user-header bg-aqua-active&quot;,
+          h3(class = &quot;widget-user-username&quot;, username),
+          h5(class = &quot;widget-user-desc&quot;, userposition)
+        ),
+        ## Box Image ##
+        div(
+          class = &quot;widget-user-image&quot;,
+          img(class = &quot;img-circle&quot;, src = &quot;&quot;, alt = &quot;User Avatar&quot;)
+        ),
+        ## Box Footer ##
+        div(
+          class = &quot;box-footer&quot;,
+          div(
+            class = &quot;row&quot;,
+            # first column
+            div(
+              class = &quot;col-sm-4 border-right&quot;,
+              div(
+                class = &quot;description-block&quot;,
+                h5(class = &quot;description-header&quot;, sales),
+                span(class = &quot;description-text&quot;, &quot;SALES&quot;)
+              )
+            ),
+            # second column
+            div(
+              class = &quot;col-sm-4 border-right&quot;,
+              div(
+                class = &quot;description-block&quot;,
+                h5(class = &quot;description-header&quot;, followers),
+                span(class = &quot;description-text&quot;, &quot;FOLLOWERS&quot;)
+              )
+            ),
+            # third column
+            div(
+              class = &quot;col-sm-4 border-right&quot;,
+              div(
+                class = &quot;description-block&quot;,
+                h5(class = &quot;description-header&quot;, products),
+                span(class = &quot;description-text&quot;, &quot;PRODUCTS&quot;)
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+}
+
+# launch the dashboard with our simple custom function
+library(shiny)
+library(shinydashboard)
+shinyApp(
+  ui = dashboardPage(
+    dashboardHeader(),
+    dashboardSidebar(),
+    dashboardBody(
+      my_tiny_socialbox(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
+                        sales = 150, followers = 1200, products = 3)
+    ),
+    title = &quot;Dashboard example&quot;
+  ),
+  server = function(input, output) { }
+)
+
+</code></pre>
+
+<p>Congratulations!</p>
+
+<p><a href="images/dashboard_socialbox.png"><img src="images/dashboard_socialbox.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>From now, you should be able to integrate any boostrap 3 compatible objects in your
+shinydashboards.</p>
+
+<p>A better example of what you could achieve is <a href="https://dgranjon.shinyapps.io/myshinycv/">here</a></p>
+
+<p><a href="images/shinyCV_newdesign.png"><img src="images/shinyCV_newdesign.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h3 id="customize-shinydashboard-elements">Customize shinydashboard elements</h3>
+
+<p>In this part, I explain how you could improve the box function
+that is already available <code>shinydashboard::box</code>.</p>
+
+<p>Let&rsquo;s analyse this function:</p>
+
+<pre><code class="language-r">box &lt;- function (..., title = NULL, footer = NULL, status = NULL, solidHeader = FALSE, 
+background = NULL, width = 6, height = NULL, collapsible = FALSE, 
+collapsed = FALSE) 
+{
+  boxClass &lt;- &quot;box&quot;
+  if (solidHeader || !is.null(background)) {
+  boxClass &lt;- paste(boxClass, &quot;box-solid&quot;)
+  }
+  if (!is.null(status)) {
+  validateStatus(status)
+  boxClass &lt;- paste0(boxClass, &quot; box-&quot;, status)
+  }
+  if (collapsible &amp;&amp; collapsed) {
+  boxClass &lt;- paste(boxClass, &quot;collapsed-box&quot;)
+  }
+  if (!is.null(background)) {
+  validateColor(background)
+  boxClass &lt;- paste0(boxClass, &quot; bg-&quot;, background)
+  }
+  style &lt;- NULL
+  if (!is.null(height)) {
+  style &lt;- paste0(&quot;height: &quot;, validateCssUnit(height))
+  }
+  titleTag &lt;- NULL
+  if (!is.null(title)) {
+  titleTag &lt;- h3(class = &quot;box-title&quot;, title)
+  }
+  collapseTag &lt;- NULL
+  if (collapsible) {
+  buttonStatus &lt;- status %OR% &quot;default&quot;
+  collapseIcon &lt;- if (collapsed) 
+  &quot;plus&quot;
+  else &quot;minus&quot;
+  collapseTag &lt;- div(class = &quot;box-tools pull-right&quot;, tags$button(class = paste0(&quot;btn btn-box-tool&quot;), 
+  `data-widget` = &quot;collapse&quot;, shiny::icon(collapseIcon)))
+  }
+  headerTag &lt;- NULL
+  if (!is.null(titleTag) || !is.null(collapseTag)) {
+  headerTag &lt;- div(class = &quot;box-header&quot;, titleTag, collapseTag)
+  }
+  div(class = if (!is.null(width)) 
+  paste0(&quot;col-sm-&quot;, width), div(class = boxClass, style = if (!is.null(style)) 
+  style, headerTag, div(class = &quot;box-body&quot;, ...), if (!is.null(footer)) 
+  div(class = &quot;box-footer&quot;, footer)))
+}
+
+</code></pre>
+
+<p>The basic css class is &ldquo;box&rdquo; and stored in the variable boxClass. If you enter other parameters
+such as the box status (choose among primary, success, info, warning, danger), the boxClass
+will be updated so that it could be &ldquo;box-primary&rdquo; if the status is primary. You can control
+other parameters such as the collapsible state, the background color, &hellip;</p>
+
+<p>When I started shiny app development, I noticed that the boxes were not possible to
+close, which can be useful sometimes. From now, let&rsquo;s make it closable!
+Everything you need is already in adminLTE2, we just have to
+reorder things properly. The box toolbox, which contains the collapse and close button
+as well as other elements such as badges, is implemented as follow in HTML:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;box-tools pull-right&quot;&gt;
+                &lt;span data-toggle=&quot;tooltip&quot; title=&quot;3 New Messages&quot; class=&quot;badge bg-light-blue&quot;&gt;3&lt;/span&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-box-tool&quot; data-widget=&quot;collapse&quot;&gt;&lt;i class=&quot;fa fa-minus&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-box-tool&quot; data-widget=&quot;remove&quot;&gt;&lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;/div&gt;
+
+</code></pre>
+
+<p>Everything is embeded in a &ldquo;box-tools pull-right&rdquo; class. What we actually need is this part:</p>
+
+<pre><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn btn-box-tool&quot; data-widget=&quot;remove&quot;&gt;&lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+</code></pre>
+
+<p>The box function from shinydashboard package already contains the collapsible button (if the
+collapsible argument is TRUE).</p>
+
+<pre><code class="language-r">collapseTag &lt;- NULL
+  if (collapsible) {
+    buttonStatus &lt;- status %OR% &quot;default&quot;
+    collapseIcon &lt;- if (collapsed) 
+      &quot;plus&quot;
+    else &quot;minus&quot;
+    collapseTag &lt;- div(
+      class = &quot;box-tools pull-right&quot;, 
+      tags$button(
+        class = paste0(&quot;btn btn-box-tool&quot;), 
+        `data-widget` = &quot;collapse&quot;, shiny::icon(collapseIcon)
+      )
+    )
+  }
+</code></pre>
+
+<p>As in the adminLTE2 HTML snippet, you recognize <code>class = &quot;box-tools pull-right&quot;</code>
+and <code>tags$button(class = paste0(&quot;btn btn-box-tool&quot;), `data-widget` = &quot;collapse&quot;, shiny::icon(collapseIcon))</code>.
+We are just going to add a similar implementation for the closable state (copy this
+code just after the collapseTag):</p>
+
+<pre><code class="language-r"># make our box closable
+  closableTag &lt;- NULL
+  if (closable) {
+    closableTag &lt;- tags$button(
+      class = &quot;btn btn-box-tool&quot;, 
+      `data-widget` = &quot;remove&quot;, 
+      type = &quot;button&quot;,
+      tags$i(shiny::icon(&quot;times&quot;))
+    )
+    # add the new tag to the collapse tag
+    collapseTag &lt;- tagAppendChild(collapseTag, closableTag)
+  } 
+</code></pre>
+
+<p>Notice that I used <code>tagAppendChild(collapseTag, closableTag)</code> to update the collapseTag
+by adding it the closableTag. Since it could be confusing to add
+the closable tag to the collapsible one, it would even be better if you created a boxToolTag
+for which you would add collapseTag and closableTag such as:</p>
+
+<pre><code class="language-r">boxToolTag &lt;- NULL
+if (collapsible || closable) {
+  boxToolTag &lt;- div(class = &quot;box-tools pull-right&quot;)
+}
+
+collapseTag &lt;- NULL
+  if (collapsible) {
+    buttonStatus &lt;- status %OR% &quot;default&quot;
+    collapseIcon &lt;- if (collapsed) 
+      &quot;plus&quot;
+    else &quot;minus&quot;
+    collapseTag &lt;- tags$button(
+        class = paste0(&quot;btn btn-box-tool&quot;), 
+        `data-widget` = &quot;collapse&quot;, shiny::icon(collapseIcon)
+      )
+    )
+  }
+  
+  # make our box closable
+  closableTag &lt;- NULL
+  if (closable) {
+    closableTag &lt;- tags$button(
+      class = &quot;btn btn-box-tool&quot;, 
+      `data-widget` = &quot;remove&quot;, 
+      type = &quot;button&quot;,
+      tags$i(shiny::icon(&quot;times&quot;))
+    )
+  } 
+
+boxToolTag &lt;- tagAppendChildren(boxToolTag, collapseTag, closableTag)
+</code></pre>
+
+<p>Finally, do not forget to replace <strong>collapseTag</strong> by <strong>boxToolTag</strong> in the box <strong>headerTag</strong>
+<code>headerTag &lt;- div(class = &quot;box-header&quot;, titleTag, collapseTag)</code> (the final code is at the end
+of this section). Besides, you should add the closable argument to the argument list
+(closable = TRUE by default).</p>
+
+<p>I have a good (or bad) new for you: this was just the warm-up! What do you think about
+adding tags to the boxToolTag?</p>
+
+<p>This is very simple: the HTML code is here:</p>
+
+<pre><code class="language-html">&lt;span class=&quot;label label-danger&quot;&gt;UI Design&lt;/span&gt;
+</code></pre>
+
+<p>which gives in R:</p>
+
+<pre><code class="language-r"># we first quickly create the label function
+dashboardLabel &lt;- function(..., status = &quot;primary&quot;) {
+  stopifnot(!is.null(status))
+  validateStatus(status)
+  tags$span(
+    class = paste0(&quot;label&quot;, &quot; label-&quot;, status),
+    ...
+  )
+}
+
+# add it after closableTag
+labelTag &lt;- dashboardLabel(&quot;My Label&quot;, status = label_status)
+
+boxToolTag &lt;- tagAppendChildren(boxToolTag, labelTag, collapseTag, closableTag)
+
+</code></pre>
+
+<p>You should also add the label_status argument to the argument list of the box function!</p>
+
+<p>The final code is here:</p>
+
+<pre><code class="language-r">library(shiny)
+library(shinydashboard)
+
+##########
+#
+# useful functions
+#
+##########
+validateColor &lt;- function(color) {
+  if (color %in% validColors) {
+    return(TRUE)
+  }
+  
+  stop(&quot;Invalid color: &quot;, color, &quot;. Valid colors are: &quot;,
+       paste(validColors, collapse = &quot;, &quot;), &quot;.&quot;)
+}
+
+validStatuses &lt;- c(&quot;primary&quot;, &quot;success&quot;, &quot;info&quot;, &quot;warning&quot;, &quot;danger&quot;)
+
+validateStatus &lt;- function(status) {
+  
+  if (status %in% validStatuses) {
+    return(TRUE)
+  }
+  
+  stop(&quot;Invalid status: &quot;, status, &quot;. Valid statuses are: &quot;,
+       paste(validStatuses, collapse = &quot;, &quot;), &quot;.&quot;)
+}
+
+&quot;%OR%&quot; &lt;- function(a, b) if (!is.null(a)) a else b
+
+
+# we first quickly create the label function
+dashboardLabel &lt;- function(..., status = &quot;primary&quot;) {
+  stopifnot(!is.null(status))
+  validateStatus(status)
+  tags$span(
+    class = paste0(&quot;label&quot;, &quot; label-&quot;, status),
+    ...
+  )
+}
+
+
+##########
+#
+# box code
+#
+##########
+box &lt;- function (..., title = NULL, footer = NULL, status = NULL, solidHeader = FALSE, 
+                 background = NULL, width = 6, height = NULL, collapsible = FALSE, 
+                 collapsed = FALSE, closable = TRUE, label_status = &quot;primary&quot;) 
+{
+  boxClass &lt;- &quot;box&quot;
+  if (solidHeader || !is.null(background)) {
+    boxClass &lt;- paste(boxClass, &quot;box-solid&quot;)
+  }
+  if (!is.null(status)) {
+    validateStatus(status)
+    boxClass &lt;- paste0(boxClass, &quot; box-&quot;, status)
+  }
+  if (collapsible &amp;&amp; collapsed) {
+    boxClass &lt;- paste(boxClass, &quot;collapsed-box&quot;)
+  }
+  if (!is.null(background)) {
+    validateColor(background)
+    boxClass &lt;- paste0(boxClass, &quot; bg-&quot;, background)
+  }
+  style &lt;- NULL
+  if (!is.null(height)) {
+    style &lt;- paste0(&quot;height: &quot;, validateCssUnit(height))
+  }
+  titleTag &lt;- NULL
+  if (!is.null(title)) {
+    titleTag &lt;- h3(class = &quot;box-title&quot;, title)
+  }
+  
+  # the new boxtool section
+  boxToolTag &lt;- NULL
+  if (collapsible || closable) {
+    boxToolTag &lt;- div(class = &quot;box-tools pull-right&quot;)
+  }
+  
+  collapseTag &lt;- NULL
+  if (collapsible) {
+    buttonStatus &lt;- status %OR% &quot;default&quot;
+    collapseIcon &lt;- if (collapsed) 
+      &quot;plus&quot;
+    else &quot;minus&quot;
+    collapseTag &lt;- tags$button(
+      class = paste0(&quot;btn btn-box-tool&quot;), 
+      `data-widget` = &quot;collapse&quot;, shiny::icon(collapseIcon)
+    )
+  }
+  
+  closableTag &lt;- NULL
+  if (closable) {
+    closableTag &lt;- tags$button(
+      class = &quot;btn btn-box-tool&quot;, 
+      `data-widget` = &quot;remove&quot;, 
+      type = &quot;button&quot;,
+      tags$i(shiny::icon(&quot;times&quot;))
+    )
+  } 
+  
+  labelTag &lt;- dashboardLabel(&quot;My Label&quot;, status = label_status)
+  
+  # update boxToolTag
+  boxToolTag &lt;- tagAppendChildren(boxToolTag, labelTag, collapseTag, closableTag)
+  
+  headerTag &lt;- NULL
+  if (!is.null(titleTag) || !is.null(collapseTag)) {
+    # replace by boxToolTag
+    headerTag &lt;- div(class = &quot;box-header&quot;, titleTag, boxToolTag)
+  }
+  div(class = if (!is.null(width)) 
+    paste0(&quot;col-sm-&quot;, width), div(class = boxClass, style = if (!is.null(style)) 
+      style, headerTag, div(class = &quot;box-body&quot;, ...), if (!is.null(footer)) 
+        div(class = &quot;box-footer&quot;, footer)))
+}
+
+
+##########
+#
+# test our box
+#
+##########
+shinyApp(
+  ui = dashboardPage(
+    dashboardHeader(),
+    dashboardSidebar(),
+    dashboardBody(
+      fluidRow(
+        box(title = &quot;Histogram box title&quot;, closable = TRUE, label_status = &quot;danger&quot;,
+            status = &quot;warning&quot;, solidHeader = FALSE, collapsible = TRUE,
+            p(&quot;Box Content&quot;)
+        )
+      )
+    )
+  ),
+  server = function(input, output) {}
+)
+</code></pre>
+
+<p>Here is the result.</p>
+
+<p><a href="images/custom_box.png"><img src="images/custom_box.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>I wish you a nice customization :)</p>
+
+<h2 id="some-improved-version-of-shinydashboard">Some improved version of shinydashboard</h2>
+
+<p>To finish this tutorial, I have some suggestions to radically pimp your dashboard design.</p>
+
+<h3 id="gentelella-dashboard">gentelella dashboard</h3>
+
+<p>A version very similar to adminLTE2. By chance, a shiny implementation is available
+<a href="http://code.markedmondson.me/gentelellaShiny/">here</a>, developed by <a href="https://github.com/MarkEdmondson1234">Mark Edmonson</a>.</p>
+
+<p><a href="images/shiny_gentelella.png"><img src="images/shiny_gentelella.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>This template looks really promising! Below a demonstration of an app I am currently developing
+for an external project (it is unfortunately in French).</p>
+
+<p><a href="http://130.60.24.205/shinyLove/"><img src="images/gentelella_app.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h3 id="semantic-dashboards">Semantic dashboards</h3>
+
+<p>Recently released on CRAN by the <a href="https://appsilondatascience.com">Appsilon</a>
+data science group, this upcoming package
+seems a very interesting alternative to shinydashboard. It relies on the semantic UI
+library, for wich <a href="https://demo.appsilondatascience.com/shiny-semantic-components/">shiny.semantic</a> is also available.
+<a href="https://appsilondatascience.com/blog/rstats/2018/04/23/semanticdashboard.html">Semantic dashboard</a> looks very
+clear but terribly efficient. What I really enjoy is that you only need to change
+<code>library(shinydashboard)</code> to <code>library(semantic.dashboard)</code> in order to convert
+any shinydashboard to the semantic design. Besides, you can add any of the
+semantic themes (make either light or dark dashboard), which you cannot do
+with shinydashboard. Amazing!!!</p>
+
+<pre><code class="language-r">library(shiny)
+library(shiny.semantic)
+library(semantic.dashboard)
+library(plotly)
+library(DT)
+
+ui &lt;- dashboardPage(
+  dashboardHeader(dropdownMenuOutput(&quot;dropdown&quot;),
+                  dropdownMenu(type = &quot;notifications&quot;,
+                               taskItem(&quot;Project progress...&quot;, 50.777, color = &quot;red&quot;)),
+                  dropdownMenu(icon = uiicon(&quot;red warning sign&quot;),
+                               notificationItem(&quot;This is an important notification!&quot;, color = &quot;red&quot;))),
+  dashboardSidebar(side = &quot;left&quot;,
+                   sidebarMenu(
+                     menuItem(tabName = &quot;plot_tab&quot;, text = &quot;My plot&quot;, icon = icon(&quot;home&quot;)),
+                     menuItem(tabName = &quot;table_tab&quot;, text = &quot;My table&quot;, icon = icon(&quot;smile&quot;)))),
+  dashboardBody(
+    tabItems(
+      tabItem(tabName = &quot;plot_tab&quot;,
+              fluidRow(
+                valueBox(&quot;Unread Mail&quot;, 44, icon(&quot;mail&quot;), color = &quot;blue&quot;, width = 5)),
+              fluidRow(
+                box(title = &quot;Sample box&quot;, color = &quot;blue&quot;, width = 11,
+                    selectInput(inputId =  &quot;variable1&quot;, choices = names(mtcars),
+                                label = &quot;Select first variable&quot;, selected = &quot;mpg&quot;),
+                    selectInput(inputId =  &quot;variable2&quot;, choices = names(mtcars),
+                                label = &quot;Select second variable&quot;, selected = &quot;cyl&quot;),
+                    plotlyOutput(&quot;mtcars_plot&quot;)),
+                tabBox(title = &quot;Sample box&quot;, color = &quot;blue&quot;, width = 5,
+                       collapsible = FALSE,
+                       tabs = list(
+                         list(menu = &quot;First Tab&quot;, content = &quot;Some text...&quot;),
+                         list(menu = &quot;Second Tab&quot;, content = plotlyOutput(&quot;mtcars_plot2&quot;))
+                       )))),
+      tabItem(tabName = &quot;table_tab&quot;,
+              fluidRow(
+                valueBox(&quot;Unread Mail&quot;, 144, icon(&quot;mail&quot;), color = &quot;blue&quot;, width = 6, size = &quot;small&quot;),
+                valueBox(&quot;Spam&quot;, 20, icon(&quot;mail&quot;), color = &quot;red&quot;, width = 5, size = &quot;small&quot;),
+                valueBox(&quot;Readed Mail&quot;, 666, icon(&quot;mail&quot;), color = &quot;green&quot;, width = 5, size = &quot;small&quot;)
+              ),
+              fluidRow(
+                box(title = &quot;Classic box&quot;, color = &quot;blue&quot;, ribbon = FALSE,
+                    title_side = &quot;top left&quot;, width = 14,
+                    tags$div(
+                      dataTableOutput(&quot;mtcars_table&quot;)
+                      , style = paste0(&quot;color:&quot;, semantic_palette[[&quot;blue&quot;]], &quot;;&quot;))
+                ))))
+  ), theme = &quot;slate&quot;
+)
+
+server &lt;- function(input, output) {
+  
+  output$mtcars_plot &lt;- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
+                                             y = ~ mtcars[ , input$variable2],
+                                             type = &quot;scatter&quot;, mode = &quot;markers&quot;)
+  )
+  output$mtcars_plot2 &lt;- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
+                                              y = ~ mtcars[ , input$variable2],
+                                              type = &quot;scatter&quot;, mode = &quot;markers&quot;))
+  
+  output$mtcars_table &lt;- renderDataTable(mtcars, options = list(dom = 't'))
+  
+  output$dropdown &lt;- renderDropdownMenu({
+    dropdownMenu(messageItem(&quot;User&quot;, &quot;Test message&quot;, color = &quot;teal&quot;, style = &quot;min-width: 200px&quot;),
+                 messageItem(&quot;Users&quot;, &quot;Test message&quot;, color = &quot;teal&quot;, icon = &quot;users&quot;),
+                 messageItem(&quot;See this&quot;, &quot;Another test&quot;, icon = &quot;warning&quot;, color = &quot;red&quot;))
+  })
+}
+
+shinyApp(ui, server)
+</code></pre>
+
+<p>The result below ;)</p>
+
+<p><a href="semantic_app.png"><img src="images/semantic_app.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h3 id="material-dashboards">Material dashboards</h3>
+
+<p>Material design to build shiny dashboards. Download shinymaterial from <a href="https://github.com/ericrayanderson/shinymaterial">here</a>. A dashboard example is available
+<a href="https://github.com/ericrayanderson/shinymaterial_dashboard">here</a>.</p>
+
+<p><a href="https://ericrayanderson.shinyapps.io/shinymaterial_dashboard/"><img src="images/material_dashboard.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p><strong>More Updates Coming soon</strong></p>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy; David Granjon 2020
+    ·
+    
+    
+    ·
+    Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

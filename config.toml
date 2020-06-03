@@ -1,71 +1,96 @@
+theme = "soho"
 baseurl = "https://divadnojnarg.github.io"
-relativeurls = true
-languageCode = "en-us"
-tags = ["Zurich", "renal physiology", "mathematical physiology", "calcium", "phosphate", "ShinyApps", "R"]
-
-title = "Hi, I am David"
-theme = "osprey"
-googleAnalytics = ""
-disqusShortname = "divadnojnarg"
+#relativeurls = true
+languageCode = "en"
+title = "David Granjon"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+summarylength = 10
+enableEmoji = true
+paginate = 5
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 publishDir ="/Users/granjda1/Documents/David/Websites/divadnojnarg.github.io"
 
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
-
 [params]
-    tagline = "Hi, I am David"
-    author = "David Granjon"
-    description = "PhD in Mathematical Physiology, Renal Physiology, Zurich."
-    logoBig = "/images/fractal-logo.png"
-    logoSmall = "/images/fractal-logo.png"
-    
-    linkedin = "david-granjon-88625968"
-    github = "divadnojnarg"
-    twitter = "divadnojnarg"
-    
-    email = "dgranjon@ymail.com"
-    
-    googleTagManger = ""
-    copyright = true
-    credits = true
-    
-    # Code highlighting with highlight.js
-    highlightJS = true
-    highlightJSStyle = "/styles/highlight/atom-one-light.css" # For custom highlight.js styles, add your /path/to/styles/default.css
-    highlightJSScript = "/scripts/highlight.min.js" # For custom highlight.js languages config, add your /path/to/highlight.pack.js
-    
-    # Cache busting of static resources (additional set up required)
-    cacheBustCSS = false
-    cacheBustJS = false
-    
-    # Choose either Formspree contact form or Basin contact form
-    ajaxFormspree = true
-    ajaxFormspreeGold = false
-    ajaxBasin = ""
+title = "David Granjon"
+description = "Blog"
+# gravatar = "soho@example.com"
+#images = ["images/profile.png"]
+profilePicture = "images/profile.jpeg"
+copyright = "David Granjon"
+#license = "CC BY-SA 4.0"
+#licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+builtWith = true
+mainSections = ["post"]
 
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
+## Set custom theme color.
+themeColor = "#3e3e3e"
 
+## Set custom CSS and/or JS to override site defaults.
+customCss = ["css/custom.css"]
+# customJs = ["js/custom.js"
 
-[[menu.main]]
-    name = "Blog"
-    url = "/#blog"
-    weight = 1
-[[menu.main]]
-    name = "Contact"
-    url = "/#contact"
-    weight = 2
-    
-[[menu.main]]
-    name = "About"
-    url = "/david_granjon_cv.html"
-    weight = 3
-    
-[[menu.main]]
-    name = "RinteRface"
-    url = "https://rinterface.com"
-    weight = 4
+  [[params.socialIcons]]
+  icon = "fa-linkedin"
+  title = "Linkedin"
+  url = "https://ch.linkedin.com/in/david-granjon-88625968"
+
+  [[params.socialIcons]]
+  icon = "fa-github"
+  title = "GitHub"
+  url = "https://github.com/DivadNojnarg"
+
+  [[params.socialIcons]]
+  icon = "fa-twitter"
+  title = "Twitter"
+  url = "https://twitter.com/divadnojnarg"
+
+[taxonomies]
+  series = "series"
+  category = "categories"
+  tag = "tags"
+
+[menu]
+  ## Remove unnecessary items
+  #[[menu.main]]
+  #name = "Posts"
+  #weight = 100
+  #identifier = "posts"
+  #url = "/posts/"
+
+  #[[menu.main]]
+  #name = "Categories"
+  #weight = 200
+  #identifier = "categories"
+  #url = "/categories/"
+
+  #[[menu.main]]
+  #name = "Tags"
+  #weight = 200
+  #identifier = "tags"
+  #url = "/tags/"
+
+  [[menu.main]]
+  name = "About"
+  identifier = "about"
+  weight = 10
+  url = "/about/"
+
+  [[menu.main]]
+  name = "Contact"
+  identifier = "contact"
+  weight = 20
+  url = "mailto:dgranjon@ymail.com"
+
+[markup]
+
+  [markup.highlight]
+  codeFences = true
+  guessSyntax = false
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = true
+  noClasses = true
+  style = "monokai"
+  tabWidth = 4

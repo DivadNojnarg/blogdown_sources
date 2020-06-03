@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David Granjon</title>
+    <link>/</link>
+    <description>Recent content on David Granjon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Contact</title>
+      <link>/contact/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>Get in contact with us!</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.</description>
+    </item>
+    
+    <item>
+      <title>About RinteRface</title>
+      <link>/post/about-rinterface/</link>
+      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/about-rinterface/</guid>
+      <description>Introduction I recently created the RinteRface plateform in order to enhance the R shiny interface experience.</description>
+    </item>
+    
+    <item>
+      <title>Create a simple webviewer for shiny (IOs/Xcode)</title>
+      <link>/post/shiny_webview/</link>
+      <pubDate>Thu, 04 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/shiny_webview/</guid>
+      <description>Important Note This blog post is a summary of this brief but excellent tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Build Bootstrap 4 dashboards with bs4Dash</title>
+      <link>/post/bs4dash/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/bs4dash/</guid>
+      <description>.card { box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.</description>
+    </item>
+    
+    <item>
+      <title>Save your R packages when updating R version</title>
+      <link>/post/rpackages_save/</link>
+      <pubDate>Tue, 24 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rpackages_save/</guid>
+      <description>This post is a copy and paste of an r-blogger article.</description>
+    </item>
+    
+    <item>
+      <title>Track a website usage with hotjar</title>
+      <link>/post/shinyapp_hotjar/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/shinyapp_hotjar/</guid>
+      <description>A web tracking tool I often use is hotjar. Below is a heatmap showing all the users click in the past week in my personal website.</description>
+    </item>
+    
+    <item>
+      <title>Build awesome dashboards with shiny</title>
+      <link>/post/awesomedashboards/</link>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/awesomedashboards/</guid>
+      <description>shinydashboardPlus  I recently released shinydashboardPlus on CRAN. Therefore, some of the functions below are now included in the package.</description>
+    </item>
+    
+    <item>
+      <title>Make beautiful CVs with shiny and AdminLTE2</title>
+      <link>/post/shinycvs/</link>
+      <pubDate>Tue, 13 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/shinycvs/</guid>
+      <description>shinyCV  Amazing HTML CVs based upon adminLTE2 template</description>
+    </item>
+    
+    <item>
+      <title>Extend shinyWidgets: knobInput</title>
+      <link>/post/knobinput/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/knobinput/</guid>
+      <description>Introduction shiny basic package contains several widgets, available here. This database is continuously extended through the shinyWidget package developed by the dreamRs team.</description>
+    </item>
+    
+    <item>
+      <title>How to customize shiny sliderInput</title>
+      <link>/post/customsliderinput/</link>
+      <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/customsliderinput/</guid>
+      <description>Sometimes, you might get bored by the design of the sliders in Shiny.</description>
+    </item>
+    
+    <item>
+      <title>Essential Shiny packages</title>
+      <link>/post/bestofshiny/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/bestofshiny/</guid>
+      <description>I would like to share with you a &amp;ldquo;best of&amp;rdquo; of all Shiny packages you might need to build outstanding applications.</description>
+    </item>
+    
+    <item>
+      <title>Upcoming Updates</title>
+      <link>/post/todolist/</link>
+      <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/todolist/</guid>
+      <description>Future updates:
+add a link to the second scientific article published upload the first shiny app in the Lorenz model section add all other shiny apps related to the Lorenz model open the shiny showcase section new icons update the Lotka Volterra App publish Shiny App of Calcium Homeostasis add a description part to the Calcium Homeostasis gallery add tutorials/articles in the teaching section  Last update: 22-10-17</description>
+    </item>
+    
+    <item>
+      <title>Setting MathJax with Hugo</title>
+      <link>/post/mathjax/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mathjax/</guid>
+      <description>The classical approach MathJax is a javascript library which allows the user to integrate math expressions in a website or a blog.</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>/post/hello/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hello/</guid>
+      <description>Welcome to my new website. I am David, PhD in mathematical physiology, especially in renal physiology and calcium/phosphate metabolism.</description>
+    </item>
+    
+  </channel>
+</rss>
