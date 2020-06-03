@@ -18,7 +18,7 @@ hidden under the hood, in the inst/AdminLTE folder (shinydashboard [github](http
 In the following, I will show you how you could implement any of the adminLTE2 elements,
 when they are not already included in the shinydashboard package. 
 
-<a href="images/adminLTE2_dashboard.png"><img src="images/adminLTE2_dashboard.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/adminLTE2_dashboard.png"><img src="/images/adminLTE2_dashboard.png" width="auto" height="auto" alt="blank"></a>
 
 ## From R to HTML
 
@@ -176,7 +176,7 @@ You noticed a timeline element that you really want to include in your shinydash
 According to the following screenshot, open the profile.html page with your
 favorite editor (notepad ++, Rstudio, Xcode, ...). 
 
-<a href="images/adminLTE2_folder.png"><img src="images/adminLTE2_folder.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/adminLTE2_folder.png"><img src="/images/adminLTE2_folder.png" width="auto" height="auto" alt="blank"></a>
 
 Go to find, type "The timeline" and copy the following code, which corresponds 
 to the timeline object:
@@ -405,7 +405,7 @@ shinyApp(
 
 You should see something like that:
 
-<a href="images/dashboard_timeline.png"><img src="images/dashboard_timeline.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/dashboard_timeline.png"><img src="/images/dashboard_timeline.png" width="auto" height="auto" alt="blank"></a>
 
 Congratulations!!! Actually and in my opinion, if you write a
 shiny app, it is more consistent to write everything in R and not mix HTML and R,
@@ -417,7 +417,7 @@ in R.
 For this part, I will take the HTML code corresponding to a social box 
 from adminLTE2.
 
-<a href="images/socialbox_example.png"><img src="images/socialbox_example.png" width="400" height="200" alt="blank"></a>
+<a href="/images/socialbox_example.png"><img src="/images/socialbox_example.png" width="400" height="200" alt="blank"></a>
 
 The associated HTML is located in the widgets.html file:
 
@@ -771,14 +771,14 @@ shinyApp(
 
 Congratulations!
 
-<a href="images/dashboard_socialbox.png"><img src="images/dashboard_socialbox.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/dashboard_socialbox.png"><img src="/images/dashboard_socialbox.png" width="auto" height="auto" alt="blank"></a>
 
 From now, you should be able to integrate any boostrap 3 compatible objects in your
 shinydashboards. 
 
 A better example of what you could achieve is [here](https://dgranjon.shinyapps.io/myshinycv/)
 
-<a href="images/shinyCV_newdesign.png"><img src="images/shinyCV_newdesign.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/shinyCV_newdesign.png"><img src="/images/shinyCV_newdesign.png" width="auto" height="auto" alt="blank"></a>
 
 
 ### Customize shinydashboard elements
@@ -1128,7 +1128,7 @@ shinyApp(
 
 Here is the result.
 
-<a href="images/custom_box.png"><img src="images/custom_box.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/custom_box.png"><img src="/images/custom_box.png" width="auto" height="auto" alt="blank"></a>
 
 I wish you a nice customization :)
 
@@ -1140,12 +1140,12 @@ To finish this tutorial, I have some suggestions to radically pimp your dashboar
 A version very similar to adminLTE2. By chance, a shiny implementation is available
 [here](http://code.markedmondson.me/gentelellaShiny/), developed by [Mark Edmonson](https://github.com/MarkEdmondson1234).
 
-<a href="images/shiny_gentelella.png"><img src="images/shiny_gentelella.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/shiny_gentelella.png"><img src="/images/shiny_gentelella.png" width="auto" height="auto" alt="blank"></a>
 
 This template looks really promising! Below a demonstration of an app I am currently developing
 for an external project (it is unfortunately in French).
 
-<a href="http://130.60.24.205/shinyLove/"><img src="images/gentelella_app.png" width="auto" height="auto" alt="blank"></a>
+<a href="http://130.60.24.205/shinyLove/"><img src="/images/gentelella_app.png" width="auto" height="auto" alt="blank"></a>
 
 
 ### Semantic dashboards
@@ -1155,8 +1155,7 @@ seems a very interesting alternative to shinydashboard. It relies on the semanti
 library, for wich [shiny.semantic](https://demo.appsilondatascience.com/shiny-semantic-components/) is also available.
 [Semantic dashboard](https://appsilondatascience.com/blog/rstats/2018/04/23/semanticdashboard.html) looks very
 clear but terribly efficient. What I really enjoy is that you only need to change
-`library(shinydashboard)` to `library(semantic.dashboard)` in order to convert
-any shinydashboard to the semantic design. Besides, you can add any of the 
+`library(shinydashboard)` to `library(semantic.dashboard)` in order to convert any shinydashboard to the semantic design. Besides, you can add any of the 
 semantic themes (make either light or dark dashboard), which you cannot do
 with shinydashboard. Amazing!!!
 
@@ -1235,14 +1234,14 @@ shinyApp(ui, server)
 
 The result below ;)
 
-<a href="semantic_app.png"><img src="images/semantic_app.png" width="auto" height="auto" alt="blank"></a>
+<a href="semantic_app.png"><img src="/images/semantic_app.png" width="auto" height="auto" alt="blank"></a>
 
 ### Material dashboards
 
 Material design to build shiny dashboards. Download shinymaterial from [here](https://github.com/ericrayanderson/shinymaterial). A dashboard example is available 
 [here](https://github.com/ericrayanderson/shinymaterial_dashboard).
 
-<a href="https://ericrayanderson.shinyapps.io/shinymaterial_dashboard/"><img src="images/material_dashboard.png" width="auto" height="auto" alt="blank"></a>
+<a href="https://ericrayanderson.shinyapps.io/shinymaterial_dashboard/"><img src="/images/material_dashboard.png" width="auto" height="auto" alt="blank"></a>
 
 
 **More Updates Coming soon**

@@ -281,26 +281,26 @@ shinyApp(ui, server)
 
 The code above will give the image below
 
-<a href="images/custom_colorsliders.png"><img src="images/custom_colorsliders.png" width="800px" height="600px" alt="blank"></a>
+<a href="/images/custom_colorsliders.png"><img src="/images/custom_colorsliders.png" width="800px" height="600px" alt="blank"></a>
 <br>
 
-<a href="images/sliderFlat.png"><img src="images/sliderFlat.png" width="400px" height="200px" alt="blank" title="Flat design"></a>
+<a href="/images/sliderFlat.png"><img src="/images/sliderFlat.png" width="400px" height="200px" alt="blank" title="Flat design"></a>
 <div class="col-sm-6>
 
-<a href="images/sliderModern.png"><img src="images/sliderModern.png" width="400px" height="200px" alt="blank" title="Modern design"></a>
+<a href="/images/sliderModern.png"><img src="/images/sliderModern.png" width="400px" height="200px" alt="blank" title="Modern design"></a>
 <br>
 
 
-<a href="images/sliderSimple.png"><img src="images/sliderSimple.png" width="400px" height="200px" alt="blank" title="Simple design"></a>
+<a href="/images/sliderSimple.png"><img src="/images/sliderSimple.png" width="400px" height="200px" alt="blank" title="Simple design"></a>
 <br>
 
-<a href="images/sliderNice.png"><img src="images/sliderNice.png" width="400px" height="200px" alt="blank" title="Nice design"></a>
+<a href="/images/sliderNice.png"><img src="/images/sliderNice.png" width="400px" height="200px" alt="blank" title="Nice design"></a>
 <br>
 
-<a href="images/sliderRound.png"><img src="images/sliderRound.png" width="400px" height="200px" alt="blank" title="Round design"></a>
+<a href="/images/sliderRound.png"><img src="/images/sliderRound.png" width="400px" height="200px" alt="blank" title="Round design"></a>
 <br>
 
-<a href="images/sliderSquare.png"><img src="images/sliderSquare.png" width="400px" height="200px" alt="blank" title="Square design"></a>
+<a href="/images/sliderSquare.png"><img src="/images/sliderSquare.png" width="400px" height="200px" alt="blank" title="Square design"></a>
 <br>
 
 

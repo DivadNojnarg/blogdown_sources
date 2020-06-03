@@ -45,7 +45,7 @@ shinyWidgetsGallery()
 
 Keep up the good work Victor!
 
-<a href="images/shinyWidgetsDemo.png"><img src="images/shinyWidgetsDemo.png" alt="blank" title="shinyWidgets"></a>
+<a href="/images/shinyWidgetsDemo.png"><img src="/images/shinyWidgetsDemo.png" alt="blank" title="shinyWidgets"></a>
 <br>
 
 ## Other Options
@@ -92,10 +92,10 @@ template was also created.
 I developed 2 new R packages to integrate argon and the argon dashboard template.
 These are respectively called [argonR](https://rinterface.github.io/argonR/) and [argonDash](https://rinterface.github.io/argonDash/) and will be released soon on CRAN (currently submitted).
 
-<a href="images/argonRDemo.png"><img src="images/argonRDemo.png" alt="blank" title="argonR template"></a>
+<a href="/images/argonRDemo.png"><img src="/images/argonRDemo.png" alt="blank" title="argonR template"></a>
 <br>
 
-<a href="images/argonDashDemo.png"><img src="images/argonDashDemo.png" alt="blank" title="argonDash example"></a>
+<a href="/images/argonDashDemo.png"><img src="/images/argonDashDemo.png" alt="blank" title="argonDash example"></a>
 <br>
 
 ### Materialize CSS
@@ -104,7 +104,7 @@ I personally enjoy this custom template taken from the [**material**](https://ma
 By the way, a showcase is available [here](https://ericrayanderson.github.io/shinymaterial/). 
 A major drawback is that the navbarmenu cannot be customized very easily, unless after some manipulations.
 
-<a href="images/shinyMaterialDemo.png"><img src="images/shinyMaterialDemo.png" alt="blank" title="shinymaterial"></a>
+<a href="/images/shinyMaterialDemo.png"><img src="/images/shinyMaterialDemo.png" alt="blank" title="shinymaterial"></a>
 <br>
 
 ### Semantic design
@@ -120,7 +120,7 @@ suppressDependencies("bootstrap")
 A feature I really appreciate is the
 card widget as well as rating but I will have to report that inputs such as sliders are not part of this package, which implies to use input widgets from the shiny base package. I did not spend so much time working with this UI but I think it could be really promising and serious alternative to bootstrap!
 
-<a href="images/shinySemanticDemo.png"><img src="images/shinySemanticDemo.png" alt="blank" title="shiny.semantic"></a>
+<a href="/images/shinySemanticDemo.png"><img src="/images/shinySemanticDemo.png" alt="blank" title="shiny.semantic"></a>
 <br>
 
 ## Make your app more professional
@@ -144,9 +144,7 @@ everything you need [here](https://github.com/carlganz/rintrojs).
 
 ## Summary
 
-As a result, if you aim at building outstanding apps, I would advise to spend some
-time considering these previous packages. Be careful about the compatibility problems,
-before going too far. Indeed, it is better to make some tests to avoid nasty surprises!
+As a result, if you aim at building outstanding apps, I would advise to spend some time considering these previous packages. Be careful about the compatibility problems, before going too far. Indeed, it is better to make some tests to avoid nasty surprises!
 
 
 I will regularly update this article.

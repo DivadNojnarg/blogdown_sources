@@ -21,7 +21,7 @@ change anything!
 * Click on the code editor (second button of the top right toolbox)
 
 
-<a href="images/shiny_webview_wrapup.png"><img src="images/shiny_webview_wrapup.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/shiny_webview_wrapup.png"><img src="/images/shiny_webview_wrapup.png" width="auto" height="auto" alt="blank"></a>
 
 
 ## The code
@@ -97,5 +97,5 @@ A large range of devices is available: Ipad Air, Ipad Pro 12.9, Iphone 8, ...
 so that you can test you app on multiple screen size.
 
 <video width="800" height="600" controls>
-  <source src="videos/shiny_webview.mp4" type="video/mp4">
+  <source src="/videos/shiny_webview.mp4" type="video/mp4">
 </video>

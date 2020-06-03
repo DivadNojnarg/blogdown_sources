@@ -9,19 +9,19 @@ this kind of feedback since it summarizes everything at a glance. The screenshot
 you can see only takes into account click events. However, you can also see users
 moves or how they scroll on your website.
 
-<a href="images/heatmap_blog.jpg"><img src="images/heatmap_blog.jpg" width="auto" height="auto" alt="blank"></a>
+<a href="/images/heatmap_blog.jpg"><img src="/images/heatmap_blog.jpg" width="auto" height="auto" alt="blank"></a>
 
 The table below shows where your visitors are from, how much time they spend on a
 given page, with which web browser and when. 
 
-<a href="images/visitors_logs.png"><img src="images/visitors_logs.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/visitors_logs.png"><img src="/images/visitors_logs.png" width="auto" height="auto" alt="blank"></a>
 
 Moreover, you can go further and investigate what they specifically did during their
 session. Indeed, each user session is recorded so that you see exactly where they spent
 a lot of time, you can even detect hesitations and at what moment they exited your
 website.
 
-<a href="images/visitors_movie.png"><img src="images/visitors_movie.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/visitors_movie.png"><img src="/images/visitors_movie.png" width="auto" height="auto" alt="blank"></a>
 
 If you are interested in the features described above, I highly recommend you
 trying hotjar and create a free account (perfect for small impact websites). Furthermore,
@@ -46,7 +46,7 @@ the good url and simply check your installation with their tool.
         </script>
 {{< /highlight >}}
 
-<a href="images/hotjar_check.png"><img src="images/hotjar_check.png" width="auto" height="auto" alt="blank"></a>
+<a href="/images/hotjar_check.png"><img src="/images/hotjar_check.png" width="auto" height="auto" alt="blank"></a>
 
 You can easily understand that hotjar can be used for tracking a shiny app usage.
 To include it in your app, you have 6 steps to follow:
@@ -101,4 +101,4 @@ Finally, I give you an overview of what you could obtain with a shiny app. I not
 >Hope that cleared things up and please let me know if you need any extra help!
  
  
- <a href="images/heatmap_shinyapp.jpg"><img src="images/heatmap_shinyapp.jpg" width="auto" height="auto" alt="blank"></a>
+ <a href="/images/heatmap_shinyapp.jpg"><img src="/images/heatmap_shinyapp.jpg" width="auto" height="auto" alt="blank"></a>
