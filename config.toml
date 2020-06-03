@@ -8,7 +8,7 @@ theme = "osprey"
 googleAnalytics = ""
 disqusShortname = "divadnojnarg"
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
-publishDir ="/Users/macdavidgranjon/Documents/Websites/divadnojnarg.github.io"
+publishDir ="/Users/granjda1/Documents/David/Websites/divadnojnarg.github.io"
 
 [permalinks]
     post = "/:year/:month/:day/:slug/"
@@ -62,7 +62,7 @@ publishDir ="/Users/macdavidgranjon/Documents/Websites/divadnojnarg.github.io"
     
 [[menu.main]]
     name = "About"
-    url = "/cv.pdf"
+    url = "/david_granjon_cv.html"
     weight = 3
     
 [[menu.main]]
