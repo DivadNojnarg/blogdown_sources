@@ -1,6 +1,5 @@
 theme = "soho"
-baseurl = "https://divadnojnarg.github.io/"
-#relativeurls = true
+baseurl = "https://divadnojnarg.github.io"
 languageCode = "en"
 title = "David Granjon"
 DefaultContentLanguage = "en"
@@ -15,7 +14,7 @@ publishDir ="/Users/granjda1/Documents/David/Websites/divadnojnarg.github.io"
 title = "David Granjon"
 description = "Blog"
 # gravatar = "soho@example.com"
-#images = ["images/profile.png"]
+# images = ["images"]
 profilePicture = "images/profile.jpeg"
 copyright = "David Granjon"
 #license = "CC BY-SA 4.0"
