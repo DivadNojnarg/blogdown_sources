@@ -1,5 +1,5 @@
 theme = "soho"
-baseurl = "https://divadnojnarg.github.io"
+baseurl = "https://divadnojnarg.github.io/"
 #relativeurls = true
 languageCode = "en"
 title = "David Granjon"
@@ -28,7 +28,7 @@ themeColor = "#3e3e3e"
 
 ## Set custom CSS and/or JS to override site defaults.
 customCss = ["css/custom.css"]
-# customJs = ["js/custom.js"
+customJs = ["js/custom.js"]
 
   [[params.socialIcons]]
   icon = "fa-linkedin"
@@ -69,17 +69,23 @@ customCss = ["css/custom.css"]
   #weight = 200
   #identifier = "tags"
   #url = "/tags/"
+  
+  [[menu.main]]
+  name = "CV"
+  identifier = "cv"
+  weight = 10
+  url = "/cv.pdf"
 
   [[menu.main]]
   name = "About"
   identifier = "about"
-  weight = 10
+  weight = 20
   url = "/about/"
 
   [[menu.main]]
   name = "Contact"
   identifier = "contact"
-  weight = 20
+  weight = 30
   url = "mailto:dgranjon@ymail.com"
 
 [markup]
